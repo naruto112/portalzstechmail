@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portal | Zurich-Santander</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+
+  <link rel="shortcut icon" href="dist/img/ico-santander.png">
+  
+  <script>
+        var token = localStorage.getItem("token");
+        var sms = localStorage.getItem("sms");
+        var obj_sms = JSON.parse(sms);
+        var object = JSON.parse(token);
+    
+        var date = new Date();
+        var minute = date.getMinutes();
+        
+        if(token == null){
+            // window.location.href = "index.html?login";
+        }else{
+
+            if(obj_sms.token){
+                total_expira = minute - object.minuto;
+    
+                if(total_expira > 50) {
+                localStorage.clear();
+                window.location.href = "index.html?login";
+                }
+                if(total_expira < 0){
+                localStorage.clear();
+                window.location.href = "index.html?login";
+                }
+                window.location.href = "index.html?portal";
+            }else{
+                localStorage.clear();
+            }
+            
+            
+        }
+    </script>
+
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box login-box-resposive">
+        
+  <div class="login-logo">
+    <a href="#"><img src="dist/img/logo-Zurich-Santander_novo.png" style="width: 85%; padding-top: 10px; height: auto; margin: auto"></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <div id="msg-alert"></div>
+    <div id="msg-center">
+        <p class="login-box-msg consulta-login" style="margin-top: 4%;margin-left: 0%;position: absolute;font-size: 195%;">Aguarde consultando CPF</p>
+        <img src="dist/img/consultando-segurado.gif" style="width: 75%;padding-top: 10px;height: auto;margin: auto;margin-left: 13%;">
+    </div>
+  </div>
+  <!-- /.login-box-body -->
+
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+  var date = new Date();
+  yearNow = date.getYear();
+  if (yearNow < 1000)
+  yearNow+=1900
+  $("#ano-now").text(yearNow);
+</script>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="dist/js/Cosumer.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.mask.js"></script>
+<script>
+    var url = localStorage.getItem("url");
+    var id_consulta = localStorage.getItem("id_consulta");
+    var object = JSON.parse(id_consulta);
+    
+    function consultarStatus(){
+        $.ajax({
+                url: url+'/api/aguarde/consulta/'+object.id,
+                success: function (response) {
+                    
+                    if(response == '3'){
+                        // alert("Não foi Encontrado em nossa base para esse CPF");
+                        $("#msg-alert").append('<div class="alert alert-warning color-msg-box-alert" role="alert">Não encontramos nenhum seguro em seu CPF. <a href="index.html?login">Clique para voltar</a></div>');
+                        $("#msg-center").remove();
+                        localStorage.clear();
+                        // window.location.href = "index.html?login";
+                    }else{
+
+                        if(response == 'true'){
+                            Login(object.cpf);
+                        }else{
+                            // console.log(object.cpf);
+                        }
+
+                    }
+                    
+                }
+            });
+    }
+
+    setInterval(function(){         
+        consultarStatus();
+        }, 6000);
+</script>
+
+
+<script>
+    window.history.pushState("Login", "Portal | Login", "/index.html?login");
+</script>
+</body>
+</html>

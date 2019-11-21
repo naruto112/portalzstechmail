@@ -1,0 +1,161 @@
+<div id="btn-voltar"></div>
+<h3 id="h3-detail"></h3>
+<br>
+<h2 class="h2-size"> Bem vindo ao Portal de Sinistros Santander.</h2> <p><h4>O que a gente pode fazer por você hoje?</h4></p>
+<br>
+<br>
+<div id="ticketid" hidden></div>
+<div id="sucesso-doc" class="alert alert-success" hidden>
+    <strong>Pronto!</strong> Seus documentos foram enviados com sucesso.
+</div>
+<div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Segurado</label>
+        <input type="text" class="form-control" id="nome_segurado" readonly="readonly">
+    </div>
+  <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Sinistrado</label>
+        <input type="text" class="form-control" id="nome_sinistrado" readonly="readonly">
+    </div>
+  <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Notificante</label>
+        <input type="text" class="form-control" id="nome_notificante" readonly="readonly">
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF Segurado</label>
+        <input type="text" class="form-control" id="cpf_segurado" readonly="readonly">
+    </div>
+  <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF Sinistrado</label>
+        <input type="text" class="form-control" id="cpf_sinistrado" readonly="readonly">
+    </div>
+  <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF Notificante</label>
+        <input type="text" class="form-control" id="cpf_notificante" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">Nº Sinistro</label>
+        <input type="text" class="form-control" id="num_sinistro" readonly="readonly">
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1" style="margin-right: -50%;">E-mail <span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="email" class="form-control" id="email" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1" style="margin-right: -50%;">Telefone Contato <span id="obrigatorio-tel" style="color: red;font-size: 83%;">*</span></label>
+        <input type="text" class="form-control" id="telefone" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+            <label for="exampleInputEmail1">Cobertura Reclamada</label>
+            <input type="text" id="cobertura_reclamada" class="form-control" id="cpf_notificante" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">Apolice</label>
+        <input type="text" id="apolice" class="form-control" id="num_sinistro" readonly="readonly">
+    </div>
+</div>
+</a>
+<br>
+<div class="callout-bar header-prev">
+    <h4 class="h4-font-size">RELAÇÃO DE DOCUMENTOS PARA ENVIO <button data-toggle="modal" data-target="#modalExemplo" type="button" class="btn btn-danger btn-add-doc">+ Adicionar</button></h4>
+</div>
+<section id="document-menu" class="content resposive-content header-prev"> 
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <ul class="timeline">
+                <li> 
+                <div class="timeline-item timeline-item-resposive time-line-responsive">
+                <div class="timeline-body" id="body-upload">
+                    <br>
+                    <ul id="doc-conteudo-pass">
+                        <div id="alert-tipifica-pass"><div style="text-align: center;">Não Existe Documentos</div></div>
+                    </ul>
+                </div>
+                </div>
+                </li>
+                <li>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+</section>
+<br>
+<div class="callout-bar" ><h4 class="h4-font-size">DOCUMENTOS SOLICITADO PELA SEGURADORA</h4></div>
+<section id="document-menu" class="content resposive-content">
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <ul class="timeline">
+                <li> 
+                <div class="timeline-item timeline-item-resposive time-line-responsive">
+                    <div class="timeline-body" id="body-upload">
+                        <br>
+                        <ul id="doc-conteudo">
+                            <div id="alert-tipifica"></div>
+                            <div id="alert-tipifica-not"><div style="text-align: center;">Não Existe Documentos</div></div> 
+                        </ul>
+                    </div>
+                </div>
+                </li>
+            </ul>
+            <div id="loading-progresso" class="loading-progresso">
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>  
+    <div id="ticketid" hidden></div>
+    <span id="span-ok"></span>
+</section>
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" id="modal-doc-prev">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      <button type="button" class="btn btn-secondary" style="color: rgb(255, 255, 255);background-color: #cc0001;" onclick="IncluiDocumentoPrev()">Incluir</button>
+    </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.mask.js"></script>
+<script>
+
+    var count = 0;
+
+    $( document ).ready(function() {
+
+        documentosPrev();
+    
+        var $seuCampoCelular = $("#telefone");
+        $seuCampoCelular.mask('(00)00000-0000', {reverse: false});
+
+        $('#meuModal').on('shown.bs.modal', function () {
+            $('#meuInput').trigger('focus')
+        })
+
+    });
+
+    var valor = localStorage.getItem("identificador");
+    var array = JSON.parse(valor);
+    var resultado = JSON.parse(valor);
+    var date = new Date();
+    var minute = date.getMinutes();
+    
+
+    window.history.pushState("Portal", "Portal | Login", "/index.html?documento");
+</script>

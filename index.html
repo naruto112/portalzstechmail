@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/Cosumer.js"></script>
+    <script>
+        var url_atual = window.location.href;
+        params = url_atual.split("/").pop();
+
+        var token = localStorage.getItem("login");
+        var object_token = JSON.parse(token);
+
+        var d = new Date();
+        var h = addZero(d.getHours());
+        var m = addZero(d.getMinutes());
+
+        var hour_now = h + ":" + m;
+        
+        function calculaHora(hora_ini, hora_final)
+        {
+            
+            h_i = hora_ini.split(':');
+            h_f = hora_final.split(':');
+
+            if(h_i[0] < h_f[0])
+            {
+                resultado = true;
+            }else if(h_i[0] == h_f[0])
+            {
+                res = h_f[1] - h_i[1];
+                if(res > 40){
+                    resultado = true;
+                }else{
+                    resultado = false;
+                }
+            }else if(h_i[0] < h_f[0])
+            {
+                res = h_f[1] - h_i[1];
+                if(res > 40){
+                    resultado = true;
+                }else{
+                    resultado = false;
+                }
+            }else{
+                resultado = false;
+            }
+            return resultado;
+        }
+    
+        switch (params) {
+            case "":
+                if(object_token == null){
+                    location.href = "index.html?login";
+                }else{
+                    var identificador = localStorage.getItem("identificador");
+                    var objeto = JSON.parse(identificador);
+                    var calc = calculaHora(objeto.time, hour_now);
+                    if(calc){
+                        localStorage.clear();
+                        location.href = "index.html?login";
+                    }
+                    location.href = "index.html?portal";
+                }
+                break;
+            case "index.html?portal":
+                if(object_token == null){
+                    location.href = "index.html?login";
+                }else{
+                    var identificador = localStorage.getItem("identificador");
+                    var objeto = JSON.parse(identificador);
+                    location.href = "portal.html";
+                }
+                break;
+            
+            case "index.html?login":
+                location.href = "login.html";
+                break;
+
+            case "index.html?confirmacao":
+                location.href = "paginas/confirmaDados.html";
+                break;
+
+            case "index.html?documento":
+                if(object_token == null){
+                    location.href = "index.html?login";
+                }else{
+                    var identificador = localStorage.getItem("identificador");
+                    var objeto = JSON.parse(identificador);
+                    var calc = calculaHora(objeto.time, hour_now);
+                    if(calc){
+                        localStorage.clear();
+                        location.href = "index.html?login";
+                    }
+                    
+                    location.href = "index.html?portal";
+                }
+                break;
+            default:
+                break;
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

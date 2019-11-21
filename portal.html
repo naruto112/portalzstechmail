@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portal | Santander</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+  <link rel="shortcut icon" href="dist/img/ico-santander.png" />
+
+  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+
+
+  <script>
+        var identificador = localStorage.getItem("identificador");
+        var object = JSON.parse(identificador);
+        
+
+        var token = localStorage.getItem("login");
+        var object_token = JSON.parse(token);
+
+        var date = new Date();
+        var minute = date.getMinutes();
+  </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header logo" style="background-color: #222d32;">
+    <nav class="navbar navbar-static-top" style="margin-left: 0%;">
+      <!-- <a href="javascript:window.location.reload()" class="sidebar-toggle">
+            <i class="fa fa-angle-left" aria-hidden="true" style="font-size: 186%;"></i>
+      </a> -->
+
+      <div class="navbar-custom-menu" id="login-user">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/user2-.jpg" class="user-image" alt="User Image">
+              <span id="nome_cliente" class="hidden-xs"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  <label id="nome_cliente_1"></label>
+                  <!-- <small>Portal do Cliente</small> -->
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-right">
+                    <button  onclick="exitLogin()" class="btn btn-default btn-flat">Sair</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        
+        <span class="logo-lg"><img class="img-resposive hidden-sm hidden-md hidden-lg hidden-xl" src="dist/img/santander-logo-2.png" width="80%"></span>
+        <span class="logo-lg"><a href="javascript:void(0)"><img class="img-resposive hidden-xs " src="dist/img/santander-logo-2.png" width="35%"></a></span>
+      </h1>
+      <h2>
+        <!-- <small>Solicitação de Documento</small> -->
+      </h2>
+    </section>
+
+    <!-- CORPO DO FORMULARIO -->
+    <div id="conteudo-pagina" class="content-wrapper" style="min-height: 553px; margin-left: 2%;margin-right: 2%;">
+        <br>
+        <h2 class="h2-size"> Bem vindo ao Portal de Sinistros Santander.</h2> <p><h4>O que a gente pode fazer por você hoje?</h4></p>
+        <br>
+        <br>
+        <div class="row">
+            <div id="body-row"></div>        
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+        <div>
+            <div class="recommendation">
+                Esta seguradora se reserva no direito de solicitar novos documentos caso se tornem necessários durante a regulação do sinistro.
+                O prazo máximo para pagamento da indenização será de até 30 (trinta) dias, contados da data em que a Seguradora receber TODOS os documentos necessários para a comprovação do evento coberto, de acordo com a relação constante das condições especiais de cada cobertura contratada em Documentos para Sinistro. 
+            </div>
+        </div>
+        <br>
+        <div>
+            <div class="recommendation">
+                Em casos de dúvida e/ou posicionamento do sinistro, entre em contato nos telefones <b>0800 940 2901</b> ou <b>3132-7782</b>, de segunda-feira a sexta-feira, das 8h às 18h.
+            </div>
+        </div>
+  </footer>
+
+  <div class="modal fade" id="exemplomodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content-resposive" style="width: 120%;background-color: #77777700;margin-left: -9%;">
+            <div class="modal-header" style="border-bottom-color: #f4f4f400;padding: 0px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;opacity: 1;"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel" style="text-align: center;color: #fff;opacity: 1;">Bem Vindo ao Portal Santander</h4>
+            </div>
+            <div class="modal-body">
+                <img class="img-pc-tutorial" id="my_image" src="dist/img/tutorial/Screenshot_1.png" style="width: 100%;">
+                <img class="img-tutorial" id="my_image_mobile" src="dist/img/tutorial/Screenshot_mobile_1.png" style="width: 100%;">
+            </div>
+            <div class="modal-footer" style="width: 55%;margin-top: -3%;border-top-color: #ffffff00;">
+                <button type="button" onclick="PreviousImg();" class="btn btn-default btn-previous" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button type="button" onclick="NextImg();" class="btn btn-default btn-next" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            </div>
+        </div>
+    </div>
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+  var date = new Date();
+  yearNow = date.getYear();
+  if (yearNow < 1000)
+  yearNow+=1900
+  $("#ano-now").text(yearNow);
+</script>
+<script type="text/javascript">
+    var count_img = 1;
+    $(document).ready(function() {
+        
+        var slide = localStorage.getItem("tutorial");
+        var object_slide = JSON.parse(slide);
+
+        if(object_slide){
+        }else{
+            var tutorial = { "tutorial": true }
+            localStorage.setItem("tutorial", JSON.stringify(tutorial));
+            $('#exemplomodal').modal('show');
+        }
+    })
+    
+    function NextImg(){
+        count_img = count_img + 1;
+        if(count_img > 3){
+            $(".btn-next").hide();
+        }else{
+            $(".btn-next").show();
+            $(".btn-previous").show();
+            $("#my_image").attr("src","dist/img/tutorial/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial/Screenshot_mobile_"+count_img+".png");
+        }
+        
+    }
+    function PreviousImg(){
+        count_img = count_img - 1;
+        if(count_img == 0){
+            $(".btn-previous").hide();
+        }else{
+            $(".btn-next").show();
+            $(".btn-previous").show();
+            $("#my_image").attr("src","dist/img/tutorial/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial/Screenshot_mobile_"+count_img+".png");
+        }
+        
+    }
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="dist/js/timeline.js"></script>
+<!-- Morris.js charts -->
+<!-- <script src="bower_components/raphael/raphael.min.js"></script> -->
+<!-- <script src="bower_components/morris.js/morris.min.js"></script> -->
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<script src="dist/js/Cosumer.js"></script>
+<script src="dist/js/jquery.md5.js"></script>
+
+<script src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="bower_components/fullcalendar/dist/locale/pt-br.js"></script>
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- AdminLTE for demo purposes -->
+<script>
+    $("#nome_cliente").text(object.nome);
+    $("#nome_cliente_1").text(object.nome);
+    if(object.bool){
+            window.history.pushState("Portal", "Portal | Login", "/index.html?portal");
+            abrirDoc(object.record);
+    }else{
+        location.href = "index.html?login";
+    }
+</script>
+</body>
+</html>

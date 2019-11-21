@@ -1,0 +1,145 @@
+<div id="btn-voltar"></div>
+<h3 id="h3-detail"></h3>
+<br>
+<div id="sucesso-sini">
+</div>
+<div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Segurado</label>
+        <input type="text" class="form-control font-upercase" id="nome_segurado_aviso" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF do Segurado</label>
+        <input type="text" class="form-control" id="cpf_segurado_aviso" readonly="readonly">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">Data Nascimento Segurado</label>
+        <input type="date" class="form-control" id="datanasc_segurado_aviso" readonly="readonly">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-10">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th>Descrição Seguro</th>
+                <th>Apolice</th>
+                <th>Certificado</th>
+                <th>Data Inicio Vigência</th>
+                <th>Data Fim Vigência</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-apolice">
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="campo-notificante" hidden>
+<div class="row">
+    <div class="form-group col-md-4">
+            <label for="exampleInputEmail1">Apolice<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+            <input type="text" class="form-control font-upercase" id="apolice" readonly="readonly">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Sinistrado<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="text" class="form-control font-upercase" id="nome_sinistrado">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF Sinistrado<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="text" class="form-control font-upercase" id="cpf_sinistrado" maxlength="14">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-4">
+        <label for="exampleInputEmail1">Nome do Notificante<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="text" class="form-control font-upercase" id="nome_notificante">
+    </div>
+  <div class="form-group col-md-3">
+        <label for="exampleInputEmail1">CPF Notificante<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="text" class="form-control font-upercase" id="cpf_notificante" maxlength="14">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1" style="margin-right: -50%;">E-mail de contato<span id="obrigatorio-email" style="color: red;font-size: 83%;">*</span></label>
+        <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group col-md-3">
+        <label for="exampleInputEmail1" style="margin-right: -50%;">Telefone de contato</label>
+        <input type="text" class="form-control font-upercase" id="telefone" placeholder="01191234-5678">
+    </div>
+</div>
+<div class="padding-div-sini">
+    <button type="button" id="btn-notifica" onclick="NotificarSinistro();" class="btn btn-danger btn-registra-sinistro">REGISTRAR SINISTRO</button>
+</div>
+</div>
+<br>
+
+<span id="loading-sinistro"></span>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.mask.js"></script>
+<script>
+   
+    var valor = localStorage.getItem("identificador");
+    var array = JSON.parse(valor);
+    var resultado = JSON.parse(valor);
+    var date = new Date();
+    var minute = date.getMinutes();
+
+        
+    $( document ).ready(function() {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url+"/api/proposta",
+            async: true,
+            data: { 'cpf' :resultado.cpf },
+            traditional: true,
+            success: function(data){
+                console.log(data);
+                $.each(data, function(key, value){
+                    $("#tbody-apolice").append('<tr><td>'+value.mfr_part_no+'</td><td><a href="javascript:ExibeCampo('+value.productname+');">'+value.productname+'</a></td><td>'+value.productcode+'</td><td>'+value.sales_start_date+'</td><td>'+value.expiry_date+'</td></tr>');
+                });
+            }
+          }).fail(function() {
+             alert( "ERROR API - NÃO RESPONDE" );
+        });
+
+
+        $("#nome_segurado_aviso").val(resultado.nome);
+        $("#cpf_segurado_aviso").val(resultado.cpf);
+        var $seuCampoCpf = $("#cpf_segurado_aviso");
+        $seuCampoCpf.mask('000.000.000-00', {reverse: true});
+
+        //APLICA A MASCRAA DE CPF  
+        var CampoCpfSinistrado = $("#cpf_sinistrado");
+        CampoCpfSinistrado.mask('000.000.000-00', {reverse: true});
+        var CampoCpfNotificante = $("#cpf_notificante")
+        CampoCpfNotificante.mask('000.000.000-00', {reverse: true});
+
+        $("#datanasc_segurado_aviso").val(resultado.data_nasc);
+        var $seuCampoTelefone = $("#telefone");
+        $seuCampoTelefone.mask('99999999-9999', {reverse: false});
+    });
+    
+    if(valor != null){
+        total_expira = minute - resultado.minuto;
+    
+        if(total_expira > 60) {
+            exitLogin();
+            localStorage.clear();
+            window.location.href = "index.html?login";
+        }
+        if(total_expira < 0){
+            exitLogin();
+            localStorage.clear();
+            window.location.href = "index.html?login";
+        }
+    }else{
+        exitLogin();
+        window.location.href = "index.html?login";
+    }
+        window.history.pushState("Portal", "Portal | Login", "/index.html?portal");
+</script>

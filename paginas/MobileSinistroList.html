@@ -1,0 +1,75 @@
+<table class="table table-striped">
+<thead>
+    <tr>
+    <th style="font-size: 137%;">Lista de Sinistros</th>
+    </tr>
+</thead>
+<tbody id="tbody-mobile">
+</tbody>
+</table>
+<!-- <div class="padding-div-sini">
+    <button type="button" onclick="window.location.reload();" class="btn btn-secondary btn-registra-sinistro btn-hide">RETORNAR AO MENU</button>
+</div> -->
+<script>
+
+var valor = localStorage.getItem("identificador");
+var array = JSON.parse(valor);
+var resultado = JSON.parse(valor);
+var date = new Date();
+var minute = date.getMinutes();
+
+var url = localStorage.getItem("url");
+var token = localStorage.getItem("token");
+var object = JSON.parse(token);
+
+$( document ).ready(function() {
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: url+"/api/solicitacoes/"+object.cpf,
+        async: true,
+        traditional: true,
+        success: function(data){
+            console.log(data);
+            $.each(data, function(key, value){
+                if(value.n_sinistro == ""){
+
+                }else{
+                    if(value.status == 'PAGAMENTO TOTAL'){
+                        $("#tbody-mobile").append('<tr style="font-size: 198%;"><td><a href="javascript:void(0)" onclick="abrirDoc('+value.id+')"><i class="fa fa-check-circle"></i> '+value.n_sinistro+'</a></td></tr>')
+                    }else{
+                        $("#tbody-mobile").append('<tr style="font-size: 198%;"><td><a href="javascript:void(0)" onclick="abrirDoc('+value.id+')"><i class="fa fa-clock-o"></i> '+value.n_sinistro+'</a></td></tr>')
+                    }
+                    
+                }
+
+            });
+        }
+    }).fail(function() {
+        alert( "ERROR API - NÃO RESPONDE" );
+    });
+
+});
+
+
+if(valor != null){
+        total_expira = minute - resultado.minuto;
+    
+        if(total_expira > 60) {
+        exitLogin();
+        localStorage.clear();
+        window.location.href = "index.html?login";
+        }
+        if(total_expira < 0){
+        exitLogin();
+        localStorage.clear();
+        window.location.href = "index.html?login";
+        }
+    }else{
+        exitLogin();
+        window.location.href = "index.html?login";
+    }
+        window.history.pushState("Portal", "Portal | Login", "/index.html?portal");
+
+</script>

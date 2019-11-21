@@ -1,0 +1,33 @@
+
+<iframe class="web-map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d17381.240431187238!2d-46.69367204108905!3d-23.677542432092924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBanco+santander!5e0!3m2!1spt-BR!2sbr!4v1565641275236!5m2!1spt-BR!2sbr" width="400" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<iframe class="mobile-map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d17381.240431187238!2d-46.69367204108905!3d-23.677542432092924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBanco+santander!5e0!3m2!1spt-BR!2sbr!4v1565641275236!5m2!1spt-BR!2sbr" width="1000" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+<script>
+    var valor = localStorage.getItem("identificador");
+    var array = JSON.parse(valor);
+    var resultado = JSON.parse(valor);
+    var date = new Date();
+    var minute = date.getMinutes();
+    
+    if(valor != null){
+        total_expira = minute - resultado.minuto;
+    
+        if(total_expira > 60) {
+        exitLogin();
+        localStorage.clear();
+        window.location.href = "index.html?login";
+        }
+        if(total_expira < 0){
+        exitLogin();
+        localStorage.clear();
+        window.location.href = "index.html?login";
+        }
+    }else{
+        exitLogin();
+        window.location.href = "index.html?login";
+    }
+    
+    window.history.pushState("Portal", "Portal | Login", "/index.html?portal");
+</script>
