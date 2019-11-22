@@ -189,7 +189,7 @@
      }
      
     .btn-add-doc{
-        margin-left: 10%;
+        margin-left: 5%;
     }
 }
 
@@ -467,6 +467,7 @@
     
     .timeline-item-resposive {
         margin-right: -8px !important;
+        margin-left: 57px !important;
     }
 
     .tamanho-label-doc{
