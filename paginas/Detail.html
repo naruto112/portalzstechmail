@@ -61,77 +61,104 @@
     </div>
 </div>
 </a>
-<br>
-<div class="callout-bar header-prev">
-    <h4 class="h4-font-size">RELAÇÃO DE DOCUMENTOS PARA ENVIO <button data-toggle="modal" data-target="#modalExemplo" type="button" class="btn btn-danger btn-add-doc">+ Adicionar</button></h4>
-</div>
-<section id="document-menu" class="content resposive-content header-prev"> 
-    <div class="row" id="row">
-        <div class="col-md-12">
-            <ul class="timeline">
-                <li> 
-                <div class="timeline-item timeline-item-resposive time-line-responsive">
-                <div class="timeline-body" id="body-upload">
-                    <br>
-                    <ul id="doc-conteudo-pass">
-                        <div id="alert-tipifica-pass"><div style="text-align: center;">Não Existe Documentos</div></div>
-                    </ul>
-                </div>
-                </div>
-                </li>
-                <li>
-                </li>
-            </ul>
-        </div>
+<ul class="nav nav-tabs">
+    <li class="active" id="bar-status">
+        <a href="javascript:TabMenu('status')">Status do Sinistro</a>
+    </li>
+    
+    <li class="" id="bar-doc">
+        <a href="javascript:TabMenu('documentos')">Solicitação de Documentos</a>
+    </li>
+    
+  </ul>
+  <span id="status-timeline">
+    <div id="time-line">
+        <div class="linha-vertical"></div>
+        <div id="icon-timeline"></div>
     </div>
     <br>
     <br>
-</section>
-<br>
-<div class="callout-bar" ><h4 class="h4-font-size">DOCUMENTOS SOLICITADO PELA SEGURADORA</h4></div>
-<section id="document-menu" class="content resposive-content">
-    <div class="row" id="row">
-        <div class="col-md-12">
-            <ul class="timeline">
-                <li> 
-                <div class="timeline-item timeline-item-resposive time-line-responsive">
+  </span>
+  <div id="count-timeline">
+    <div class="circulo-timer">
+        <label id="text-dia"><span id="dia">0</span> dias</label>
+        <img style="width: 250px;" id="cicrle-timer">
+    </div>
+  </div>
+  </div>
+  <span id="doc-bar" hidden>
+    <br>
+    <br>
+    <div class="callout-bar header-prev" >
+        <h4 class="h4-font-size">RELAÇÃO DE DOCUMENTOS PARA ENVIO <button data-toggle="modal" data-target="#modalExemplo" type="button" class="btn btn-danger btn-add-doc">+ Adicionar</button></h4>
+    </div>
+    <section id="document-menu" class="content resposive-content header-prev"> 
+        <div class="row" id="row">
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li> 
+                    <div class="timeline-item timeline-item-resposive time-line-responsive">
                     <div class="timeline-body" id="body-upload">
                         <br>
-                        <ul id="doc-conteudo">
-                            <div id="alert-tipifica"></div>
-                            <div id="alert-tipifica-not"><div style="text-align: center;">Não Existe Documentos</div></div> 
+                        <ul id="doc-conteudo-pass">
+                            <div id="alert-tipifica-pass"><div style="text-align: center;">Não Existe Documentos</div></div>
                         </ul>
                     </div>
-                </div>
-                </li>
-            </ul>
-            <div id="loading-progresso" class="loading-progresso">
+                    </div>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
             </div>
-            <br>
-            <br>
         </div>
-    </div>  
-    <div id="ticketid" hidden></div>
-    <span id="span-ok"></span>
-</section>
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-        <!-- <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5> -->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-        <span aria-hidden="true">&times;</span>
-        </button>
+        <br>
+        <br>
+    </section>
+    <br>
+    <div class="callout-bar" ><h4 class="h4-font-size">DOCUMENTOS SOLICITADO PELA SEGURADORA</h4></div>
+    <section id="document-menu" class="content resposive-content">
+        <div class="row" id="row">
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li> 
+                    <div class="timeline-item timeline-item-resposive time-line-responsive">
+                        <div class="timeline-body" id="body-upload">
+                            <br>
+                            <ul id="doc-conteudo">
+                                <div id="alert-tipifica"></div>
+                                <div id="alert-tipifica-not"><div style="text-align: center;">Não Existe Documentos</div></div> 
+                            </ul>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+                <div id="loading-progresso" class="loading-progresso">
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>  
+        <div id="ticketid" hidden></div>
+        <span id="span-ok"></span>
+    </section>
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="modal-doc-prev">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-secondary" style="color: rgb(255, 255, 255);background-color: #cc0001;" onclick="IncluiDocumentoPrev()">Incluir</button>
+        </div>
+        </div>
     </div>
-    <div class="modal-body" id="modal-doc-prev">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-      <button type="button" class="btn btn-secondary" style="color: rgb(255, 255, 255);background-color: #cc0001;" onclick="IncluiDocumentoPrev()">Incluir</button>
-    </div>
-    </div>
-</div>
-</div>
+</span>
 <script type="text/javascript" src="../bower_components/jquery/dist/jquery.mask.js"></script>
 <script>
 
@@ -140,9 +167,8 @@
     $( document ).ready(function() {
 
         documentosPrev();
-    
-        var $seuCampoCelular = $("#telefone");
-        $seuCampoCelular.mask('(00)00000-0000', {reverse: false});
+        TimeLine();
+        CircleTimer();
 
         $('#meuModal').on('shown.bs.modal', function () {
             $('#meuInput').trigger('focus')
@@ -155,7 +181,23 @@
     var resultado = JSON.parse(valor);
     var date = new Date();
     var minute = date.getMinutes();
-    
+
+    //Função anonima
+    (function() {
+        var objeto = localStorage.getItem("identificador");
+        var objeto = JSON.parse(objeto);
+        if(objeto){
+            var bool = objeto.ramo === paramsRamo ? true : false;
+            if(!bool){
+                $("#bar-doc").addClass("active");
+                $("#doc-bar").show();
+                $("#bar-status").remove();
+                $("#time-line").remove();
+            }
+            
+        }
+    })();
+
 
     window.history.pushState("Portal", "Portal | Login", "/index.html?documento");
 </script>

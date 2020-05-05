@@ -24,8 +24,6 @@
   <script>
         var token = localStorage.getItem("identificador");
         var sms = localStorage.getItem("sms");
-        var obj_sms = JSON.parse(sms);
-        var object = JSON.parse(token);
         var date = new Date();
         var minute = date.getMinutes();
 
@@ -33,21 +31,7 @@
            
         }else{
 
-            if(obj_sms.token){
-                total_expira = minute - object.minuto;
-    
-                if(total_expira > 50) {
-                localStorage.clear();
-                window.location.href = "index.html?login";
-                }
-                if(total_expira < 0){
-                localStorage.clear();
-                window.location.href = "index.html?login";
-                }
-                window.location.href = "index.html?portal";
-            }else{
-                localStorage.clear();
-            }
+          localStorage.clear();
                         
         }
     </script>
@@ -63,7 +47,7 @@
   <div class="login-box-body">
     <p class="login-box-msg"></p>
       <div class="form-group has-feedback">
-        <input id="num_sinistro" type="text" onkeypress="enviar(event);" class="form-control" placeholder="Digite o Nº Sinistro. Ex: 2019-71-150179-0" maxlength="35" style="font-weight:bold;">
+        <input id="num_sinistro" type="text" onkeypress="enviar(event);" class="form-control" placeholder="Digite o Nº Sinistro" maxlength="35" style="font-weight:bold;">
       </div>
       <div class="row">
         <div class="col-xs-8">
@@ -98,7 +82,7 @@
 
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="dist/js/Cosumer.js"></script>
+<script src="dist/js/Consumer.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
