@@ -1,0 +1,69 @@
+[33mcommit 9dfcd9ed605a60a1bc24224cf0c9ebb01d4b5033[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mportalzs[m[33m)[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 16:21:26 2019 -0200
+
+    Update CSS Linha: 468
+
+[33mcommit 0575d7b4e0635049f6fc133e16c7e2a95c39b7e7[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 16:20:14 2019 -0200
+
+    Update CSS Linha: 468
+
+[33mcommit 5f427d4e6538f77c46d994613038fb60b4cab7ac[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 16:09:04 2019 -0200
+
+    Atualização de Landing Page
+
+[33mcommit befc480b1c9b9c34b186ad57b5b66611234fec38[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 12:33:13 2019 -0200
+
+    Atualização de Imagem Carrosel
+
+[33mcommit 5d3f371500f8f4ba7b22f383330c3c2c26acdc09[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 11:48:51 2019 -0200
+
+    Atualização no CSS Resposive Galaxy
+
+[33mcommit 71e0bf26377794139879dd921d0181377b49edaf[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Fri Nov 22 11:41:21 2019 -0200
+
+    Atualização META TAG NO CACHE
+
+[33mcommit b3cd86987a84d7fa48fc13b7323f0f882514b2d5[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Thu Nov 21 16:44:33 2019 -0200
+
+    Atualização
+
+[33mcommit 8f8a734ebe06de095ba5d533d3bbe21f3a3f9f0a[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Thu Nov 21 16:42:35 2019 -0200
+
+    Atualização
+
+[33mcommit 80f2ccf03ebc79676f62387f3eb5f446894364fd[m
+Merge: 7298995 e6d2cf2
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Thu Nov 21 12:56:05 2019 -0200
+
+    Merge branch 'master' of https://bitbucket.org/sinitrozs/portalzs
+    
+    Conflicts:
+            README.md
+
+[33mcommit e6d2cf28cfaec6a8290670a5cb33d939113fa92f[m
+Author: Desenvolvimento <desenvolvimento@techmail.com.br>
+Date:   Thu Nov 21 15:49:00 2019 +0000
+
+    Initial commit
+
+[33mcommit 72989957acf8c52e3402bbe94087c91f02ece45f[m
+Author: Renato Moschetta de Souza <renato.souza@techmail.com.br>
+Date:   Thu Nov 21 12:49:32 2019 -0200
+
+    Atualização do Front Portal
