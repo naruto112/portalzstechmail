@@ -2,26 +2,17 @@
   left: 45%;
   top: 58%;
   position: absolute;
-  width: 50px;
+  width: 92px;
 }
 
 .circulo-timer label {
   position: absolute;
-  margin-left: 99px;
-  margin-right: 99px;
-  margin-top: 80px;
-  font-size: 36px;
+  margin-left: 74px;
+  margin-right: 78px;
+  margin-top: 52px;
+  font-size: 55px;
   text-align: center;
 }
-
-/* @keyframes changeColor {
-  from {
-    transform: rotate(0deg) translateX(30px);
-  }
-  to {
-    transform: rotate(360deg) translateX(30px);
-  }
-} */
 
 .label-atendimento {
   width: 442px;
@@ -65,6 +56,25 @@
     font-size: 140%;
     padding-top: 7px;
     padding-bottom: 7px;
+  }
+
+  .circulo-timer {
+    margin-top: 20px;
+    margin-left: 75px !important;
+    margin-bottom: 20px !important;
+    position: inherit !important;
+  }
+
+  .circulo-timer img {
+    width: 195px !important;
+  }
+  .circulo-timer label {
+    position: absolute !important;
+    margin-left: 60px !important;
+    margin-right: 60px !important;
+    margin-top: 37px !important;
+    font-size: 45px !important;
+    width: 77px !important;
   }
 }
 

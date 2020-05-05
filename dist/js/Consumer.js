@@ -30,6 +30,9 @@ function addZero(i) {
 }
 
 function CircleTimer() {
+  var objeto = localStorage.getItem("identificador");
+  var data = JSON.parse(objeto);
+
   $.ajax({
     type: "GET",
     dataType: "json",
@@ -37,54 +40,83 @@ function CircleTimer() {
     data: { ticketid: data.record },
     async: true,
     success: function (data) {
-      console.log(data);
+      
+      var total = "";
+      !data? total=0:total=data;
+
+
+      let valor = [
+        //Gráfico Verde
+        { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia" },
+        { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia" },
+        { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias" },
+        { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias" },
+        //Gráfico Amarelo
+        { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias" },
+        //Gráfico Vermelho
+        { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias" },
+      ];
+    
+
+      if ( total === 0) {
+
+        let imagem = valor.filter((valor) => valor.dia === 0);
+        let { img, dia, nomenclatura } = imagem[0];
+        $("#dia").text(dia);
+        $("#text-dia").text(nomenclatura);
+        document.getElementById("cicrle-timer").src = img;
+
+        return false;
+      }
+
+      if ( total < 30) {
+        
+        let imagem = valor.filter((valor) => valor.dia === parseInt(total));
+        let { img, dia, nomenclatura } = imagem[0];
+        $("#dia").text(dia);
+        $("#text-dia").text(nomenclatura);
+        document.getElementById("cicrle-timer").src = img;
+
+      } else {
+
+        let imagem = valor.filter((valor) => valor.dia === 30);
+        let { img, dia, nomenclatura } = imagem[0];
+        $("#dia").text(dia);
+        $("#text-dia").text(nomenclatura);
+        document.getElementById("cicrle-timer").src = img;
+
+      }
+      
     },
   }).fail(function () {
     alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
   });
 
-  let valor = [
-    //Gráfico Verde
-    { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dia" },
-    { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias" },
-    { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias" },
-    { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias" },
-    { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias" },
-    { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias" },
-    //Gráfico Amarelo
-    { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias" },
-    //Gráfico Vermelho
-    { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias" },
-  ];
-
-  let imagem = valor.filter((valor) => valor.dia === 0);
-  let { img, dia, nomenclatura } = imagem[0];
-  $("#dia").text(dia);
-  $("text-dia").text(nomenclatura);
-  document.getElementById("cicrle-timer").src = img;
 }
 
 function TimeLine() {
@@ -865,12 +897,14 @@ function ReadOnlyTrue(params, chk) {
 function TabMenu(item) {
   if (item == "documentos") {
     $("#status-timeline").hide();
+    $("#count-timeline").hide();
     $("#doc-bar").show();
     $("#bar-status").removeClass("active");
     $("#bar-doc").addClass("active");
   }
   if (item == "status") {
     $("#status-timeline").show();
+    $("#count-timeline").show();
     $("#doc-bar").hide();
     $("#bar-status").addClass("active");
     $("#bar-doc").removeClass("active");
