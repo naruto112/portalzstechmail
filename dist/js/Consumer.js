@@ -30,6 +30,19 @@ function addZero(i) {
 }
 
 function CircleTimer() {
+  $.ajax({
+    type: "GET",
+    dataType: "json",
+    url: url + "/api/circletimer",
+    data: { ticketid: data.record },
+    async: true,
+    success: function (data) {
+      console.log(data);
+    },
+  }).fail(function () {
+    alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
+  });
+
   let valor = [
     //Gráfico Verde
     { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia" },
@@ -56,14 +69,12 @@ function CircleTimer() {
     { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias" },
     { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias" },
     { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias" },
-    { img: "dist/img/circle-amarelo-3.svg", dia: 23, nomenclatura: "dias" },
     //Gráfico Vermelho
     { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias" },
-    { img: "dist/img/circle-vermelho-6.svg", dia: 27, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias" },
     { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias" },
