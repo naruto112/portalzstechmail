@@ -49,59 +49,54 @@ function CircleTimer() {
 
       let valor = [
         //Gráfico Verde
-        { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia" },
-        { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia" },
-        { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias" },
-        { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias" },
+        { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia", marginLeft: "85px" },
+        { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia", marginLeft: "85px" },
+        { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias", marginLeft: "76px" },
         //Gráfico Amarelo
-        { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias" },
-        { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias" },
+        { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias", marginLeft: "76px" },
         //Gráfico Vermelho
-        { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias" },
-        { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias" },
+        { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias", marginLeft: "76px" },
+        { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias", marginLeft: "76px" },
       ];
     
 
       if ( total === 0) {
-
-        let imagem = valor.filter((valor) => valor.dia === 0);
-        let { img, dia, nomenclatura } = imagem[0];
-        $("#dia").text(dia);
-        $("#text-dia").text(nomenclatura);
-        document.getElementById("cicrle-timer").src = img;
-
+        $("#count-timeline").hide();
         return false;
       }
 
       if ( total < 30) {
         
         let imagem = valor.filter((valor) => valor.dia === parseInt(total));
-        let { img, dia, nomenclatura } = imagem[0];
+        let { img, dia, nomenclatura, marginLeft } = imagem[0];
         $("#dia").text(dia);
         $("#text-dia").text(nomenclatura);
+        $(".circulo-timer label").css({ marginLeft : marginLeft })
         document.getElementById("cicrle-timer").src = img;
 
       } else {
