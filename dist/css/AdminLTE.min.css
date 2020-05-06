@@ -1,16 +1,8 @@
 .circulo-timer {
-  left: 45%;
-  top: 60%;
   position: absolute;
+  left: 163px;
+  top: -35px;
   width: 92px;
-}
-
-.circulo-timer label {
-  position: absolute;
-  margin-right: 83px;
-  margin-top: 52px;
-  font-size: 55px;
-  text-align: center;
 }
 
 .label-atendimento {

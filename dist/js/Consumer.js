@@ -31,91 +31,26 @@ function addZero(i) {
   return i;
 }
 
-function CircleTimer() {
-  var objeto = localStorage.getItem("identificador");
-  var data = JSON.parse(objeto);
+// function CircleTimer() {
+//   var objeto = localStorage.getItem("identificador");
+//   var data = JSON.parse(objeto);
 
-  $.ajax({
-    type: "GET",
-    dataType: "json",
-    url: url + "/api/circletimer",
-    data: { ticketid: data.record },
-    async: true,
-    success: function (data) {
+//   $.ajax({
+//     type: "GET",
+//     dataType: "json",
+//     url: url + "/api/circletimer",
+//     data: { ticketid: data.record },
+//     async: true,
+//     success: function (data) {
       
-      var total = "";
-      !data? total=0:total=data;
-
-
-      let valor = [
-        //Gráfico Verde
-        { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia", marginLeft: "85px" },
-        { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia", marginLeft: "85px" },
-        { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias", marginLeft: "76px" },
-        //Gráfico Amarelo
-        { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias", marginLeft: "76px" },
-        //Gráfico Vermelho
-        { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias", marginLeft: "76px" },
-        { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias", marginLeft: "76px" },
-      ];
-    
-
-      if ( total === 0) {
-        $("#count-timeline").hide();
-        return false;
-      }
-
-      if ( total < 30) {
-        
-        let imagem = valor.filter((valor) => valor.dia === parseInt(total));
-        let { img, dia, nomenclatura, marginLeft } = imagem[0];
-        $("#dia").text(dia);
-        $("#text-dia").text(nomenclatura);
-        $(".circulo-timer label").css({ marginLeft : marginLeft })
-        document.getElementById("cicrle-timer").src = img;
-
-      } else {
-
-        let imagem = valor.filter((valor) => valor.dia === 30);
-        let { img, dia, nomenclatura, marginLeft } = imagem[0];
-        $("#dia").text(dia);
-        $("#text-dia").text(nomenclatura);
-        $(".circulo-timer label").css({ marginLeft : marginLeft });
-        document.getElementById("cicrle-timer").src = img;
-
-      }
       
-    },
-  }).fail(function () {
-    alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
-  });
+      
+//     },
+//   }).fail(function () {
+//     alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
+//   });
 
-}
+// }
 
 function TimeLine() {
   var objeto = localStorage.getItem("identificador");
@@ -128,9 +63,11 @@ function TimeLine() {
     data: { ticketid: data.record },
     async: true,
     success: function (data) {
+      
       let top = "";
       let left = "";
       let msg = "";
+
       // alert($(window).width());
       if ($(window).width() < 440) {
         // alert('entrou aqui')
@@ -146,7 +83,8 @@ function TimeLine() {
       let height = 200;
       let icon = "";
 
-      $(data).each(function (index, item) {
+
+      $(data.timeline).each(function (index, item) {
         switch (item.etapa) {
           case "SINISTRO AVISADO":
             icon = "far fa-star";
@@ -226,17 +164,83 @@ function TimeLine() {
             break;
         }
 
+
         $("#icon-timeline").append(
           `<i class="${icon} custom-icon" style="top: ${top}px; left: ${left}px;"><span class="font-title-span">${
             item.etapa
           }<span class="font-text-span"><br>${
             item.etapa === "SINISTRO AVISADO" ? item.data_aviso : item.data
-          } <br>${msg}</span></span></i>`
+          } <br>${msg}</span></span>
+          <div class="circulo-timer">${ item.etapa === 'EM ANÁLISE'? '<img style="width: 100px;" id="cicrle-timer">':'' }</div>
+          </i>`
         );
         $(".linha-vertical").css("height", `${height}px`);
         top = top + 75;
         height = height * 1.17;
       });
+
+       // *********** Gráfico de Circulo na TimeLine ******************//
+       var total = "";
+       !data.dia? total=0:total=data.dia;
+ 
+ 
+       let valor = [
+         //Gráfico Verde
+         { img: "dist/img/circle-vazio.svg", dia: 0, nomenclatura: "dia", marginLeft: "85px" },
+         { img: "dist/img/circle-verde-1.svg", dia: 1, nomenclatura: "dia", marginLeft: "85px" },
+         { img: "dist/img/circle-verde-1.svg", dia: 2, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-1.svg", dia: 3, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-1.svg", dia: 4, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-2.svg", dia: 5, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-2.svg", dia: 6, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-2.svg", dia: 7, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-2.svg", dia: 8, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-2.svg", dia: 9, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-3.svg", dia: 10, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-3.svg", dia: 11, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-3.svg", dia: 12, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-4.svg", dia: 13, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-verde-5.svg", dia: 14, nomenclatura: "dias", marginLeft: "76px" },
+         //Gráfico Amarelo
+         { img: "dist/img/circle-amarelo-1.svg", dia: 15, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-1.svg", dia: 16, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-1.svg", dia: 17, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-2.svg", dia: 18, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-2.svg", dia: 19, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-2.svg", dia: 20, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-3.svg", dia: 21, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-amarelo-3.svg", dia: 22, nomenclatura: "dias", marginLeft: "76px" },
+         //Gráfico Vermelho
+         { img: "dist/img/circle-vermelho-1.svg", dia: 23, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-2.svg", dia: 24, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-3.svg", dia: 25, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-4.svg", dia: 26, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-5.svg", dia: 27, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-7.svg", dia: 28, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-8.svg", dia: 29, nomenclatura: "dias", marginLeft: "76px" },
+         { img: "dist/img/circle-vermelho-9.svg", dia: 30, nomenclatura: "dias", marginLeft: "76px" },
+       ];
+     
+ 
+       if ( total === 0) {
+         $("#count-timeline").hide();
+         return false;
+       }
+ 
+      if ( total < 30) {
+        
+        let imagem = valor.filter((valor) => valor.dia === parseInt(total));
+        let { img } = imagem[0];
+        document.getElementById("cicrle-timer").src = img;
+
+      } else {
+
+        let imagem = valor.filter((valor) => valor.dia === 30);
+        let { img } = imagem[0];
+        document.getElementById("cicrle-timer").src = img;
+
+      } 
+
     },
   }).fail(function () {
     alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
