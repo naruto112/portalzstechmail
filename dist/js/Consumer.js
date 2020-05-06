@@ -4,7 +4,9 @@
 // Desenvolvedor: Renato Moschetta de Souza
 // Objetivo: Portal Regular de Documentos
 
-var url = "https://sinistrozs-desenvolvimento.techmail.com.br";
+var data = JSON.parse(base_url);
+
+var url = data[0].url;
 
 var documento_tab = "'documentos'";
 const paramsRamo = "89";
