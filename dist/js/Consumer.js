@@ -102,10 +102,10 @@ function CircleTimer() {
       } else {
 
         let imagem = valor.filter((valor) => valor.dia === 30);
-        let { img, dia, nomenclatura } = imagem[0];
+        let { img, dia, nomenclatura, marginLeft } = imagem[0];
         $("#dia").text(dia);
         $("#text-dia").text(nomenclatura);
-        $(".circulo-timer label").css({ marginLeft : marginLeft })
+        $(".circulo-timer label").css({ marginLeft : marginLeft });
         document.getElementById("cicrle-timer").src = img;
 
       }
