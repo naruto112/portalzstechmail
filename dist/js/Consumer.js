@@ -63,10 +63,10 @@ function TimeLine() {
     data: { ticketid: data.record },
     async: true,
     success: function (data) {
-      
-      let top = "";
+      console.log(data);
+      let top  = "";
       let left = "";
-      let msg = "";
+      let msg  = "";
 
       // alert($(window).width());
       if ($(window).width() < 440) {
@@ -90,21 +90,21 @@ function TimeLine() {
             icon = "far fa-star";
             msg = "";
             if ($(window).width() <= 440) {
-              left = 55;
+              left = 56;
             } else {
-              left = 74;
+              left = 84;
             }
             if ($(window).width() > 1900) {
-              left = 85;
+              left = 84;
             }
             break;
           case "DOCUMENTOS RECEPCIONADOS":
             icon = "far fa-file";
             msg = "";
             if ($(window).width() <= 440) {
-              left = 59;
+              left = 62;
             } else {
-              left = 79;
+              left = 89;
             }
             if ($(window).width() > 1900) {
               left = 90;
@@ -116,10 +116,10 @@ function TimeLine() {
             if ($(window).width() <= 440) {
               left = 57;
             } else {
-              left = 78;
+              left = 86;
             }
             if ($(window).width() > 1900) {
-              left = 89;
+              left = 86;
             }
             break;
           case "SOLICITAÇÃO DE DOCUMENTOS":
@@ -128,7 +128,7 @@ function TimeLine() {
             if ($(window).width() <= 440) {
               left = 60;
             } else {
-              left = 79;
+              left = 88;
             }
             if ($(window).width() > 1900) {
               left = 90;
@@ -141,10 +141,10 @@ function TimeLine() {
             if ($(window).width() <= 440) {
               left = 60;
             } else {
-              left = 81;
+              left = 91;
             }
             if ($(window).width() > 1900) {
-              left = 92;
+              left = 91;
             }
             break;
           case "EM PAGAMENTO PARCIAL":
@@ -154,10 +154,10 @@ function TimeLine() {
             if ($(window).width() <= 440) {
               left = 60;
             } else {
-              left = 81;
+              left = 91;
             }
             if ($(window).width() > 1900) {
-              left = 92;
+              left = 91;
             }
             break;
           default:
@@ -171,7 +171,7 @@ function TimeLine() {
           }<span class="font-text-span"><br>${
             item.etapa === "SINISTRO AVISADO" ? item.data_aviso : item.data
           } <br>${msg}</span></span>
-          <div class="circulo-timer">${ item.etapa === 'EM ANÁLISE'? '<img style="width: 100px;" id="cicrle-timer">':'' }</div>
+          <div class="circulo-timer">${ (item.etapa === 'EM ANÁLISE') && (data.circle.id === item.id) ? '<img style="width: 60px;" id="cicrle-timer">':'' }</div>
           </i>`
         );
         $(".linha-vertical").css("height", `${height}px`);
@@ -181,7 +181,7 @@ function TimeLine() {
 
        // *********** Gráfico de Circulo na TimeLine ******************//
        var total = "";
-       !data.dia? total=0:total=data.dia;
+       !data.circle.dia?total=0:total=data.circle.dia;
  
  
        let valor = [
