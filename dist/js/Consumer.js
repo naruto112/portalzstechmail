@@ -131,7 +131,12 @@ function TimeLine() {
       let top = "";
       let left = "";
       let msg = "";
-      // alert($(window).width());
+      console.log(data);
+      if (data.length == 0){
+          $("[timeline]").hide();
+          return false;
+      }
+
       if ($(window).width() < 440) {
         // alert('entrou aqui')
         top = 1211;

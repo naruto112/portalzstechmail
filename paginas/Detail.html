@@ -71,7 +71,7 @@
     </li>
     
   </ul>
-  <span id="status-timeline">
+  <span id="status-timeline" timeline>
     <div id="time-line">
         <div class="linha-vertical"></div>
         <div id="icon-timeline"></div>
@@ -167,8 +167,8 @@
 
     $( document ).ready(function() {
 
-        documentosPrev();
         TimeLine();
+        documentosPrev();
         CircleTimer();
 
         $('#meuModal').on('shown.bs.modal', function () {
