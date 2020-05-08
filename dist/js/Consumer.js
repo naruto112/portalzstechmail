@@ -131,7 +131,7 @@ function TimeLine() {
       let top = "";
       let left = "";
       let msg = "";
-      console.log(data);
+      
       if (data.length == 0){
           $("[timeline]").hide();
           return false;
@@ -902,6 +902,7 @@ function ReadOnlyTrue(params, chk) {
 }
 
 function TabMenu(item) {
+  TimeLine();
   if (item == "documentos") {
     $("#status-timeline").hide();
     $("#count-timeline").hide();
