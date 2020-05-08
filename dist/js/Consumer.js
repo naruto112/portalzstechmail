@@ -86,7 +86,7 @@ function CircleTimer() {
     
 
       if ( total === 0) {
-        $("#count-timeline").hide();
+        // $("#count-timeline").hide();
         return false;
       }
 
