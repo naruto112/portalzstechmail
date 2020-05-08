@@ -492,7 +492,7 @@ function getFileName(v) {
   $("#btn-ok").remove();
   $("#span-ok").empty();
   $("#span-ok").append(
-    '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" ><span class="fas fa-redo-alt"></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" enviar><span class="fa fa-location-arrow"></span> Enviar</button></div>'
+    '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" ><span class="fas fa-redo-alt" canceled></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" enviar><span class="fa fa-location-arrow"></span> Enviar</button></div>'
   );
 }
 
@@ -515,6 +515,7 @@ function enviarDoc() {
 
   //Quando estiver enviando Hidden no Button Enviar Documento
   $("[enviar]").hide();
+  $("[canceled]").hide();
 
   $.ajax({
     type: "POST",
