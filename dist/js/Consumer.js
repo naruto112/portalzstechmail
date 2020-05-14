@@ -558,6 +558,8 @@ function targetFileDeleted(item, id, i) {
 
   total === 1 ? $(`#mutiple-file_${id}`).append(`<span class="text-expectativa" expectativa_${id}>Solicitação que possibiita subir mais arquivos</span>`) : '';
 
+  total === 1 ? $(".div-button-doc").hide() : '';
+
   document.getElementById(item).remove();
 
   let index = fileInput.indexOf(i);
