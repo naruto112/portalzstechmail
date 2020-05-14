@@ -45,7 +45,6 @@
 
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
 
-
   <script>
         var identificador = localStorage.getItem("identificador");
         var object = JSON.parse(identificador);
@@ -57,6 +56,7 @@
         var date = new Date();
         var minute = date.getMinutes();
   </script>
+  
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -115,6 +115,51 @@
             <div id="body-row"></div>        
     </div>
   </div>
+  
+  <!-- Modal para exibir loading do envio de Doc-->
+  <div class="process-document modal fade" id="process-document-modal" role="dialog">
+    <img src="dist/img/upload_loading.gif" alt="loading up file" width="200px">
+  </div>
+
+  <!--Modal para o usuario clicar em concluir o envio de Doc-->
+  <div class="modal fade" id="concluido-document-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          </button>
+        </div>
+        <div class="modal-body" style="color: #FFF; font-size: 20px;">
+          <img src="dist/img/santander-logo-2.png" alt="Logo Santander" width="100px" style="margin-left: 39%;padding: 19px;">
+          <div style="text-align: center;">Envio concluido. <p>Clique em concluir para novos envios.</p></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.reload();">Concluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal informando erros de envio de Doc-->
+  <div class="modal fade" id="erro-document-modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          </button>
+        </div>
+        <div class="modal-body" style="color: #FFF; font-size: 20px;">
+          <img src="dist/img/santander-logo-2.png" alt="Logo Santander" width="100px" style="margin-left: 39%;padding: 19px;">
+          <div style="text-align: center;">ERRO AO ENVIAR. 
+            <p>Verifique sua conexão de internet ou entre em contato:</p>
+            <p style="font-size: 18px;">Contato nos telefones <b>0800 940 2901</b> ou <b>3132-7782</b>, de segunda-feira a sexta-feira, das 8h às 18h.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.reload();">Concluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
         <div>
@@ -146,13 +191,17 @@
                 <button type="button" onclick="NextImg();" class="btn btn-default btn-next" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-right"></span></button>
             </div>
         </div>
-    </div>
+  </div>
+
 
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.lob.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button);
   var date = new Date();
@@ -164,10 +213,9 @@
 <script type="text/javascript">
     var count_img = 1;
     $(document).ready(function() {
-        
         var slide = localStorage.getItem("tutorial");
         var object_slide = JSON.parse(slide);
-
+        
         if(object_slide){
         }else{
             var tutorial = { "tutorial": true }
