@@ -1,16 +1,17 @@
 // JAVASCRIPT QUE IRÁ CONTROLAR TODO O PORTAL
 // Data de Criação: 25/09/2019
-// Alteração Data: 17/11/2019
+// Alteração Data: 14/05/2020
 // Desenvolvedor: Renato Moschetta de Souza
-// Objetivo: Portal Regular de Documentos
+// Objetivo: Portal Zurich Santander
 
 var data = JSON.parse(base_url);
 
 var url = data[0].url;
-
 var documento_tab = "'documentos'";
 const paramsRamo = "89";
 let formularioPrev = "";
+let baseImg64 = "";
+let fileInput = [];
 
 function formatDate(data, formato) {
   var date = $.datepicker.formatDate("yy-mm-dd", new Date());
@@ -92,21 +93,22 @@ function CircleTimer() {
 
       if ( total < 30) {
         
-        let imagem = valor.filter((valor) => valor.dia === parseInt(total));
-        let { img, dia, nomenclatura, marginLeft } = imagem[0];
-        $("#dia").text(dia);
-        $("#text-dia").text(nomenclatura);
-        $(".circulo-timer label").css({ marginLeft : marginLeft })
-        document.getElementById("cicrle-timer").src = img;
+        /////////Função Desativada pois a Marcelle da Zurich ainda não decidiu de fato oque irá colocar para mostrar ao cliente/////
+        // let imagem = valor.filter((valor) => valor.dia === parseInt(total));
+        // let { img, dia, nomenclatura, marginLeft } = imagem[0];
+        // $("#dia").text(dia);
+        // $("#text-dia").text(nomenclatura);
+        // $(".circulo-timer label").css({ marginLeft : marginLeft })
+        // document.getElementById("cicrle-timer").src = img;
 
       } else {
-
-        let imagem = valor.filter((valor) => valor.dia === 30);
-        let { img, dia, nomenclatura, marginLeft } = imagem[0];
-        $("#dia").text(dia);
-        $("#text-dia").text(nomenclatura);
-        $(".circulo-timer label").css({ marginLeft : marginLeft });
-        document.getElementById("cicrle-timer").src = img;
+        /////////Função Desativada pois a Marcelle da Zurich ainda não decidiu de fato oque irá colocar para mostrar ao cliente/////
+        // let imagem = valor.filter((valor) => valor.dia === 30);
+        // let { img, dia, nomenclatura, marginLeft } = imagem[0];
+        // $("#dia").text(dia);
+        // $("#text-dia").text(nomenclatura);
+        // $(".circulo-timer label").css({ marginLeft : marginLeft });
+        // document.getElementById("cicrle-timer").src = img;
 
       }
       
@@ -161,7 +163,7 @@ function TimeLine() {
             } else {
               left = 74;
             }
-            if ($(window).width() > 1900) {
+            if ($(window).width() > 1700) {
               left = 85;
             }
             break;
@@ -173,8 +175,8 @@ function TimeLine() {
             } else {
               left = 79;
             }
-            if ($(window).width() > 1900) {
-              left = 90;
+            if ($(window).width() > 1700) {
+              left = 89;
             }
             break;
           case "EM ANÁLISE":
@@ -185,8 +187,8 @@ function TimeLine() {
             } else {
               left = 78;
             }
-            if ($(window).width() > 1900) {
-              left = 89;
+            if ($(window).width() > 1700) {
+              left = 86;
             }
             break;
           case "SOLICITAÇÃO DE DOCUMENTOS":
@@ -197,8 +199,8 @@ function TimeLine() {
             } else {
               left = 79;
             }
-            if ($(window).width() > 1900) {
-              left = 90;
+            if ($(window).width() > 1700) {
+              left = 89;
             }
             break;
           case "EM PAGAMENTO TOTAL":
@@ -210,8 +212,8 @@ function TimeLine() {
             } else {
               left = 81;
             }
-            if ($(window).width() > 1900) {
-              left = 92;
+            if ($(window).width() > 1700) {
+              left = 91;
             }
             break;
           case "EM PAGAMENTO PARCIAL":
@@ -223,8 +225,8 @@ function TimeLine() {
             } else {
               left = 81;
             }
-            if ($(window).width() > 1900) {
-              left = 92;
+            if ($(window).width() > 1700) {
+              left = 91;
             }
             break;
           default:
@@ -359,6 +361,7 @@ function abrirDoc(record) {
     traditional: true,
     timeout: 30000,
     success: function (data) {
+      
       $("#nome_segurado").val(data[0].nome_segurado);
       $("#nome_sinistrado").val(data[0].nome_sinistrado);
       $("#nome_notificante").val(data[0].nome_notificante);
@@ -373,13 +376,14 @@ function abrirDoc(record) {
       $("#ticketid").text(data[0].ticketid);
       localStorage.setItem("data_aviso", data[0].data_aviso);
 
-      if (data[0].ramo == "71" || data[0].ramo == "77") {
+      if (data[0].ramo == "71" || data[0].ramo == "77" || data[0].ramo == 93) {
         $(".header-prev").remove();
       }
 
       var num = 0;
       var variable = 0;
       $.each(data, function (key, value) {
+    
         if (value.status_evento == "TIPIFICACAO INCORRETA") {
           $("#alert-tipifica-not").empty();
           if (variable == 0) {
@@ -391,7 +395,7 @@ function abrirDoc(record) {
           $("#doc-conteudo").append(
             '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
               value.noteid +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               value.noteid +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;" >Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               value.noteid +
@@ -407,26 +411,42 @@ function abrirDoc(record) {
           );
         }
 
-        if (
-          value.status_evento == "AGUARDANDO DOCUMENTO" ||
-          value.status_evento == "AGUARDANDO DOCUMENTO COMPLEMENTAR"
-        ) {
-          $("#alert-tipifica-not").empty();
-          $("#doc-conteudo").append(
-            '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
-              value.noteid +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
-              value.noteid +
-              '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
-              value.noteid +
-              '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
-              value.documento_tooltip +
-              '" data-balloon-pos="up">' +
-              value.tipo_doc +
-              '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
-              value.noteid +
-              '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
-          );
+        if ( value.status_evento == "AGUARDANDO DOCUMENTO" || value.status_evento == "AGUARDANDO DOCUMENTO COMPLEMENTAR" ) {
+          if(value.tipo_input != 'Mult-Input') {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-single" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
+                value.noteid +
+                '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+                value.documento_tooltip +
+                '" data-balloon-pos="up">' +
+                value.tipo_doc +
+                '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
+                value.noteid +
+                '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
+            );
+          } else {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-multiple[]" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileMultiple(this, \'result-multiplefile_'+value.noteid+'\')" multiple="multiple"/><label for="' +
+                value.noteid +
+                '" id="label-busca-'+value.noteid+'" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+                value.documento_tooltip +
+                '" data-balloon-pos="up">' +
+                value.tipo_doc +
+                '</a></span></li>'
+                +'<div id="mutiple-file_'+value.noteid+'" class="ui-file"><span class="text-expectativa" expectativa_'+value.noteid+'>Solicitação que possibiita subir mais arquivos</span></div><br><br>'
+            );
+
+          }
         }
 
         if (value.status_evento == "RECUSADO PORTAL") {
@@ -489,6 +509,63 @@ function LimparDocPrev(params) {
   $("#divPrev-" + params).remove();
 }
 
+
+function getFileMultiple(v, params) {
+
+      let total = $('#mutiple-file_'+v.id+' > div').length
+      
+      if (v.files.length > 5) {
+        alert("Maior que o nível permitido");
+        return false;
+      }
+
+      if (total === 5) {
+        alert("Maior que o nível permitido");
+        return false;
+      }
+
+
+      $(`[expectativa_${v.id}]`).remove();
+      var files = $(v)[0].files;
+      var names = "";
+
+      $("#img-" + v.id).attr("src", "dist/img/ok.png");
+      $("#btn-enviaDoc").attr("style", "visibility: visible");
+      $("#btn-enviaDoc").attr("style", "margin-left: 89%");
+      $("#btn-ok").remove();
+      $("#span-ok").empty();
+      $("#span-ok").append(
+        '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" canceled><span class="fas fa-redo-alt"></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" enviar><span class="fa fa-location-arrow"></span> Enviar</button></div>'
+      );
+
+      $.each(files,function(i, file){
+
+          fileInput.push([v.id, file, i]);
+
+          names += `<div id="arquivo_${v.id}_${i}"><img width="2%" src="dist/img/open-iconic/image.svg"><span style="width: 100%;">${file.name}</span> <div style="display: inline;width: 100%;text-align: end;cursor: pointer;"><img src="dist/img/open-iconic/x.svg" onClick="targetFileDeleted('arquivo_${v.id}_${i}', ${v.id}, ${i})"></div></div>`;
+
+      });
+      document.getElementById(`mutiple-file_${v.id}`).innerHTML += names;
+
+}
+
+//Limpa os input do combo box e volta a mensagem e o incone de upload
+function targetFileDeleted(item, id, i) {
+  	
+  const total = $(`[id^=arquivo]`).length;
+
+  total === 1 ? $(`#img-${id}`).attr("src", "dist/img/upload.png") : '';
+
+  total === 1 ? $(`#mutiple-file_${id}`).append(`<span class="text-expectativa" expectativa_${id}>Solicitação que possibiita subir mais arquivos</span>`) : '';
+
+  document.getElementById(item).remove();
+
+  let index = fileInput.indexOf(i);
+
+  fileInput.splice(index, 1);
+
+}
+
 function getFileName(v) {
   $("#btn-enviaDoc").attr("style", "visibility: visible");
   $("#btn-enviaDoc").attr("style", "margin-left: 89%");
@@ -501,150 +578,154 @@ function getFileName(v) {
   );
 }
 
-function enviarDoc() {
-  var month = date.getMonth();
-  var day = date.getDate();
-  var year = date.getFullYear();
-  var data = year + "-" + month + "-" + day;
-  var md5 = $.md5(data);
-  var count = 1;
-  var b64 = "";
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Multiple
+function Tobase64Multiple(files, ticketid, notesid) {
+  var file = files,
+    reader = new FileReader();
 
-  var email = $("#email").val();
-  var telefone = $("#telefone").val();
-  var num_sinistro = $("#num_sinistro").val();
+  reader.onloadend = function () {
+    var base64 = reader.result;
+
+    const data = {
+          base64,
+          ticketid,
+          notesid
+        }
+
+     axios.post(`${url}/api/send-multiplefile`, data)
+      .then(response => {              
+        // console.log(response);
+      })
+      .catch(error => {
+          $("#erro-document-modal").modal('show');
+          console.log(error)
+      })
+    
+  };
+
+  reader.readAsDataURL(file);
+  setTimeout(() => {}, 500);
+};
+
+
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Single
+function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
+  var file = files,
+    reader = new FileReader();
+
+  reader.onloadend = function () {
+    var base64 = reader.result;
+
+    const data = {
+      name: file_name,
+      record: notesid,
+      ticketid,
+      ramo,
+      doc_name,
+      base64
+    }
+
+    axios.post(`${url}/api/attachement-single`, data)
+    .then(response => {
+
+      //Exibe a tela do concluido no envio de documento
+      $("#process-document-modal").modal('hide');
+      $("#exampleModal").modal('show');
+      console.log(response);
+
+    })
+    .catch(error => {
+        $("#erro-document-modal").modal('show');
+        console.log(error)
+    })
+    
+  };
+
+  reader.readAsDataURL(file);
+  setTimeout(() => {}, 500);
+};
+
+
+
+function enviarDoc() {
+
+  var count = 1;
+  var validity = "";
+
   var ticketid = $("#ticketid").text();
+  var doc_name = "";
 
   var identificador = localStorage.getItem("identificador");
   var obj = JSON.parse(identificador);
 
+  $("#process-document-modal").modal('show');
+  
+
   //Quando estiver enviando Hidden no Button Enviar Documento
   $("[enviar]").hide();
   $("[canceled]").hide();
+ 
+  //Captura o File Input 
+  $(fileInput).each(function (i, val) {
 
-  $.ajax({
-    type: "POST",
-    dataType: "json",
-    url: url + "/api/confirma-campo",
-    timeout: 30000,
-    async: true,
-    data: { num_sinistro: num_sinistro, email: email, telefone: telefone },
-    traditional: true,
-    success: function (data) {
-      if (data.result == true) {
-        var formData = new FormData();
+    Tobase64Multiple(val[1], ticketid, val[0]);
 
-        $("#loading-progresso").append(
-          "<span id='texto-envio' style='font-weight: bold; margin-left: 47%;'></span><div class='progresso'><div class='progress-bar-santander' id='progresso' role='progressbar' style='width: 100%;' aria-valuenow=0' aria-valuemin='0' aria-valuemax='100'>0%</div></div>"
-        );
-
-        $("input[type=file]").each(function (i, input) {
-          if (input.files[0] != undefined) {
-            if (input.files[0].size > "13500000") {
-              // $("html").removeClass('modal-html');
-              // $("#load").empty();
-              alert(
-                "Seu arquivo deve ser menor ou igual a 13,5MB. Caso esteja tentando enviar pela Câmera do Celular, diminua os pixels para o envio."
-              );
-              return false;
-            } else {
-              if (
-                input.files[0].type == "application/pdf" ||
-                input.files[0].type == "image/jpeg" ||
-                input.files[0].type == "image/png" ||
-                input.files[0].type == "image/jpg"
-              ) {
-                // return false;
-                // base64( $("input[type=file]"), function(data){
-                //     b64 = data.base64;
-                // })
-
-                let data_aviso = localStorage.getItem("data_aviso");
-
-                formData.append(input.name, input.files[0]);
-                formData.append("record", input.id);
-                formData.append("ticketid", ticketid);
-                formData.append("data_aviso", data_aviso);
-                formData.append("ramo", obj.ramo);
-                let label = $("#label-" + count).text();
-                formData.append("doc_nome", label);
-
-                $("#btn-enviaDoc").remove();
-                $("#texto-envio").empty();
-                $("#texto-envio").text("Efetuando o envio...");
-
-                $("#btn-ok").remove();
-
-                let req = new XMLHttpRequest();
-                req.overrideMimeType("application/json");
-                req.upload.addEventListener(
-                  "progress",
-                  function (evt) {
-                    var pct = Math.floor((evt.loaded * 100) / evt.total);
-                    $("#progresso").empty();
-                    $("#progresso").text(pct + "%");
-                    $("#progresso").width(pct + "%");
-                  },
-                  false
-                );
-                req.open("POST", url + "/api/new-attachemnt");
-                req.timeout = 10000000000;
-                req.onload = function () {
-                  var request = JSON.parse(req.responseText);
-
-                  if (request.status == true) {
-                    $("#email").attr("readonly", true);
-                    $("#telefone").attr("readonly", true);
-                    $("#btn-enviaDoc").remove();
-                    $("label").remove();
-                    $(".resposive-content-limpar").remove();
-                    $("#sucesso-doc").fadeIn(function () {
-                      setTimeout(function () {}, 5000);
-                    });
-                    $("#texto-envio").empty();
-                    $("#texto-envio").text("Envio concluido.");
-                    // $("html").removeClass('modal-html');
-                    $("#btn-ok").remove();
-                    $("#span-ok").append(
-                      '<div class="div-finalizado-doc"><button id="btn-ok" class="btn btn-success btn-upload-responsive" onclick="finalizado()" style="margin-left: 89%;"><span class="glyphicon glyphicon-ok"></span> Finalizar</button></div>'
-                    );
-                    // $("#load").empty();
-                  } else {
-                    // $("html").removeClass('modal-html');
-                    $("#load").empty();
-                    alert(
-                      "Não foi Possivel enviar os documento, procure o suporte"
-                    );
-                    location.reload;
-                    return false;
-                  }
-                };
-                req.send(formData);
-              } else {
-                // $("#load").empty();
-                // $("html").removeClass('modal-html');
-                alert(
-                  "Você deve anexar os seguintes arquivos: PNG, JPG, JPEG e PDF"
-                );
-                return false;
-              }
-            }
-          } else {
-            $("#alerta-doc").fadeIn(function () {
-              setTimeout(function () {}, 5000);
-            });
-          }
-          count = count + 1;
-        });
-      } else {
-        alert("ERROR API - NÃO RESPONDE");
-        location.reload;
-      }
-    },
-  }).fail(function () {
-    alert("ERROR API - NÃO RESPONDE");
-    location.reload;
   });
+
+
+
+  // Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
+  $("input[multiple=multiple]").each(function (i, input) {
+
+    !input.files.length > 0 ? validity=false : validity=true;
+
+  });
+  
+  if ( validity ) {
+
+    setTimeout(() => {
+
+      const datatype = {
+        ramo: obj.ramo,
+        ticketid,
+      }
+  
+      // APi para listar os Documentos Converter e Anexar no Sinistro
+      axios.post(`${url}/api/unionimage`, datatype)
+      .then(response => {
+        //Exibe a tela do concluido no envio de documento
+        $("#process-document-modal").modal('hide');
+        $("#concluido-document-modal").modal('show');
+        console.log(response);
+      })
+      .catch(error => {
+          $("#erro-document-modal").modal('show');
+          console.log(error);
+      })
+      
+    }, 1000);
+
+  }
+  
+  // Each responsavel em enviar arquivos com 1 anexo 1 expectativa.
+  $("input[name=file-single]").each(function (i, input) {
+
+    //Valida se o arquivo tiver vazio ele não executa o Envio.
+    if (input.files.length > 0) {
+      
+      // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+      $(`#label-${count}`).text() ? doc_name = $(`#label-${count}`).text() : doc_name="";
+  
+
+      // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+      setTimeout(() => {
+        Tobase64Single(input.files[0], input.files[0].name, ticketid, input.id, obj.ramo, doc_name);
+      }, 1000);
+
+    }
+
+  });
+  
 }
 
 function documentosPrev() {
@@ -709,7 +790,7 @@ function documentosPrev() {
       }
     },
   }).fail(function () {
-    alert("ERROR API - NÃO RESPONDE");
+    $("#erro-document-modal").modal('show');
   });
 }
 
@@ -773,7 +854,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" doc="' +
                 selecteditemsTip[i] +
-                '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+                '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
                 count +
                 '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 count +
@@ -800,7 +881,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" doc="' +
                 selecteditemsTip[i] +
-                '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+                '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
                 count +
                 '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 count +
@@ -836,7 +917,7 @@ function IncluiDocumentoPrev() {
               count +
               '" doc="' +
               selecteditemsTip[i] +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               count +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               count +
@@ -863,7 +944,7 @@ function IncluiDocumentoPrev() {
               count +
               '" doc="' +
               selecteditemsTip[i] +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               count +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               count +
