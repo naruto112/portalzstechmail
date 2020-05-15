@@ -289,6 +289,11 @@ function LoginSinistro() {
           localStorage.setItem("tutorial", JSON.stringify(tutorial));
         }
 
+        if (obj.ramo == "93") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
         window.location.href = "index.html?confirmacao";
       } else {
         $("#alert-sinistro-verifica").show();
@@ -540,9 +545,9 @@ function getFileMultiple(v, params) {
 
       $.each(files,function(i, file){
 
-          fileInput.push([v.id, file, i]);
+          fileInput.push([v.id, file, file.name]);
 
-          names += `<div id="arquivo_${v.id}_${i}"><img width="2%" src="dist/img/open-iconic/image.svg"><span style="width: 100%;">${file.name}</span> <div style="display: inline;width: 100%;text-align: end;cursor: pointer;"><img src="dist/img/open-iconic/x.svg" onClick="targetFileDeleted('arquivo_${v.id}_${i}', ${v.id}, ${i})"></div></div>`;
+          names += `<div id="arquivo_${v.id}_${i}"><img width="2%" src="dist/img/open-iconic/image.svg"><span style="width: 100%;">${file.name}</span> <div style="display: inline;width: 100%;text-align: end;cursor: pointer;"><img src="dist/img/open-iconic/x.svg" onClick="targetFileDeleted('arquivo_${v.id}_${i}', ${v.id}, '${file.name}')"></div></div>`;
 
       });
       document.getElementById(`mutiple-file_${v.id}`).innerHTML += names;
@@ -550,7 +555,7 @@ function getFileMultiple(v, params) {
 }
 
 //Limpa os input do combo box e volta a mensagem e o incone de upload
-function targetFileDeleted(item, id, i) {
+function targetFileDeleted(item, id, fileName) {
   	
   const total = $(`[id^=arquivo]`).length;
 
@@ -562,9 +567,26 @@ function targetFileDeleted(item, id, i) {
 
   document.getElementById(item).remove();
 
-  let index = fileInput.indexOf(i);
+  let index=""
 
-  fileInput.splice(index, 1);
+  for(i=0; fileInput.length > i; i++) {
+
+    for(j=0; fileInput[i].length > j; j++) {
+        
+      let a = fileInput[i].indexOf(fileName);
+
+      if(a >= 0) {
+        index = fileInput[i];
+      }
+
+    }
+
+  } 
+
+  let indexes = fileInput.indexOf(index);  
+
+  fileInput.splice(indexes, 1);
+
 
 }
 
@@ -596,7 +618,7 @@ function Tobase64Multiple(files, ticketid, notesid) {
 
      axios.post(`${url}/api/send-multiplefile`, data)
       .then(response => {              
-        // console.log(response);
+        console.log(response);
       })
       .catch(error => {
           $("#erro-document-modal").modal('show');
@@ -673,8 +695,6 @@ function enviarDoc() {
     Tobase64Multiple(val[1], ticketid, val[0]);
 
   });
-
-
 
   // Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
   $("input[multiple=multiple]").each(function (i, input) {
