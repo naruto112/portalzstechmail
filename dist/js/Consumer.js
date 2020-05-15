@@ -652,7 +652,7 @@ function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
 
     const data = {
       name: file_name,
-      record: notesid,
+      notesid,
       ticketid,
       ramo,
       doc_name,
@@ -748,7 +748,6 @@ function enviarDoc() {
       // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
       $(`#label-${count}`).text() ? doc_name = $(`#label-${count}`).text() : doc_name="";
   
-
       // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
       setTimeout(() => {
         Tobase64Single(input.files[0], input.files[0].name, ticketid, input.id, obj.ramo, doc_name);
