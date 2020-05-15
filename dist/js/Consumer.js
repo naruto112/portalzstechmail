@@ -524,7 +524,14 @@ function getFileMultiple(v, params) {
         return false;
       }
 
-      if (total === 5) {
+      if (total > 5) {
+        alert("Maior que o nível permitido");
+        return false;
+      }
+
+      let sum_two = (v.files.length + total);
+
+      if(sum_two > 5) {
         alert("Maior que o nível permitido");
         return false;
       }
