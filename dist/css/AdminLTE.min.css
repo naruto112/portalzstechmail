@@ -653,9 +653,10 @@ input[type="file"] {
   .ui-file {
     border: 1px solid #bcbcbc85;
     background-color: #bcbcbc14;
-    width: 100%;
+    width: 99%;
     padding: 8px;
     margin-left: 0px;
+    margin-top: 10px;
     display: block;
   }
 

@@ -564,7 +564,8 @@ function getFileMultiple(v, params) {
 //Limpa os input do combo box e volta a mensagem e o incone de upload
 function targetFileDeleted(item, id, fileName) {
   	
-  const total = $(`[id^=arquivo]`).length;
+  const total = $(`#mutiple-file_${id} > [id^=arquivo]`).length;
+
 
   total === 1 ? $(`#img-${id}`).attr("src", "dist/img/upload.png") : '';
 
