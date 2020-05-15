@@ -578,8 +578,8 @@ input[type="file"] {
   .btn-primary-busca {
     background-color: #585858;
     border-color: #a2a4ad;
-    width: 24%;
-    font-size: 84%;
+    width: 21%;
+    font-size: 76%;
   }
   .tamanho-label-doc {
     width: 58%;
@@ -646,6 +646,12 @@ input[type="file"] {
   .tamanho-label-doc {
     width: 58%;
     text-align: justify;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .doc-conteudo {
+    margin-left: 5px;
   }
 }
 
