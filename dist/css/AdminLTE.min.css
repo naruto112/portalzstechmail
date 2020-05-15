@@ -512,9 +512,9 @@ input[type="file"] {
   }
   .img-tutorial {
     display: inline;
-    width: 76% !important;
-    margin-left: 16%;
-    margin-top: 8%;
+    width: 85% !important;
+    margin-left: 10%;
+    margin-top: 0%;
   }
 
   .img-pc-tutorial {
@@ -4335,6 +4335,9 @@ table.text-center th {
 } */
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
+  .div-button-doc {
+    margin-top: -60px;
+  }
   .resposive-content {
     margin-top: -1%;
     margin-left: -32%;
