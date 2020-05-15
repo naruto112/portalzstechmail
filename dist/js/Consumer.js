@@ -676,7 +676,7 @@ function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
   };
 
   reader.readAsDataURL(file);
-  setTimeout(() => {}, 500);
+  setTimeout(() => {}, 3000);
 };
 
 
@@ -735,7 +735,7 @@ function enviarDoc() {
           console.log(error);
       })
       
-    }, 1000);
+    }, 2000);
 
   }
   
