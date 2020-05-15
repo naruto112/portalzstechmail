@@ -404,9 +404,9 @@ function abrirDoc(record) {
               value.noteid +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;" >Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               value.noteid +
-              '" src="dist/img/warning_icorrent.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+              '" src="dist/img/warning_icorrent.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
               value.documento_tooltip +
-              '" data-balloon-pos="up">' +
+              '">' +
               value.tipo_doc +
               '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
               value.noteid +
@@ -426,9 +426,9 @@ function abrirDoc(record) {
                 value.noteid +
                 '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
                 value.documento_tooltip +
-                '" data-balloon-pos="up">' +
+                '">' +
                 value.tipo_doc +
                 '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
                 value.noteid +
@@ -443,9 +443,9 @@ function abrirDoc(record) {
                 value.noteid +
                 '" id="label-busca-'+value.noteid+'" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
                 value.documento_tooltip +
-                '" data-balloon-pos="up">' +
+                '">' +
                 value.tipo_doc +
                 '</a></span></li>'
                 +'<div id="mutiple-file_'+value.noteid+'" class="ui-file"><span class="text-expectativa" expectativa_'+value.noteid+'>Solicitação que possibiita subir mais arquivos</span></div><br><br>'
@@ -458,7 +458,7 @@ function abrirDoc(record) {
           $("#doc-conteudo").append(
             '<div><li class="tamanho-label-doc" style="list-style-type: none;"><span"><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
               value.documento_tooltip +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               value.tipo_doc +
               '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
               value.noteid +
@@ -566,12 +566,14 @@ function targetFileDeleted(item, id, fileName) {
   	
   const total = $(`#mutiple-file_${id} > [id^=arquivo]`).length;
 
-
   total === 1 ? $(`#img-${id}`).attr("src", "dist/img/upload.png") : '';
 
   total === 1 ? $(`#mutiple-file_${id}`).append(`<span class="text-expectativa" expectativa_${id}>Solicitação que possibiita subir mais arquivos</span>`) : '';
 
-  total === 1 ? $(".div-button-doc").hide() : '';
+  const total_file = $(`[id^=arquivo]`).length;
+
+  total_file === 1 ? $(".div-button-doc").hide() : '';
+
 
   document.getElementById(item).remove();
 
