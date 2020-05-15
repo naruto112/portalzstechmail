@@ -626,7 +626,7 @@ function Tobase64Multiple(files, ticketid, notesid) {
           notesid
         }
 
-     axios.post(`${url}/api/send-multiplefile`, data)
+     axios.post(`${url}/api/send-multiplefile`, data, {timeout: 10000})
       .then(response => {              
         console.log(response);
       })
@@ -638,7 +638,6 @@ function Tobase64Multiple(files, ticketid, notesid) {
   };
 
   reader.readAsDataURL(file);
-  setTimeout(() => {}, 500);
 };
 
 
@@ -659,24 +658,28 @@ function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
       base64
     }
 
-    axios.post(`${url}/api/attachement-single`, data)
-    .then(response => {
+    setTimeout(() => {
+      axios.post(`${url}/api/attachement-single`, data, {timeout: 10000})
+      .then(response => {
 
-      //Exibe a tela do concluido no envio de documento
-      $("#process-document-modal").modal('hide');
-      $("#concluido-document-modal").modal('show');
-      console.log(response);
+        //Exibe a tela do concluido no envio de documento
+        $("#process-document-modal").modal('hide');
+        
+        console.log(response);
 
-    })
-    .catch(error => {
-        $("#erro-document-modal").modal('show');
-        console.log(error)
-    })
+      })
+      .catch(error => {
+          $("#erro-document-modal").modal('show');
+          console.log(error)
+      })
+    }, 3000);
     
   };
 
   reader.readAsDataURL(file);
-  setTimeout(() => {}, 3000);
+  setTimeout(() => {
+    $("#concluido-document-modal").modal('show');
+  }, 3000);
 };
 
 
@@ -706,12 +709,16 @@ function enviarDoc() {
 
   });
 
+  setTimeout(() => {}, 19000);
+
   // Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
   $("input[multiple=multiple]").each(function (i, input) {
 
     !input.files.length > 0 ? validity=false : validity=true;
 
   });
+
+  
   
   if ( validity ) {
 
@@ -723,7 +730,7 @@ function enviarDoc() {
       }
   
       // APi para listar os Documentos Converter e Anexar no Sinistro
-      axios.post(`${url}/api/unionimage`, datatype)
+      axios.post(`${url}/api/unionimage`, datatype, {timeout: 15000})
       .then(response => {
         //Exibe a tela do concluido no envio de documento
         $("#process-document-modal").modal('hide');
@@ -735,7 +742,7 @@ function enviarDoc() {
           console.log(error);
       })
       
-    }, 2000);
+    }, 10000);
 
   }
   
