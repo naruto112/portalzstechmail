@@ -163,10 +163,6 @@
   display: none;
 }
 
-.btn-add-doc {
-  margin-left: 69%;
-}
-
 .recommendation {
   text-align: center;
 }
@@ -339,9 +335,6 @@ input[type="file"] {
     text-align: justify;
   }
 
-  .btn-add-doc {
-    margin-left: 5%;
-  }
 }
 
 @media screen and (min-width: 500px) and (max-width: 770px) {
@@ -778,6 +771,13 @@ body {
 }
 
 @media (max-width: 767px) {
+  .process-document {
+    position: absolute !important;
+    left: 25% !important;
+    top: 73% !important;
+    color: #FFF !important;
+    background: transparent !important;
+  }
   .h2-size {
     font-size: 175%;
   }
