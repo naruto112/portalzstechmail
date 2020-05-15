@@ -176,7 +176,7 @@
         </div>
   </footer>
 
-  <div class="modal fade" id="exemplomodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal fade" id="tutorial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-content-resposive" style="width: 120%;background-color: #77777700;margin-left: -9%;">
             <div class="modal-header" style="border-bottom-color: #f4f4f400;padding: 0px;">
@@ -215,12 +215,13 @@
     $(document).ready(function() {
         var slide = localStorage.getItem("tutorial");
         var object_slide = JSON.parse(slide);
-        
+        // $("#process-document-modal").modal('show');
+
         if(object_slide){
         }else{
             var tutorial = { "tutorial": true }
             localStorage.setItem("tutorial", JSON.stringify(tutorial));
-            $('#exemplomodal').modal('show');
+            $('#tutorial-modal').modal('show');
         }
     })
     

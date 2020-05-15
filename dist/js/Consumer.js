@@ -664,7 +664,7 @@ function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
 
       //Exibe a tela do concluido no envio de documento
       $("#process-document-modal").modal('hide');
-      $("#exampleModal").modal('show');
+      $("#concluido-document-modal").modal('show');
       console.log(response);
 
     })
@@ -894,7 +894,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" data-balloon-length="medium" aria-label="' +
                 selecteditemsTip[i] +
-                '" data-balloon-pos="up">' +
+                '" data-balloon-pos="bottom">' +
                 selecteditems[i] +
                 '</a> <i class="fas fa-file-download"></i> <a href="dist/formularios/' +
                 arquivo +
@@ -921,7 +921,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" data-balloon-length="medium" aria-label="' +
                 selecteditemsTip[i] +
-                '" data-balloon-pos="up">' +
+                '" data-balloon-pos="bottom">' +
                 selecteditems[i] +
                 '</a></span></li><a href="javascript:void(0)" onclick="LimparDocPrev(' +
                 count +
@@ -957,7 +957,7 @@ function IncluiDocumentoPrev() {
               count +
               '" data-balloon-length="medium" aria-label="' +
               selecteditemsTip[i] +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               selecteditems[i] +
               '</a>  <i class="fas fa-file-download"></i> <a href="dist/formularios/' +
               arquivo +
@@ -984,7 +984,7 @@ function IncluiDocumentoPrev() {
               count +
               '" data-balloon-length="medium" aria-label="' +
               selecteditemsTip[i] +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               selecteditems[i] +
               '</a></span></li><a href="javascript:void(0)" onclick="LimparDocPrev(' +
               count +
