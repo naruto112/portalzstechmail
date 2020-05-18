@@ -981,6 +981,7 @@ function somenteNumeros(num) {
 }
 
 function IncluiDocumentoPrev() {
+  $(".btn-add-doc").hide();
   $("#alert-tipifica-pass").empty();
 
   var selecteditems = [];
