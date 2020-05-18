@@ -270,6 +270,8 @@ function TimeLine() {
   var objeto = localStorage.getItem("identificador");
   var data = JSON.parse(objeto);
 
+  $("#icon-timeline").empty();
+
   $.ajax({
     type: "GET",
     dataType: "json",
@@ -379,7 +381,6 @@ function TimeLine() {
           default:
             break;
         }
-
         $("#icon-timeline").append(
           `<i class="${icon} custom-icon" style="top: ${top}px; left: ${left}px;"><span class="font-title-span">${
             item.etapa
