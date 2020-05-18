@@ -863,13 +863,13 @@ async function enviarDoc() {
           .post(`${url}/api/unionimage`, datatype)
           .then((response) => {
             //Exibe a tela do concluido no envio de documento
-            $("#process-document-modal").modal("hide");
-            $("#concluido-document-modal").modal("show");
-            console.log(response);
+            setTimeout(() => {
+              $("#process-document-modal").modal("hide");
+              $("#concluido-document-modal").modal("show");
+            }, 2000);
           })
           .catch((error) => {
             $("#erro-document-modal").modal("show");
-            console.log(error);
           });
       }
 
