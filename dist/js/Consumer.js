@@ -12,6 +12,7 @@ const paramsRamo = "89";
 let formularioPrev = "";
 let baseImg64 = "";
 let fileInput = [];
+let expectPrev = [];
 
 function formatDate(data, formato) {
   var date = $.datepicker.formatDate("yy-mm-dd", new Date());
@@ -667,6 +668,8 @@ function Limpar(v, h) {
 }
 
 function LimparDocPrev(params) {
+  //Retorna o Botão para que ele possa adicionar mais documento do previdencia.
+  expectPrev.length === 1 ? $(".btn-add-doc").show() : expectPrev.splice(1, 1);
   $("#divPrev-" + params).remove();
 }
 
@@ -993,6 +996,7 @@ function IncluiDocumentoPrev() {
     .find("input:checked")
     .each(function (i, ob) {
       obValue.push($(ob).val());
+      expectPrev.push(i);
 
       totalCaracteres = $(ob).val();
 
