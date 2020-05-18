@@ -784,7 +784,7 @@ const Tobase64Multiple = (files, ticketid, notesid) => {
         })
         .catch((error) => {
           $("#erro-document-modal").modal("show");
-          console.log(error);
+          reject(error);
         });
 
 
@@ -795,42 +795,30 @@ const Tobase64Multiple = (files, ticketid, notesid) => {
 }
 
 //Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Single
-function Tobase64Single(files, file_name, ticketid, notesid, ramo, doc_name) {
-  var file = files,
-    reader = new FileReader();
-
-  reader.onloadend = function () {
-    var base64 = reader.result;
-
-    const data = {
-      name: file_name,
-      notesid,
-      ticketid,
-      ramo,
-      doc_name,
-      base64,
-    };
-
-    setTimeout(() => {
-      axios
-        .post(`${url}/api/attachement-single`, data, { timeout: 10000 })
-        .then((response) => {
-          //Exibe a tela do concluido no envio de documento
-          $("#process-document-modal").modal("hide");
-
-          console.log(response);
-        })
-        .catch((error) => {
-          $("#erro-document-modal").modal("show");
-          console.log(error);
-        });
-    }, 3000);
-  };
-
-  reader.readAsDataURL(file);
-  setTimeout(() => {
-    $("#concluido-document-modal").modal("show");
-  }, 3000);
+const Tobase64Single = (files, file_name, ticketid, notesid, ramo, doc_name) => {
+  return new Promise((resolve, reject) => {
+    getBase64(files).then(
+      b64 => {
+        const data = {
+          name: file_name,
+          notesid,
+          ticketid,
+          ramo,
+          doc_name,
+          base64: b64,
+        };
+        axios
+          .post(`${url}/api/attachement-single`, data)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => {
+            $("#erro-document-modal").modal("show");
+            reject(error);
+          });
+      }
+    )
+  });
 }
 
 async function enviarDoc() {
@@ -849,8 +837,7 @@ async function enviarDoc() {
   $("[enviar]").hide();
   $("[canceled]").hide();
 
-  //Captura o File Input
-
+  //Promise que irá enviar os arquivos de Multi-input
   let promise = await Promise.all(
     fileInput.map(function (val) {
       return Tobase64Multiple(val[1], ticketid, val[0])
@@ -888,28 +875,25 @@ async function enviarDoc() {
 
   }
 
-  // Each responsavel em enviar arquivos com 1 anexo 1 expectativa.
-  $("input[name=file-single]").each(function (i, input) {
-    //Valida se o arquivo tiver vazio ele não executa o Envio.
-    if (input.files.length > 0) {
-      // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
-      $(`#label-${count}`).text()
+  //Promise que irá enviar os arquivos de Simple-input
+  let promise2 = await Promise.all(
+    $("input[name=file-single]").map(function (i, input) {
+      if (input.files.length > 0) {
+        // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+        $(`#label-${count}`).text()
         ? (doc_name = $(`#label-${count}`).text())
         : (doc_name = "");
+          // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+            return Tobase64Single(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
+      }
+    })
+    
+  )
 
-      // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
-      setTimeout(() => {
-        Tobase64Single(
-          input.files[0],
-          input.files[0].name,
-          ticketid,
-          input.id,
-          obj.ramo,
-          doc_name
-        );
-      }, 1000);
-    }
-  });
+  if (promise2) {
+    $("#process-document-modal").modal("hide");
+    $("#concluido-document-modal").modal("show");
+  }
 }
 
 function documentosPrev() {
