@@ -794,6 +794,27 @@ const Tobase64Multiple = (files, ticketid, notesid) => {
     
 }
 
+const toUnionImage = (ramo, ticketid) => {
+  return new Promise((resolve, reject) => {
+    const datatype = {
+      ramo: ramo,
+      ticketid,
+    };
+
+    // APi para listar os Documentos Converter e Anexar no Sinistro
+    axios
+    .post(`${url}/api/unionimage`, datatype)
+    .then((response) => {
+     resolve(response);     
+    })
+    .catch((error) => {
+      resolve(error);
+      $("#erro-document-modal").modal("show");
+    });
+
+  });
+}
+
 //Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Single
 const Tobase64Single = (files, file_name, ticketid, notesid, ramo, doc_name) => {
   return new Promise((resolve, reject) => {
@@ -853,24 +874,15 @@ async function enviarDoc() {
       });
 
       if (validity) {
-        const datatype = {
-          ramo: obj.ramo,
-          ticketid,
-        };
+        let promiseUnion = await Promise.all(
+          toUnionImage(ramo, ticketid)
+        )
 
-        // APi para listar os Documentos Converter e Anexar no Sinistro
-        axios
-          .post(`${url}/api/unionimage`, datatype)
-          .then((response) => {
-            //Exibe a tela do concluido no envio de documento
-            setTimeout(() => {
-              $("#process-document-modal").modal("hide");
-              $("#concluido-document-modal").modal("show");
-            }, 2000);
-          })
-          .catch((error) => {
-            $("#erro-document-modal").modal("show");
-          });
+        if (promiseUnion) {
+          $("#process-document-modal").modal("hide");
+          $("#concluido-document-modal").modal("show");
+        }
+        
       }
 
   }
