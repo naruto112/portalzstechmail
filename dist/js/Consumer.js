@@ -889,16 +889,13 @@ async function enviarDoc() {
   //Promise que irá enviar os arquivos de Simple-input
   let promise2 = await Promise.all(
     $("input[name=file-single]").map(function (i, input) {
-      if (input.files.length > 0) {
+      
         // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
-        $(`#label-${count}`).text()
-        ? (doc_name = $(`#label-${count}`).text())
-        : (doc_name = "");
+        $(`#label-${count}`).text() ? (doc_name = $(`#label-${count}`).text()) : (doc_name = "");
           // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
-            return Tobase64Single(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
-      }
+          count++;
+          return Tobase64Single(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
     })
-    
   )
 
   if (promise2) {
