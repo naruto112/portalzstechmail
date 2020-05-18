@@ -797,7 +797,7 @@ const Tobase64Multiple = (files, ticketid, notesid) => {
 const toUnionImage = (ramo, ticketid) => {
   return new Promise((resolve, reject) => {
     const datatype = {
-      ramo: ramo,
+      ramo,
       ticketid,
     };
 
@@ -851,6 +851,7 @@ async function enviarDoc() {
 
   var identificador = localStorage.getItem("identificador");
   var obj = JSON.parse(identificador);
+  var ramo = obj.ramo
 
   $("#process-document-modal").modal("show");
 
@@ -874,9 +875,7 @@ async function enviarDoc() {
       });
 
       if (validity) {
-        let promiseUnion = await Promise.all(
-          toUnionImage(ramo, ticketid)
-        )
+        let promiseUnion = await toUnionImage(ramo, ticketid);
 
         if (promiseUnion) {
           $("#process-document-modal").modal("hide");
