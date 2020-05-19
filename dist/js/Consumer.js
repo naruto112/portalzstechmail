@@ -904,8 +904,31 @@ async function enviarDoc() {
   )
 
   if (promise2) {
-    $("#process-document-modal").modal("hide");
-    $("#concluido-document-modal").modal("show");
+
+    //Cria a linha do tempo de recepção de documento para o Ramo 89
+    if ( obj.ramo == '89') {
+
+      const datatimeline = {
+        ticketid
+      }
+  
+      axios
+        .post(`${url}/api/doc-recep-timeline`, datatimeline)
+        .then((response) => {
+          if (response.data) {
+            $("#process-document-modal").modal("hide");
+            $("#concluido-document-modal").modal("show");
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    } else {
+
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+
+    }
   }
 }
 
