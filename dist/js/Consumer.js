@@ -921,7 +921,7 @@ async function enviarDoc() {
           }
         })
         .catch((error) => {
-          console.log(error)
+          $("#erro-document-modal").modal("show");
         });
     } else {
 
