@@ -1,0 +1,1449 @@
+[33mcommit 918d6c3e011a08f30481df71fd0ad9fd5eea83f5[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/portalzs-novos-ramos[m[33m, [m[1;31morigin/feature/portalzs-novos-ramos[m[33m, [m[1;32mstatus[m[33m)[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 19 21:00:43 2020 +0000
+
+    atualização de parametro
+
+M	dist/js/Consumer.js
+
+[33mcommit 8e9579177e2292bc40ab414c449ee4b4f245ce48[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 19 18:47:22 2020 +0000
+
+    Linha do tempo duplicidade corrigida
+
+M	dist/js/Consumer.js
+
+[33mcommit 3b1850868a88a98f57530e3952fca99d34960043[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 19 17:46:21 2020 +0000
+
+    Correção do input.lenght>0
+
+M	dist/js/Consumer.js
+
+[33mcommit 06d77fcf62b66eed3aac06eff32cd2407e014751[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 19 17:36:21 2020 +0000
+
+    Correção do input.lenght>0
+
+M	dist/js/Consumer.js
+
+[33mcommit adfd05a53cdc4f06a68ff05815b603b5741ab1a8[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 22:42:12 2020 +0000
+
+    Correção Botão Prev com o Deletar
+
+M	dist/js/Consumer.js
+
+[33mcommit 464c8319f6965bd30e4c500b96ecb4e64987f882[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 22:33:12 2020 +0000
+
+    Correção Botão Prev
+
+M	dist/js/Consumer.js
+
+[33mcommit 907e0e90262201a1f5848b2d4ed92efe50ff9b73[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 22:16:44 2020 +0000
+
+    Subida de correção Prev
+
+M	dist/js/Consumer.js
+
+[33mcommit a5894294ef020a030682d64571013ed050d5ce8a[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 22:08:16 2020 +0000
+
+    Subida de correção Prev
+
+M	dist/js/Consumer.js
+
+[33mcommit 3300e7724f9a64900f10538221950279334d5f4e[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 20:26:11 2020 +0000
+
+    Ajuste de Promise
+
+M	dist/js/Consumer.js
+
+[33mcommit 88aad4a1916268c0a845d919418ea27d9aa614e6[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 19:31:15 2020 +0000
+
+    ajuste de promise ao enviar single file
+
+M	dist/js/Consumer.js
+
+[33mcommit 335c6fd07a6053e26d8a1c15981d49c020f862b9[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 19:20:26 2020 +0000
+
+    ajuste na tela de bloqueio ao enviar arquivo
+
+M	dist/js/Consumer.js
+M	portal.html
+
+[33mcommit b5fc5350cde2caa9e8ddd892a742bb8c46c823f0[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 19:10:39 2020 +0000
+
+    ajuste
+
+M	dist/js/Consumer.js
+
+[33mcommit 84fb0136e1276c424504ba8f755a973a30aa0501[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Mon May 18 17:48:14 2020 +0000
+
+    Atualização de Promise
+
+M	dist/js/Consumer.js
+
+[33mcommit a3dcaa2d251f6461c488b821c95debdc654fdb80[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 21:35:11 2020 +0000
+
+    Correção: Ajuste de Timeout Fast3G
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+
+[33mcommit 4bdee5f1f4281dec61bcf948a492c864aef75b22[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 20:23:37 2020 +0000
+
+    Correção: Tutorial e Button Enviar
+
+M	dist/css/AdminLTE.min.css
+M	paginas/Detail.html
+
+[33mcommit 58361413453baed1822cfb52a0f2fa14282117a9[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 19:22:55 2020 +0000
+
+    Correção: Centralizar login Mobile
+
+M	dist/css/AdminLTE.min.css
+
+[33mcommit a2ac27e88f3ff33c7d5747565ea8a48edebfe263[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 18:45:34 2020 +0000
+
+    Ajuste nas promise
+
+M	dist/js/Consumer.js
+
+[33mcommit 15ad153e1db92fce0e107564010ba2ab84254475[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 18:06:59 2020 +0000
+
+    Atualização da variavel notesid
+
+M	dist/js/Consumer.js
+
+[33mcommit e3e653bc14c8cd7b3d69c14e9d051fabececa290[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 17:23:56 2020 +0000
+
+    Atualização Mobile Responsive
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+M	paginas/Detail.html
+M	portal.html
+
+[33mcommit eb823b51eb3c19bf47b4e0fd4867fb8967bb5701[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 15:25:29 2020 +0000
+
+    Correção: Tooltip e Resposive Mobile
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+M	paginas/Detail.html
+
+[33mcommit 3b8f8c2837c964138a9a0aa82c0541006481166b[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 14:31:58 2020 +0000
+
+    Correção: targetFileDeleted
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+
+[33mcommit 00dfd71c6374e2c560304923d1b11bef516fab04[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 14:12:51 2020 +0000
+
+    Correção: getFileMultiple
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+
+[33mcommit e451d0e320a9e55655f15267b8f7dfdf80e7139e[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 15 13:11:53 2020 +0000
+
+    Reajuste de limpar dados do Array
+
+M	dist/js/Consumer.js
+
+[33mcommit c3dcacc680e13fb678fcadb06a3177b94f7affb1[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Thu May 14 21:32:41 2020 +0000
+
+    Tutorial novo
+
+R100	dist/img/tutorial/_Screenshot_1.png	dist/img/tutorial/Screenshot_1.png
+R100	dist/img/tutorial/_Screenshot_mobile_1.png	dist/img/tutorial/Screenshot_mobile_1.png
+
+[33mcommit c66cea80eb2c4f345ca82f382d80597c5899a34b[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Thu May 14 21:32:18 2020 +0000
+
+    Tutorial novo
+
+R100	dist/img/tutorial/Screenshot_1.png	dist/img/tutorial/_Screenshot_1.png
+R100	dist/img/tutorial/Screenshot_mobile_1.png	dist/img/tutorial/_Screenshot_mobile_1.png
+
+[33mcommit 9642291410a9af2185356dd9117b08d36ada609c[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Thu May 14 21:21:59 2020 +0000
+
+    Atualização Tutorial
+
+M	dist/img/tutorial/Screenshot_1.png
+M	dist/img/tutorial/Screenshot_mobile_1.png
+
+[33mcommit ed73192e7d4d9015b06c1d600eb7ac5b77f21e28[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Thu May 14 20:59:22 2020 +0000
+
+    Atualização de hide button enviar
+
+M	dist/js/Consumer.js
+
+[33mcommit fb6b4593a89b51feef86796bbd7ff85b366fb6a0[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Thu May 14 18:28:41 2020 +0000
+
+    Novos formato de upload
+
+M	dist/css/AdminLTE.css
+M	dist/css/AdminLTE.min.css
+A	dist/img/more.png
+A	dist/img/open-iconic/account-login.svg
+A	dist/img/open-iconic/account-logout.svg
+A	dist/img/open-iconic/action-redo.svg
+A	dist/img/open-iconic/action-undo.svg
+A	dist/img/open-iconic/align-center.svg
+A	dist/img/open-iconic/align-left.svg
+A	dist/img/open-iconic/align-right.svg
+A	dist/img/open-iconic/aperture.svg
+A	dist/img/open-iconic/arrow-bottom.svg
+A	dist/img/open-iconic/arrow-circle-bottom.svg
+A	dist/img/open-iconic/arrow-circle-left.svg
+A	dist/img/open-iconic/arrow-circle-right.svg
+A	dist/img/open-iconic/arrow-circle-top.svg
+A	dist/img/open-iconic/arrow-left.svg
+A	dist/img/open-iconic/arrow-right.svg
+A	dist/img/open-iconic/arrow-thick-bottom.svg
+A	dist/img/open-iconic/arrow-thick-left.svg
+A	dist/img/open-iconic/arrow-thick-right.svg
+A	dist/img/open-iconic/arrow-thick-top.svg
+A	dist/img/open-iconic/arrow-top.svg
+A	dist/img/open-iconic/audio-spectrum.svg
+A	dist/img/open-iconic/audio.svg
+A	dist/img/open-iconic/badge.svg
+A	dist/img/open-iconic/ban.svg
+A	dist/img/open-iconic/bar-chart.svg
+A	dist/img/open-iconic/basket.svg
+A	dist/img/open-iconic/battery-empty.svg
+A	dist/img/open-iconic/battery-full.svg
+A	dist/img/open-iconic/beaker.svg
+A	dist/img/open-iconic/bell.svg
+A	dist/img/open-iconic/bluetooth.svg
+A	dist/img/open-iconic/bold.svg
+A	dist/img/open-iconic/bolt.svg
+A	dist/img/open-iconic/book.svg
+A	dist/img/open-iconic/bookmark.svg
+A	dist/img/open-iconic/box.svg
+A	dist/img/open-iconic/briefcase.svg
+A	dist/img/open-iconic/british-pound.svg
+A	dist/img/open-iconic/browser.svg
+A	dist/img/open-iconic/brush.svg
+A	dist/img/open-iconic/bug.svg
+A	dist/img/open-iconic/bullhorn.svg
+A	dist/img/open-iconic/calculator.svg
+A	dist/img/open-iconic/calendar.svg
+A	dist/img/open-iconic/camera-slr.svg
+A	dist/img/open-iconic/caret-bottom.svg
+A	dist/img/open-iconic/caret-left.svg
+A	dist/img/open-iconic/caret-right.svg
+A	dist/img/open-iconic/caret-top.svg
+A	dist/img/open-iconic/cart.svg
+A	dist/img/open-iconic/chat.svg
+A	dist/img/open-iconic/check.svg
+A	dist/img/open-iconic/chevron-bottom.svg
+A	dist/img/open-iconic/chevron-left.svg
+A	dist/img/open-iconic/chevron-right.svg
+A	dist/img/open-iconic/chevron-top.svg
+A	dist/img/open-iconic/circle-check.svg
+A	dist/img/open-iconic/circle-x.svg
+A	dist/img/open-iconic/clipboard.svg
+A	dist/img/open-iconic/clock.svg
+A	dist/img/open-iconic/cloud-download.svg
+A	dist/img/open-iconic/cloud-upload.svg
+A	dist/img/open-iconic/cloud.svg
+A	dist/img/open-iconic/cloudy.svg
+A	dist/img/open-iconic/code.svg
+A	dist/img/open-iconic/cog.svg
+A	dist/img/open-iconic/collapse-down.svg
+A	dist/img/open-iconic/collapse-left.svg
+A	dist/img/open-iconic/collapse-right.svg
+A	dist/img/open-iconic/collapse-up.svg
+A	dist/img/open-iconic/command.svg
+A	dist/img/open-iconic/comment-square.svg
+A	dist/img/open-iconic/compass.svg
+A	dist/img/open-iconic/contrast.svg
+A	dist/img/open-iconic/copywriting.svg
+A	dist/img/open-iconic/credit-card.svg
+A	dist/img/open-iconic/crop.svg
+A	dist/img/open-iconic/dashboard.svg
+A	dist/img/open-iconic/data-transfer-download.svg
+A	dist/img/open-iconic/data-transfer-upload.svg
+A	dist/img/open-iconic/delete.svg
+A	dist/img/open-iconic/dial.svg
+A	dist/img/open-iconic/document.svg
+A	dist/img/open-iconic/dollar.svg
+A	dist/img/open-iconic/double-quote-sans-left.svg
+A	dist/img/open-iconic/double-quote-sans-right.svg
+A	dist/img/open-iconic/double-quote-serif-left.svg
+A	dist/img/open-iconic/double-quote-serif-right.svg
+A	dist/img/open-iconic/droplet.svg
+A	dist/img/open-iconic/eject.svg
+A	dist/img/open-iconic/elevator.svg
+A	dist/img/open-iconic/ellipses.svg
+A	dist/img/open-iconic/envelope-closed.svg
+A	dist/img/open-iconic/envelope-open.svg
+A	dist/img/open-iconic/euro.svg
+A	dist/img/open-iconic/excerpt.svg
+A	dist/img/open-iconic/expand-down.svg
+A	dist/img/open-iconic/expand-left.svg
+A	dist/img/open-iconic/expand-right.svg
+A	dist/img/open-iconic/expand-up.svg
+A	dist/img/open-iconic/external-link.svg
+A	dist/img/open-iconic/eye.svg
+A	dist/img/open-iconic/eyedropper.svg
+A	dist/img/open-iconic/file.svg
+A	dist/img/open-iconic/fire.svg
+A	dist/img/open-iconic/flag.svg
+A	dist/img/open-iconic/flash.svg
+A	dist/img/open-iconic/folder.svg
+A	dist/img/open-iconic/fork.svg
+A	dist/img/open-iconic/fullscreen-enter.svg
+A	dist/img/open-iconic/fullscreen-exit.svg
+A	dist/img/open-iconic/globe.svg
+A	dist/img/open-iconic/graph.svg
+A	dist/img/open-iconic/grid-four-up.svg
+A	dist/img/open-iconic/grid-three-up.svg
+A	dist/img/open-iconic/grid-two-up.svg
+A	dist/img/open-iconic/hard-drive.svg
+A	dist/img/open-iconic/header.svg
+A	dist/img/open-iconic/headphones.svg
+A	dist/img/open-iconic/heart.svg
+A	dist/img/open-iconic/home.svg
+A	dist/img/open-iconic/image.svg
+A	dist/img/open-iconic/inbox.svg
+A	dist/img/open-iconic/infinity.svg
+A	dist/img/open-iconic/info.svg
+A	dist/img/open-iconic/italic.svg
+A	dist/img/open-iconic/justify-center.svg
+A	dist/img/open-iconic/justify-left.svg
+A	dist/img/open-iconic/justify-right.svg
+A	dist/img/open-iconic/key.svg
+A	dist/img/open-iconic/laptop.svg
+A	dist/img/open-iconic/layers.svg
+A	dist/img/open-iconic/lightbulb.svg
+A	dist/img/open-iconic/link-broken.svg
+A	dist/img/open-iconic/link-intact.svg
+A	dist/img/open-iconic/list-rich.svg
+A	dist/img/open-iconic/list.svg
+A	dist/img/open-iconic/location.svg
+A	dist/img/open-iconic/lock-locked.svg
+A	dist/img/open-iconic/lock-unlocked.svg
+A	dist/img/open-iconic/loop-circular.svg
+A	dist/img/open-iconic/loop-square.svg
+A	dist/img/open-iconic/loop.svg
+A	dist/img/open-iconic/magnifying-glass.svg
+A	dist/img/open-iconic/map-marker.svg
+A	dist/img/open-iconic/map.svg
+A	dist/img/open-iconic/media-pause.svg
+A	dist/img/open-iconic/media-play.svg
+A	dist/img/open-iconic/media-record.svg
+A	dist/img/open-iconic/media-skip-backward.svg
+A	dist/img/open-iconic/media-skip-forward.svg
+A	dist/img/open-iconic/media-step-backward.svg
+A	dist/img/open-iconic/media-step-forward.svg
+A	dist/img/open-iconic/media-stop.svg
+A	dist/img/open-iconic/medical-cross.svg
+A	dist/img/open-iconic/menu.svg
+A	dist/img/open-iconic/microphone.svg
+A	dist/img/open-iconic/minus.svg
+A	dist/img/open-iconic/monitor.svg
+A	dist/img/open-iconic/moon.svg
+A	dist/img/open-iconic/move.svg
+A	dist/img/open-iconic/musical-note.svg
+A	dist/img/open-iconic/paperclip.svg
+A	dist/img/open-iconic/pencil.svg
+A	dist/img/open-iconic/people.svg
+A	dist/img/open-iconic/person.svg
+A	dist/img/open-iconic/phone.svg
+A	dist/img/open-iconic/pie-chart.svg
+A	dist/img/open-iconic/pin.svg
+A	dist/img/open-iconic/play-circle.svg
+A	dist/img/open-iconic/plus.svg
+A	dist/img/open-iconic/power-standby.svg
+A	dist/img/open-iconic/print.svg
+A	dist/img/open-iconic/project.svg
+A	dist/img/open-iconic/pulse.svg
+A	dist/img/open-iconic/puzzle-piece.svg
+A	dist/img/open-iconic/question-mark.svg
+A	dist/img/open-iconic/rain.svg
+A	dist/img/open-iconic/random.svg
+A	dist/img/open-iconic/reload.svg
+A	dist/img/open-iconic/resize-both.svg
+A	dist/img/open-iconic/resize-height.svg
+A	dist/img/open-iconic/resize-width.svg
+A	dist/img/open-iconic/rss-alt.svg
+A	dist/img/open-iconic/rss.svg
+A	dist/img/open-iconic/script.svg
+A	dist/img/open-iconic/share-boxed.svg
+A	dist/img/open-iconic/share.svg
+A	dist/img/open-iconic/shield.svg
+A	dist/img/open-iconic/signal.svg
+A	dist/img/open-iconic/signpost.svg
+A	dist/img/open-iconic/sort-ascending.svg
+A	dist/img/open-iconic/sort-descending.svg
+A	dist/img/open-iconic/spreadsheet.svg
+A	dist/img/open-iconic/star.svg
+A	dist/img/open-iconic/sun.svg
+A	dist/img/open-iconic/tablet.svg
+A	dist/img/open-iconic/tag.svg
+A	dist/img/open-iconic/tags.svg
+A	dist/img/open-iconic/target.svg
+A	dist/img/open-iconic/task.svg
+A	dist/img/open-iconic/terminal.svg
+A	dist/img/open-iconic/text.svg
+A	dist/img/open-iconic/thumb-down.svg
+A	dist/img/open-iconic/thumb-up.svg
+A	dist/img/open-iconic/timer.svg
+A	dist/img/open-iconic/transfer.svg
+A	dist/img/open-iconic/trash.svg
+A	dist/img/open-iconic/underline.svg
+A	dist/img/open-iconic/vertical-align-bottom.svg
+A	dist/img/open-iconic/vertical-align-center.svg
+A	dist/img/open-iconic/vertical-align-top.svg
+A	dist/img/open-iconic/video.svg
+A	dist/img/open-iconic/volume-high.svg
+A	dist/img/open-iconic/volume-low.svg
+A	dist/img/open-iconic/volume-off.svg
+A	dist/img/open-iconic/warning.svg
+A	dist/img/open-iconic/wifi.svg
+A	dist/img/open-iconic/wrench.svg
+A	dist/img/open-iconic/x.svg
+A	dist/img/open-iconic/yen.svg
+A	dist/img/open-iconic/zoom-in.svg
+A	dist/img/open-iconic/zoom-out.svg
+A	dist/img/upload_loading.gif
+M	dist/js/Consumer.js
+M	portal.html
+
+[33mcommit 1360461cc5c952acf4d012d9c3b00d993968e3c6[m[33m ([m[1;31morigin/portalzstechmail[m[33m, [m[1;32mportalzstechmail[m[33m)[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 20:30:06 2020 +0000
+
+    Timeline not data is hide timline
+
+M	dist/js/Consumer.js
+M	paginas/confirmaDados.html
+
+[33mcommit ff6cabe8e6ebbfef1b53eded660d5a60851082e9[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 18:42:01 2020 +0000
+
+    Timeline not data is hide timline
+
+M	dist/js/Consumer.js
+M	paginas/Detail.html
+
+[33mcommit b52c9e066fa63c1fa9e4352e7437619260dcbdca[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 18:17:44 2020 +0000
+
+    Button props canceled
+
+M	dist/js/Consumer.js
+
+[33mcommit bd1908f3e1d8dd9cd4c62df75ecedaa961cf636d[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 18:15:19 2020 +0000
+
+    Button props canceled
+
+M	dist/js/Consumer.js
+
+[33mcommit 9362a461a8eafc3503bfc0c27e06986b49a059db[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 18:07:23 2020 +0000
+
+    Button props enviar
+
+M	dist/js/Consumer.js
+
+[33mcommit df7871a935bcafa01ae8fc6de020c0036134236c[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Fri May 8 14:40:53 2020 +0000
+
+    Atualizado Homolog
+
+M	dist/js/Consumer.js
+M	paginas/Detail.html
+
+[33mcommit a6f18b6139f32798fe5b81173e1af81184ff2e80[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 15:48:41 2020 +0000
+
+    Ajuste na CSS margin Left
+
+M	dist/js/Consumer.js
+
+[33mcommit 9c5827f1c45d97436117debf386313a4f8b5f841[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 15:44:22 2020 +0000
+
+    Ajuste na CSS margin Left
+
+M	dist/js/Consumer.js
+
+[33mcommit 301954ad8e74d510b0e703d892afe78bd2671ade[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 15:40:22 2020 +0000
+
+    Ajuste na CSS margin Left
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+M	paginas/confirmaDados.html
+
+[33mcommit da6a36254dcd7498be9abf9a3ff814a423fb64b2[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 15:13:10 2020 +0000
+
+    Ajuste na URL JSON
+
+M	login-consultando.html
+M	login.html
+
+[33mcommit aac5954c58953bffb03a1975d01863b1ecf9a3eb[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 14:45:41 2020 +0000
+
+    Ajuste na URL JSON
+
+M	.gitignore
+M	dist/js/Consumer.js
+M	index.html
+M	paginas/confirmaDados.html
+M	portal.html
+
+[33mcommit 122d1b3c3727d5f6c95d3dc3926d134e4ebf5a7c[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Wed May 6 13:59:59 2020 +0000
+
+    Ajuste no CSS
+
+M	dist/css/AdminLTE.min.css
+
+[33mcommit 7d768b52c35f5d27c96d3dfdea09ac8087db3a18[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 5 23:04:34 2020 +0000
+
+    Timer Circle
+
+M	dist/css/AdminLTE.min.css
+M	dist/js/Consumer.js
+M	paginas/Detail.html
+
+[33mcommit 54c129e3da8578d772d3f9be7811f3e5daf39bde[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 5 19:13:01 2020 +0000
+
+    Atualização Portal
+
+M	dist/js/Consumer.js
+
+[33mcommit 8cbfb4eb3ef87103ee730d3dfe7e2fa57a94b52f[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 5 17:52:25 2020 +0000
+
+    Atualização de Portal
+
+A	"dafcsedfieswyifduowehcfld\033[19~"
+A	exit
+
+[33mcommit b5f771da7d9ed1b86a57dec5103d61d3cc60fff3[m
+Author: Renato Souza <renatorock3@hotmail.com>
+Date:   Tue May 5 17:32:34 2020 +0000
+
+    Atualização de Portal
+
+D	.github/ISSUE_TEMPLATE.md
+M	.gitignore
+M	.htaccess
+M	.npmignore
+M	Gruntfile.js
+M	HEAD
+M	LICENSE
+M	README.md
+M	bower.json
+M	bower_components/Flot/.bower.json
+M	bower_components/Flot/.gitignore
+M	bower_components/Flot/.travis.yml
+M	bower_components/Flot/API.md
+M	bower_components/Flot/CONTRIBUTING.md
+M	bower_components/Flot/FAQ.md
+M	bower_components/Flot/LICENSE.txt
+M	bower_components/Flot/Makefile
+M	bower_components/Flot/NEWS.md
+M	bower_components/Flot/PLUGINS.md
+M	bower_components/Flot/README.md
+M	bower_components/Flot/component.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth-1.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth-2.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth-3.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth-4.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth-5.json
+M	bower_components/Flot/examples/ajax/data-eu-gdp-growth.json
+M	bower_components/Flot/examples/ajax/data-japan-gdp-growth.json
+M	bower_components/Flot/examples/ajax/data-usa-gdp-growth.json
+M	bower_components/Flot/examples/ajax/index.html
+M	bower_components/Flot/examples/annotating/index.html
+M	bower_components/Flot/examples/axes-interacting/index.html
+M	bower_components/Flot/examples/axes-multiple/index.html
+M	bower_components/Flot/examples/axes-time-zones/date.js
+M	bower_components/Flot/examples/axes-time-zones/index.html
+M	bower_components/Flot/examples/axes-time-zones/tz/africa
+M	bower_components/Flot/examples/axes-time-zones/tz/antarctica
+M	bower_components/Flot/examples/axes-time-zones/tz/asia
+M	bower_components/Flot/examples/axes-time-zones/tz/australasia
+M	bower_components/Flot/examples/axes-time-zones/tz/backward
+M	bower_components/Flot/examples/axes-time-zones/tz/etcetera
+M	bower_components/Flot/examples/axes-time-zones/tz/europe
+M	bower_components/Flot/examples/axes-time-zones/tz/factory
+M	bower_components/Flot/examples/axes-time-zones/tz/iso3166.tab
+M	bower_components/Flot/examples/axes-time-zones/tz/leapseconds
+M	bower_components/Flot/examples/axes-time-zones/tz/northamerica
+M	bower_components/Flot/examples/axes-time-zones/tz/pacificnew
+M	bower_components/Flot/examples/axes-time-zones/tz/solar87
+M	bower_components/Flot/examples/axes-time-zones/tz/solar88
+M	bower_components/Flot/examples/axes-time-zones/tz/solar89
+M	bower_components/Flot/examples/axes-time-zones/tz/southamerica
+M	bower_components/Flot/examples/axes-time-zones/tz/systemv
+M	bower_components/Flot/examples/axes-time-zones/tz/yearistype.sh
+M	bower_components/Flot/examples/axes-time-zones/tz/zone.tab
+M	bower_components/Flot/examples/axes-time/index.html
+M	bower_components/Flot/examples/background.png
+M	bower_components/Flot/examples/basic-options/index.html
+M	bower_components/Flot/examples/basic-usage/index.html
+M	bower_components/Flot/examples/canvas/index.html
+M	bower_components/Flot/examples/categories/index.html
+M	bower_components/Flot/examples/examples.css
+M	bower_components/Flot/examples/image/hs-2004-27-a-large-web.jpg
+M	bower_components/Flot/examples/image/index.html
+M	bower_components/Flot/examples/index.html
+M	bower_components/Flot/examples/interacting/index.html
+M	bower_components/Flot/examples/navigate/arrow-down.gif
+M	bower_components/Flot/examples/navigate/arrow-left.gif
+M	bower_components/Flot/examples/navigate/arrow-right.gif
+M	bower_components/Flot/examples/navigate/arrow-up.gif
+M	bower_components/Flot/examples/navigate/index.html
+M	bower_components/Flot/examples/percentiles/index.html
+M	bower_components/Flot/examples/realtime/index.html
+M	bower_components/Flot/examples/resize/index.html
+M	bower_components/Flot/examples/selection/index.html
+M	bower_components/Flot/examples/series-errorbars/index.html
+M	bower_components/Flot/examples/series-pie/index.html
+M	bower_components/Flot/examples/series-toggle/index.html
+M	bower_components/Flot/examples/series-types/index.html
+M	bower_components/Flot/examples/shared/jquery-ui/jquery-ui.min.css
+M	bower_components/Flot/examples/stacking/index.html
+M	bower_components/Flot/examples/symbols/index.html
+M	bower_components/Flot/examples/threshold/index.html
+M	bower_components/Flot/examples/tracking/index.html
+M	bower_components/Flot/examples/visitors/index.html
+M	bower_components/Flot/examples/zooming/index.html
+M	bower_components/Flot/excanvas.js
+M	bower_components/Flot/excanvas.min.js
+M	bower_components/Flot/flot.jquery.json
+M	bower_components/Flot/jquery.colorhelpers.js
+M	bower_components/Flot/jquery.flot.canvas.js
+M	bower_components/Flot/jquery.flot.categories.js
+M	bower_components/Flot/jquery.flot.crosshair.js
+M	bower_components/Flot/jquery.flot.errorbars.js
+M	bower_components/Flot/jquery.flot.fillbetween.js
+M	bower_components/Flot/jquery.flot.image.js
+M	bower_components/Flot/jquery.flot.js
+M	bower_components/Flot/jquery.flot.navigate.js
+M	bower_components/Flot/jquery.flot.pie.js
+M	bower_components/Flot/jquery.flot.resize.js
+M	bower_components/Flot/jquery.flot.selection.js
+M	bower_components/Flot/jquery.flot.stack.js
+M	bower_components/Flot/jquery.flot.symbol.js
+M	bower_components/Flot/jquery.flot.threshold.js
+M	bower_components/Flot/jquery.flot.time.js
+M	bower_components/Flot/jquery.js
+M	bower_components/Flot/package.json
+M	bower_components/Ionicons/.bower.json
+M	bower_components/Ionicons/LICENSE
+M	bower_components/Ionicons/bower.json
+M	bower_components/Ionicons/cheatsheet.html
+M	bower_components/Ionicons/component.json
+M	bower_components/Ionicons/composer.json
+M	bower_components/Ionicons/css/ionicons.css
+M	bower_components/Ionicons/css/ionicons.min.css
+M	bower_components/Ionicons/fonts/ionicons.eot
+M	bower_components/Ionicons/fonts/ionicons.svg
+M	bower_components/Ionicons/fonts/ionicons.ttf
+M	bower_components/Ionicons/fonts/ionicons.woff
+M	bower_components/Ionicons/less/_ionicons-font.less
+M	bower_components/Ionicons/less/_ionicons-icons.less
+M	bower_components/Ionicons/less/_ionicons-variables.less
+M	bower_components/Ionicons/less/ionicons.less
+M	bower_components/Ionicons/png/512/alert-circled.png
+M	bower_components/Ionicons/png/512/alert.png
+M	bower_components/Ionicons/png/512/android-add-contact.png
+M	bower_components/Ionicons/png/512/android-add.png
+M	bower_components/Ionicons/png/512/android-alarm.png
+M	bower_components/Ionicons/png/512/android-archive.png
+M	bower_components/Ionicons/png/512/android-arrow-back.png
+M	bower_components/Ionicons/png/512/android-arrow-down-left.png
+M	bower_components/Ionicons/png/512/android-arrow-down-right.png
+M	bower_components/Ionicons/png/512/android-arrow-forward.png
+M	bower_components/Ionicons/png/512/android-arrow-up-left.png
+M	bower_components/Ionicons/png/512/android-arrow-up-right.png
+M	bower_components/Ionicons/png/512/android-battery.png
+M	bower_components/Ionicons/png/512/android-book.png
+M	bower_components/Ionicons/png/512/android-calendar.png
+M	bower_components/Ionicons/png/512/android-call.png
+M	bower_components/Ionicons/png/512/android-camera.png
+M	bower_components/Ionicons/png/512/android-chat.png
+M	bower_components/Ionicons/png/512/android-checkmark.png
+M	bower_components/Ionicons/png/512/android-clock.png
+M	bower_components/Ionicons/png/512/android-close.png
+M	bower_components/Ionicons/png/512/android-contact.png
+M	bower_components/Ionicons/png/512/android-contacts.png
+M	bower_components/Ionicons/png/512/android-data.png
+M	bower_components/Ionicons/png/512/android-developer.png
+M	bower_components/Ionicons/png/512/android-display.png
+M	bower_components/Ionicons/png/512/android-download.png
+M	bower_components/Ionicons/png/512/android-drawer.png
+M	bower_components/Ionicons/png/512/android-dropdown.png
+M	bower_components/Ionicons/png/512/android-earth.png
+M	bower_components/Ionicons/png/512/android-folder.png
+M	bower_components/Ionicons/png/512/android-forums.png
+M	bower_components/Ionicons/png/512/android-friends.png
+M	bower_components/Ionicons/png/512/android-hand.png
+M	bower_components/Ionicons/png/512/android-image.png
+M	bower_components/Ionicons/png/512/android-inbox.png
+M	bower_components/Ionicons/png/512/android-information.png
+M	bower_components/Ionicons/png/512/android-keypad.png
+M	bower_components/Ionicons/png/512/android-lightbulb.png
+M	bower_components/Ionicons/png/512/android-locate.png
+M	bower_components/Ionicons/png/512/android-location.png
+M	bower_components/Ionicons/png/512/android-mail.png
+M	bower_components/Ionicons/png/512/android-microphone.png
+M	bower_components/Ionicons/png/512/android-mixer.png
+M	bower_components/Ionicons/png/512/android-more.png
+M	bower_components/Ionicons/png/512/android-note.png
+M	bower_components/Ionicons/png/512/android-playstore.png
+M	bower_components/Ionicons/png/512/android-printer.png
+M	bower_components/Ionicons/png/512/android-promotion.png
+M	bower_components/Ionicons/png/512/android-reminder.png
+M	bower_components/Ionicons/png/512/android-remove.png
+M	bower_components/Ionicons/png/512/android-search.png
+M	bower_components/Ionicons/png/512/android-send.png
+M	bower_components/Ionicons/png/512/android-settings.png
+M	bower_components/Ionicons/png/512/android-share.png
+M	bower_components/Ionicons/png/512/android-social-user.png
+M	bower_components/Ionicons/png/512/android-social.png
+M	bower_components/Ionicons/png/512/android-sort.png
+M	bower_components/Ionicons/png/512/android-stair-drawer.png
+M	bower_components/Ionicons/png/512/android-star.png
+M	bower_components/Ionicons/png/512/android-stopwatch.png
+M	bower_components/Ionicons/png/512/android-storage.png
+M	bower_components/Ionicons/png/512/android-system-back.png
+M	bower_components/Ionicons/png/512/android-system-home.png
+M	bower_components/Ionicons/png/512/android-system-windows.png
+M	bower_components/Ionicons/png/512/android-timer.png
+M	bower_components/Ionicons/png/512/android-trash.png
+M	bower_components/Ionicons/png/512/android-user-menu.png
+M	bower_components/Ionicons/png/512/android-volume.png
+M	bower_components/Ionicons/png/512/android-wifi.png
+M	bower_components/Ionicons/png/512/aperture.png
+M	bower_components/Ionicons/png/512/archive.png
+M	bower_components/Ionicons/png/512/arrow-down-a.png
+M	bower_components/Ionicons/png/512/arrow-down-b.png
+M	bower_components/Ionicons/png/512/arrow-down-c.png
+M	bower_components/Ionicons/png/512/arrow-expand.png
+M	bower_components/Ionicons/png/512/arrow-graph-down-left.png
+M	bower_components/Ionicons/png/512/arrow-graph-down-right.png
+M	bower_components/Ionicons/png/512/arrow-graph-up-left.png
+M	bower_components/Ionicons/png/512/arrow-graph-up-right.png
+M	bower_components/Ionicons/png/512/arrow-left-a.png
+M	bower_components/Ionicons/png/512/arrow-left-b.png
+M	bower_components/Ionicons/png/512/arrow-left-c.png
+M	bower_components/Ionicons/png/512/arrow-move.png
+M	bower_components/Ionicons/png/512/arrow-resize.png
+M	bower_components/Ionicons/png/512/arrow-return-left.png
+M	bower_components/Ionicons/png/512/arrow-return-right.png
+M	bower_components/Ionicons/png/512/arrow-right-a.png
+M	bower_components/Ionicons/png/512/arrow-right-b.png
+M	bower_components/Ionicons/png/512/arrow-right-c.png
+M	bower_components/Ionicons/png/512/arrow-shrink.png
+M	bower_components/Ionicons/png/512/arrow-swap.png
+M	bower_components/Ionicons/png/512/arrow-up-a.png
+M	bower_components/Ionicons/png/512/arrow-up-b.png
+M	bower_components/Ionicons/png/512/arrow-up-c.png
+M	bower_components/Ionicons/png/512/asterisk.png
+M	bower_components/Ionicons/png/512/at.png
+M	bower_components/Ionicons/png/512/bag.png
+M	bower_components/Ionicons/png/512/battery-charging.png
+M	bower_components/Ionicons/png/512/battery-empty.png
+M	bower_components/Ionicons/png/512/battery-full.png
+M	bower_components/Ionicons/png/512/battery-half.png
+M	bower_components/Ionicons/png/512/battery-low.png
+M	bower_components/Ionicons/png/512/beaker.png
+M	bower_components/Ionicons/png/512/beer.png
+M	bower_components/Ionicons/png/512/bluetooth.png
+M	bower_components/Ionicons/png/512/bonfire.png
+M	bower_components/Ionicons/png/512/bookmark.png
+M	bower_components/Ionicons/png/512/briefcase.png
+M	bower_components/Ionicons/png/512/bug.png
+M	bower_components/Ionicons/png/512/calculator.png
+M	bower_components/Ionicons/png/512/calendar.png
+M	bower_components/Ionicons/png/512/camera.png
+M	bower_components/Ionicons/png/512/card.png
+M	bower_components/Ionicons/png/512/cash.png
+M	bower_components/Ionicons/png/512/chatbox-working.png
+M	bower_components/Ionicons/png/512/chatbox.png
+M	bower_components/Ionicons/png/512/chatboxes.png
+M	bower_components/Ionicons/png/512/chatbubble-working.png
+M	bower_components/Ionicons/png/512/chatbubble.png
+M	bower_components/Ionicons/png/512/chatbubbles.png
+M	bower_components/Ionicons/png/512/checkmark-circled.png
+M	bower_components/Ionicons/png/512/checkmark-round.png
+M	bower_components/Ionicons/png/512/checkmark.png
+M	bower_components/Ionicons/png/512/chevron-down.png
+M	bower_components/Ionicons/png/512/chevron-left.png
+M	bower_components/Ionicons/png/512/chevron-right.png
+M	bower_components/Ionicons/png/512/chevron-up.png
+M	bower_components/Ionicons/png/512/clipboard.png
+M	bower_components/Ionicons/png/512/clock.png
+M	bower_components/Ionicons/png/512/close-circled.png
+M	bower_components/Ionicons/png/512/close-round.png
+M	bower_components/Ionicons/png/512/close.png
+M	bower_components/Ionicons/png/512/closed-captioning.png
+M	bower_components/Ionicons/png/512/cloud.png
+M	bower_components/Ionicons/png/512/code-download.png
+M	bower_components/Ionicons/png/512/code-working.png
+M	bower_components/Ionicons/png/512/code.png
+M	bower_components/Ionicons/png/512/coffee.png
+M	bower_components/Ionicons/png/512/compass.png
+M	bower_components/Ionicons/png/512/compose.png
+M	bower_components/Ionicons/png/512/connection-bars.png
+M	bower_components/Ionicons/png/512/contrast.png
+M	bower_components/Ionicons/png/512/cube.png
+M	bower_components/Ionicons/png/512/disc.png
+M	bower_components/Ionicons/png/512/document-text.png
+M	bower_components/Ionicons/png/512/document.png
+M	bower_components/Ionicons/png/512/drag.png
+M	bower_components/Ionicons/png/512/earth.png
+M	bower_components/Ionicons/png/512/edit.png
+M	bower_components/Ionicons/png/512/egg.png
+M	bower_components/Ionicons/png/512/eject.png
+M	bower_components/Ionicons/png/512/email.png
+M	bower_components/Ionicons/png/512/eye-disabled.png
+M	bower_components/Ionicons/png/512/eye.png
+M	bower_components/Ionicons/png/512/female.png
+M	bower_components/Ionicons/png/512/filing.png
+M	bower_components/Ionicons/png/512/film-marker.png
+M	bower_components/Ionicons/png/512/fireball.png
+M	bower_components/Ionicons/png/512/flag.png
+M	bower_components/Ionicons/png/512/flame.png
+M	bower_components/Ionicons/png/512/flash-off.png
+M	bower_components/Ionicons/png/512/flash.png
+M	bower_components/Ionicons/png/512/flask.png
+M	bower_components/Ionicons/png/512/folder.png
+M	bower_components/Ionicons/png/512/fork-repo.png
+M	bower_components/Ionicons/png/512/fork.png
+M	bower_components/Ionicons/png/512/forward.png
+M	bower_components/Ionicons/png/512/funnel.png
+M	bower_components/Ionicons/png/512/game-controller-a.png
+M	bower_components/Ionicons/png/512/game-controller-b.png
+M	bower_components/Ionicons/png/512/gear-a.png
+M	bower_components/Ionicons/png/512/gear-b.png
+M	bower_components/Ionicons/png/512/grid.png
+M	bower_components/Ionicons/png/512/hammer.png
+M	bower_components/Ionicons/png/512/happy.png
+M	bower_components/Ionicons/png/512/headphone.png
+M	bower_components/Ionicons/png/512/heart-broken.png
+M	bower_components/Ionicons/png/512/heart.png
+M	bower_components/Ionicons/png/512/help-buoy.png
+M	bower_components/Ionicons/png/512/help-circled.png
+M	bower_components/Ionicons/png/512/help.png
+M	bower_components/Ionicons/png/512/home.png
+M	bower_components/Ionicons/png/512/icecream.png
+M	bower_components/Ionicons/png/512/icon-social-google-plus-outline.png
+M	bower_components/Ionicons/png/512/icon-social-google-plus.png
+M	bower_components/Ionicons/png/512/image.png
+M	bower_components/Ionicons/png/512/images.png
+M	bower_components/Ionicons/png/512/information-circled.png
+M	bower_components/Ionicons/png/512/information.png
+M	bower_components/Ionicons/png/512/ionic.png
+M	bower_components/Ionicons/png/512/ios7-alarm-outline.png
+M	bower_components/Ionicons/png/512/ios7-alarm.png
+M	bower_components/Ionicons/png/512/ios7-albums-outline.png
+M	bower_components/Ionicons/png/512/ios7-albums.png
+M	bower_components/Ionicons/png/512/ios7-americanfootball-outline.png
+M	bower_components/Ionicons/png/512/ios7-americanfootball.png
+M	bower_components/Ionicons/png/512/ios7-analytics-outline.png
+M	bower_components/Ionicons/png/512/ios7-analytics.png
+M	bower_components/Ionicons/png/512/ios7-arrow-back.png
+M	bower_components/Ionicons/png/512/ios7-arrow-down.png
+M	bower_components/Ionicons/png/512/ios7-arrow-forward.png
+M	bower_components/Ionicons/png/512/ios7-arrow-left.png
+M	bower_components/Ionicons/png/512/ios7-arrow-right.png
+M	bower_components/Ionicons/png/512/ios7-arrow-thin-down.png
+M	bower_components/Ionicons/png/512/ios7-arrow-thin-left.png
+M	bower_components/Ionicons/png/512/ios7-arrow-thin-right.png
+M	bower_components/Ionicons/png/512/ios7-arrow-thin-up.png
+M	bower_components/Ionicons/png/512/ios7-arrow-up.png
+M	bower_components/Ionicons/png/512/ios7-at-outline.png
+M	bower_components/Ionicons/png/512/ios7-at.png
+M	bower_components/Ionicons/png/512/ios7-barcode-outline.png
+M	bower_components/Ionicons/png/512/ios7-barcode.png
+M	bower_components/Ionicons/png/512/ios7-baseball-outline.png
+M	bower_components/Ionicons/png/512/ios7-baseball.png
+M	bower_components/Ionicons/png/512/ios7-basketball-outline.png
+M	bower_components/Ionicons/png/512/ios7-basketball.png
+M	bower_components/Ionicons/png/512/ios7-bell-outline.png
+M	bower_components/Ionicons/png/512/ios7-bell.png
+M	bower_components/Ionicons/png/512/ios7-bolt-outline.png
+M	bower_components/Ionicons/png/512/ios7-bolt.png
+M	bower_components/Ionicons/png/512/ios7-bookmarks-outline.png
+M	bower_components/Ionicons/png/512/ios7-bookmarks.png
+M	bower_components/Ionicons/png/512/ios7-box-outline.png
+M	bower_components/Ionicons/png/512/ios7-box.png
+M	bower_components/Ionicons/png/512/ios7-briefcase-outline.png
+M	bower_components/Ionicons/png/512/ios7-briefcase.png
+M	bower_components/Ionicons/png/512/ios7-browsers-outline.png
+M	bower_components/Ionicons/png/512/ios7-browsers.png
+M	bower_components/Ionicons/png/512/ios7-calculator-outline.png
+M	bower_components/Ionicons/png/512/ios7-calculator.png
+M	bower_components/Ionicons/png/512/ios7-calendar-outline.png
+M	bower_components/Ionicons/png/512/ios7-calendar.png
+M	bower_components/Ionicons/png/512/ios7-camera-outline.png
+M	bower_components/Ionicons/png/512/ios7-camera.png
+M	bower_components/Ionicons/png/512/ios7-cart-outline.png
+M	bower_components/Ionicons/png/512/ios7-cart.png
+M	bower_components/Ionicons/png/512/ios7-chatboxes-outline.png
+M	bower_components/Ionicons/png/512/ios7-chatboxes.png
+M	bower_components/Ionicons/png/512/ios7-chatbubble-outline.png
+M	bower_components/Ionicons/png/512/ios7-chatbubble.png
+M	bower_components/Ionicons/png/512/ios7-checkmark-empty.png
+M	bower_components/Ionicons/png/512/ios7-checkmark-outline.png
+M	bower_components/Ionicons/png/512/ios7-checkmark.png
+M	bower_components/Ionicons/png/512/ios7-circle-filled.png
+M	bower_components/Ionicons/png/512/ios7-circle-outline.png
+M	bower_components/Ionicons/png/512/ios7-clock-outline.png
+M	bower_components/Ionicons/png/512/ios7-clock.png
+M	bower_components/Ionicons/png/512/ios7-close-empty.png
+M	bower_components/Ionicons/png/512/ios7-close-outline.png
+M	bower_components/Ionicons/png/512/ios7-close.png
+M	bower_components/Ionicons/png/512/ios7-cloud-download-outline.png
+M	bower_components/Ionicons/png/512/ios7-cloud-download.png
+M	bower_components/Ionicons/png/512/ios7-cloud-outline.png
+M	bower_components/Ionicons/png/512/ios7-cloud-upload-outline.png
+M	bower_components/Ionicons/png/512/ios7-cloud-upload.png
+M	bower_components/Ionicons/png/512/ios7-cloud.png
+M	bower_components/Ionicons/png/512/ios7-cloudy-night-outline.png
+M	bower_components/Ionicons/png/512/ios7-cloudy-night.png
+M	bower_components/Ionicons/png/512/ios7-cloudy-outline.png
+M	bower_components/Ionicons/png/512/ios7-cloudy.png
+M	bower_components/Ionicons/png/512/ios7-cog-outline.png
+M	bower_components/Ionicons/png/512/ios7-cog.png
+M	bower_components/Ionicons/png/512/ios7-compose-outline.png
+M	bower_components/Ionicons/png/512/ios7-compose.png
+M	bower_components/Ionicons/png/512/ios7-contact-outline.png
+M	bower_components/Ionicons/png/512/ios7-contact.png
+M	bower_components/Ionicons/png/512/ios7-copy-outline.png
+M	bower_components/Ionicons/png/512/ios7-copy.png
+M	bower_components/Ionicons/png/512/ios7-download-outline.png
+M	bower_components/Ionicons/png/512/ios7-download.png
+M	bower_components/Ionicons/png/512/ios7-drag.png
+M	bower_components/Ionicons/png/512/ios7-email-outline.png
+M	bower_components/Ionicons/png/512/ios7-email.png
+M	bower_components/Ionicons/png/512/ios7-expand.png
+M	bower_components/Ionicons/png/512/ios7-eye-outline.png
+M	bower_components/Ionicons/png/512/ios7-eye.png
+M	bower_components/Ionicons/png/512/ios7-fastforward-outline.png
+M	bower_components/Ionicons/png/512/ios7-fastforward.png
+M	bower_components/Ionicons/png/512/ios7-filing-outline.png
+M	bower_components/Ionicons/png/512/ios7-filing.png
+M	bower_components/Ionicons/png/512/ios7-film-outline.png
+M	bower_components/Ionicons/png/512/ios7-film.png
+M	bower_components/Ionicons/png/512/ios7-flag-outline.png
+M	bower_components/Ionicons/png/512/ios7-flag.png
+M	bower_components/Ionicons/png/512/ios7-folder-outline.png
+M	bower_components/Ionicons/png/512/ios7-folder.png
+M	bower_components/Ionicons/png/512/ios7-football-outline.png
+M	bower_components/Ionicons/png/512/ios7-football.png
+M	bower_components/Ionicons/png/512/ios7-gear-outline.png
+M	bower_components/Ionicons/png/512/ios7-gear.png
+M	bower_components/Ionicons/png/512/ios7-glasses-outline.png
+M	bower_components/Ionicons/png/512/ios7-glasses.png
+M	bower_components/Ionicons/png/512/ios7-heart-outline.png
+M	bower_components/Ionicons/png/512/ios7-heart.png
+M	bower_components/Ionicons/png/512/ios7-help-empty.png
+M	bower_components/Ionicons/png/512/ios7-help-outline.png
+M	bower_components/Ionicons/png/512/ios7-help.png
+M	bower_components/Ionicons/png/512/ios7-home-outline.png
+M	bower_components/Ionicons/png/512/ios7-home.png
+M	bower_components/Ionicons/png/512/ios7-infinite-outline.png
+M	bower_components/Ionicons/png/512/ios7-infinite.png
+M	bower_components/Ionicons/png/512/ios7-information-empty.png
+M	bower_components/Ionicons/png/512/ios7-information-outline.png
+M	bower_components/Ionicons/png/512/ios7-information.png
+M	bower_components/Ionicons/png/512/ios7-ionic-outline.png
+M	bower_components/Ionicons/png/512/ios7-keypad-outline.png
+M	bower_components/Ionicons/png/512/ios7-keypad.png
+M	bower_components/Ionicons/png/512/ios7-lightbulb-outline.png
+M	bower_components/Ionicons/png/512/ios7-lightbulb.png
+M	bower_components/Ionicons/png/512/ios7-location-outline.png
+M	bower_components/Ionicons/png/512/ios7-location.png
+M	bower_components/Ionicons/png/512/ios7-locked-outline.png
+M	bower_components/Ionicons/png/512/ios7-locked.png
+M	bower_components/Ionicons/png/512/ios7-loop-strong.png
+M	bower_components/Ionicons/png/512/ios7-loop.png
+M	bower_components/Ionicons/png/512/ios7-medkit-outline.png
+M	bower_components/Ionicons/png/512/ios7-medkit.png
+M	bower_components/Ionicons/png/512/ios7-mic-off.png
+M	bower_components/Ionicons/png/512/ios7-mic-outline.png
+M	bower_components/Ionicons/png/512/ios7-mic.png
+M	bower_components/Ionicons/png/512/ios7-minus-empty.png
+M	bower_components/Ionicons/png/512/ios7-minus-outline.png
+M	bower_components/Ionicons/png/512/ios7-minus.png
+M	bower_components/Ionicons/png/512/ios7-monitor-outline.png
+M	bower_components/Ionicons/png/512/ios7-monitor.png
+M	bower_components/Ionicons/png/512/ios7-moon-outline.png
+M	bower_components/Ionicons/png/512/ios7-moon.png
+M	bower_components/Ionicons/png/512/ios7-more-outline.png
+M	bower_components/Ionicons/png/512/ios7-more.png
+M	bower_components/Ionicons/png/512/ios7-musical-note.png
+M	bower_components/Ionicons/png/512/ios7-musical-notes.png
+M	bower_components/Ionicons/png/512/ios7-navigate-outline.png
+M	bower_components/Ionicons/png/512/ios7-navigate.png
+M	bower_components/Ionicons/png/512/ios7-paper-outline.png
+M	bower_components/Ionicons/png/512/ios7-paper.png
+M	bower_components/Ionicons/png/512/ios7-paperplane-outline.png
+M	bower_components/Ionicons/png/512/ios7-paperplane.png
+M	bower_components/Ionicons/png/512/ios7-partlysunny-outline.png
+M	bower_components/Ionicons/png/512/ios7-partlysunny.png
+M	bower_components/Ionicons/png/512/ios7-pause-outline.png
+M	bower_components/Ionicons/png/512/ios7-pause.png
+M	bower_components/Ionicons/png/512/ios7-paw-outline.png
+M	bower_components/Ionicons/png/512/ios7-paw.png
+M	bower_components/Ionicons/png/512/ios7-people-outline.png
+M	bower_components/Ionicons/png/512/ios7-people.png
+M	bower_components/Ionicons/png/512/ios7-person-outline.png
+M	bower_components/Ionicons/png/512/ios7-person.png
+M	bower_components/Ionicons/png/512/ios7-personadd-outline.png
+M	bower_components/Ionicons/png/512/ios7-personadd.png
+M	bower_components/Ionicons/png/512/ios7-photos-outline.png
+M	bower_components/Ionicons/png/512/ios7-photos.png
+M	bower_components/Ionicons/png/512/ios7-pie-outline.png
+M	bower_components/Ionicons/png/512/ios7-pie.png
+M	bower_components/Ionicons/png/512/ios7-play-outline.png
+M	bower_components/Ionicons/png/512/ios7-play.png
+M	bower_components/Ionicons/png/512/ios7-plus-empty.png
+M	bower_components/Ionicons/png/512/ios7-plus-outline.png
+M	bower_components/Ionicons/png/512/ios7-plus.png
+M	bower_components/Ionicons/png/512/ios7-pricetag-outline.png
+M	bower_components/Ionicons/png/512/ios7-pricetag.png
+M	bower_components/Ionicons/png/512/ios7-pricetags-outline.png
+M	bower_components/Ionicons/png/512/ios7-pricetags.png
+M	bower_components/Ionicons/png/512/ios7-printer-outline.png
+M	bower_components/Ionicons/png/512/ios7-printer.png
+M	bower_components/Ionicons/png/512/ios7-pulse-strong.png
+M	bower_components/Ionicons/png/512/ios7-pulse.png
+M	bower_components/Ionicons/png/512/ios7-rainy-outline.png
+M	bower_components/Ionicons/png/512/ios7-rainy.png
+M	bower_components/Ionicons/png/512/ios7-recording-outline.png
+M	bower_components/Ionicons/png/512/ios7-recording.png
+M	bower_components/Ionicons/png/512/ios7-redo-outline.png
+M	bower_components/Ionicons/png/512/ios7-redo.png
+M	bower_components/Ionicons/png/512/ios7-refresh-empty.png
+M	bower_components/Ionicons/png/512/ios7-refresh-outline.png
+M	bower_components/Ionicons/png/512/ios7-refresh.png
+M	bower_components/Ionicons/png/512/ios7-reload.png
+M	bower_components/Ionicons/png/512/ios7-reverse-camera-outline.png
+M	bower_components/Ionicons/png/512/ios7-reverse-camera.png
+M	bower_components/Ionicons/png/512/ios7-rewind-outline.png
+M	bower_components/Ionicons/png/512/ios7-rewind.png
+M	bower_components/Ionicons/png/512/ios7-search-strong.png
+M	bower_components/Ionicons/png/512/ios7-search.png
+M	bower_components/Ionicons/png/512/ios7-settings-strong.png
+M	bower_components/Ionicons/png/512/ios7-settings.png
+M	bower_components/Ionicons/png/512/ios7-shrink.png
+M	bower_components/Ionicons/png/512/ios7-skipbackward-outline.png
+M	bower_components/Ionicons/png/512/ios7-skipbackward.png
+M	bower_components/Ionicons/png/512/ios7-skipforward-outline.png
+M	bower_components/Ionicons/png/512/ios7-skipforward.png
+M	bower_components/Ionicons/png/512/ios7-snowy.png
+M	bower_components/Ionicons/png/512/ios7-speedometer-outline.png
+M	bower_components/Ionicons/png/512/ios7-speedometer.png
+M	bower_components/Ionicons/png/512/ios7-star-half.png
+M	bower_components/Ionicons/png/512/ios7-star-outline.png
+M	bower_components/Ionicons/png/512/ios7-star.png
+M	bower_components/Ionicons/png/512/ios7-stopwatch-outline.png
+M	bower_components/Ionicons/png/512/ios7-stopwatch.png
+M	bower_components/Ionicons/png/512/ios7-sunny-outline.png
+M	bower_components/Ionicons/png/512/ios7-sunny.png
+M	bower_components/Ionicons/png/512/ios7-telephone-outline.png
+M	bower_components/Ionicons/png/512/ios7-telephone.png
+M	bower_components/Ionicons/png/512/ios7-tennisball-outline.png
+M	bower_components/Ionicons/png/512/ios7-tennisball.png
+M	bower_components/Ionicons/png/512/ios7-thunderstorm-outline.png
+M	bower_components/Ionicons/png/512/ios7-thunderstorm.png
+M	bower_components/Ionicons/png/512/ios7-time-outline.png
+M	bower_components/Ionicons/png/512/ios7-time.png
+M	bower_components/Ionicons/png/512/ios7-timer-outline.png
+M	bower_components/Ionicons/png/512/ios7-timer.png
+M	bower_components/Ionicons/png/512/ios7-toggle-outline.png
+M	bower_components/Ionicons/png/512/ios7-toggle.png
+M	bower_components/Ionicons/png/512/ios7-trash-outline.png
+M	bower_components/Ionicons/png/512/ios7-trash.png
+M	bower_components/Ionicons/png/512/ios7-undo-outline.png
+M	bower_components/Ionicons/png/512/ios7-undo.png
+M	bower_components/Ionicons/png/512/ios7-unlocked-outline.png
+M	bower_components/Ionicons/png/512/ios7-unlocked.png
+M	bower_components/Ionicons/png/512/ios7-upload-outline.png
+M	bower_components/Ionicons/png/512/ios7-upload.png
+M	bower_components/Ionicons/png/512/ios7-videocam-outline.png
+M	bower_components/Ionicons/png/512/ios7-videocam.png
+M	bower_components/Ionicons/png/512/ios7-volume-high.png
+M	bower_components/Ionicons/png/512/ios7-volume-low.png
+M	bower_components/Ionicons/png/512/ios7-wineglass-outline.png
+M	bower_components/Ionicons/png/512/ios7-wineglass.png
+M	bower_components/Ionicons/png/512/ios7-world-outline.png
+M	bower_components/Ionicons/png/512/ios7-world.png
+M	bower_components/Ionicons/png/512/ipad.png
+M	bower_components/Ionicons/png/512/iphone.png
+M	bower_components/Ionicons/png/512/ipod.png
+M	bower_components/Ionicons/png/512/jet.png
+M	bower_components/Ionicons/png/512/key.png
+M	bower_components/Ionicons/png/512/knife.png
+M	bower_components/Ionicons/png/512/laptop.png
+M	bower_components/Ionicons/png/512/leaf.png
+M	bower_components/Ionicons/png/512/levels.png
+M	bower_components/Ionicons/png/512/lightbulb.png
+M	bower_components/Ionicons/png/512/link.png
+M	bower_components/Ionicons/png/512/load-a.png
+M	bower_components/Ionicons/png/512/load-b.png
+M	bower_components/Ionicons/png/512/load-c.png
+M	bower_components/Ionicons/png/512/load-d.png
+M	bower_components/Ionicons/png/512/location.png
+M	bower_components/Ionicons/png/512/locked.png
+M	bower_components/Ionicons/png/512/log-in.png
+M	bower_components/Ionicons/png/512/log-out.png
+M	bower_components/Ionicons/png/512/loop.png
+M	bower_components/Ionicons/png/512/magnet.png
+M	bower_components/Ionicons/png/512/male.png
+M	bower_components/Ionicons/png/512/man.png
+M	bower_components/Ionicons/png/512/map.png
+M	bower_components/Ionicons/png/512/medkit.png
+M	bower_components/Ionicons/png/512/merge.png
+M	bower_components/Ionicons/png/512/mic-a.png
+M	bower_components/Ionicons/png/512/mic-b.png
+M	bower_components/Ionicons/png/512/mic-c.png
+M	bower_components/Ionicons/png/512/minus-circled.png
+M	bower_components/Ionicons/png/512/minus-round.png
+M	bower_components/Ionicons/png/512/minus.png
+M	bower_components/Ionicons/png/512/model-s.png
+M	bower_components/Ionicons/png/512/monitor.png
+M	bower_components/Ionicons/png/512/more.png
+M	bower_components/Ionicons/png/512/mouse.png
+M	bower_components/Ionicons/png/512/music-note.png
+M	bower_components/Ionicons/png/512/navicon-round.png
+M	bower_components/Ionicons/png/512/navicon.png
+M	bower_components/Ionicons/png/512/navigate.png
+M	bower_components/Ionicons/png/512/network.png
+M	bower_components/Ionicons/png/512/no-smoking.png
+M	bower_components/Ionicons/png/512/nuclear.png
+M	bower_components/Ionicons/png/512/outlet.png
+M	bower_components/Ionicons/png/512/paper-airplane.png
+M	bower_components/Ionicons/png/512/paperclip.png
+M	bower_components/Ionicons/png/512/pause.png
+M	bower_components/Ionicons/png/512/person-add.png
+M	bower_components/Ionicons/png/512/person-stalker.png
+M	bower_components/Ionicons/png/512/person.png
+M	bower_components/Ionicons/png/512/pie-graph.png
+M	bower_components/Ionicons/png/512/pin.png
+M	bower_components/Ionicons/png/512/pinpoint.png
+M	bower_components/Ionicons/png/512/pizza.png
+M	bower_components/Ionicons/png/512/plane.png
+M	bower_components/Ionicons/png/512/planet.png
+M	bower_components/Ionicons/png/512/play.png
+M	bower_components/Ionicons/png/512/playstation.png
+M	bower_components/Ionicons/png/512/plus-circled.png
+M	bower_components/Ionicons/png/512/plus-round.png
+M	bower_components/Ionicons/png/512/plus.png
+M	bower_components/Ionicons/png/512/podium.png
+M	bower_components/Ionicons/png/512/pound.png
+M	bower_components/Ionicons/png/512/power.png
+M	bower_components/Ionicons/png/512/pricetag.png
+M	bower_components/Ionicons/png/512/pricetags.png
+M	bower_components/Ionicons/png/512/printer.png
+M	bower_components/Ionicons/png/512/pull-request.png
+M	bower_components/Ionicons/png/512/qr-scanner.png
+M	bower_components/Ionicons/png/512/quote.png
+M	bower_components/Ionicons/png/512/radio-waves.png
+M	bower_components/Ionicons/png/512/record.png
+M	bower_components/Ionicons/png/512/refresh.png
+M	bower_components/Ionicons/png/512/reply-all.png
+M	bower_components/Ionicons/png/512/reply.png
+M	bower_components/Ionicons/png/512/ribbon-a.png
+M	bower_components/Ionicons/png/512/ribbon-b.png
+M	bower_components/Ionicons/png/512/sad.png
+M	bower_components/Ionicons/png/512/scissors.png
+M	bower_components/Ionicons/png/512/search.png
+M	bower_components/Ionicons/png/512/settings.png
+M	bower_components/Ionicons/png/512/share.png
+M	bower_components/Ionicons/png/512/shuffle.png
+M	bower_components/Ionicons/png/512/skip-backward.png
+M	bower_components/Ionicons/png/512/skip-forward.png
+M	bower_components/Ionicons/png/512/social-android-outline.png
+M	bower_components/Ionicons/png/512/social-android.png
+M	bower_components/Ionicons/png/512/social-apple-outline.png
+M	bower_components/Ionicons/png/512/social-apple.png
+M	bower_components/Ionicons/png/512/social-bitcoin-outline.png
+M	bower_components/Ionicons/png/512/social-bitcoin.png
+M	bower_components/Ionicons/png/512/social-buffer-outline.png
+M	bower_components/Ionicons/png/512/social-buffer.png
+M	bower_components/Ionicons/png/512/social-designernews-outline.png
+M	bower_components/Ionicons/png/512/social-designernews.png
+M	bower_components/Ionicons/png/512/social-dribbble-outline.png
+M	bower_components/Ionicons/png/512/social-dribbble.png
+M	bower_components/Ionicons/png/512/social-dropbox-outline.png
+M	bower_components/Ionicons/png/512/social-dropbox.png
+M	bower_components/Ionicons/png/512/social-facebook-outline.png
+M	bower_components/Ionicons/png/512/social-facebook.png
+M	bower_components/Ionicons/png/512/social-foursquare-outline.png
+M	bower_components/Ionicons/png/512/social-foursquare.png
+M	bower_components/Ionicons/png/512/social-freebsd-devil.png
+M	bower_components/Ionicons/png/512/social-github-outline.png
+M	bower_components/Ionicons/png/512/social-github.png
+M	bower_components/Ionicons/png/512/social-google-outline.png
+M	bower_components/Ionicons/png/512/social-google.png
+M	bower_components/Ionicons/png/512/social-googleplus-outline.png
+M	bower_components/Ionicons/png/512/social-googleplus.png
+M	bower_components/Ionicons/png/512/social-hackernews-outline.png
+M	bower_components/Ionicons/png/512/social-hackernews.png
+M	bower_components/Ionicons/png/512/social-instagram-outline.png
+M	bower_components/Ionicons/png/512/social-instagram.png
+M	bower_components/Ionicons/png/512/social-linkedin-outline.png
+M	bower_components/Ionicons/png/512/social-linkedin.png
+M	bower_components/Ionicons/png/512/social-pinterest-outline.png
+M	bower_components/Ionicons/png/512/social-pinterest.png
+M	bower_components/Ionicons/png/512/social-reddit-outline.png
+M	bower_components/Ionicons/png/512/social-reddit.png
+M	bower_components/Ionicons/png/512/social-rss-outline.png
+M	bower_components/Ionicons/png/512/social-rss.png
+M	bower_components/Ionicons/png/512/social-skype-outline.png
+M	bower_components/Ionicons/png/512/social-skype.png
+M	bower_components/Ionicons/png/512/social-tumblr-outline.png
+M	bower_components/Ionicons/png/512/social-tumblr.png
+M	bower_components/Ionicons/png/512/social-tux.png
+M	bower_components/Ionicons/png/512/social-twitter-outline.png
+M	bower_components/Ionicons/png/512/social-twitter.png
+M	bower_components/Ionicons/png/512/social-usd-outline.png
+M	bower_components/Ionicons/png/512/social-usd.png
+M	bower_components/Ionicons/png/512/social-vimeo-outline.png
+M	bower_components/Ionicons/png/512/social-vimeo.png
+M	bower_components/Ionicons/png/512/social-windows-outline.png
+M	bower_components/Ionicons/png/512/social-windows.png
+M	bower_components/Ionicons/png/512/social-wordpress-outline.png
+M	bower_components/Ionicons/png/512/social-wordpress.png
+M	bower_components/Ionicons/png/512/social-yahoo-outline.png
+M	bower_components/Ionicons/png/512/social-yahoo.png
+M	bower_components/Ionicons/png/512/social-youtube-outline.png
+M	bower_components/Ionicons/png/512/social-youtube.png
+M	bower_components/Ionicons/png/512/speakerphone.png
+M	bower_components/Ionicons/png/512/speedometer.png
+M	bower_components/Ionicons/png/512/spoon.png
+M	bower_components/Ionicons/png/512/star.png
+M	bower_components/Ionicons/png/512/stats-bars.png
+M	bower_components/Ionicons/png/512/steam.png
+M	bower_components/Ionicons/png/512/stop.png
+M	bower_components/Ionicons/png/512/thermometer.png
+M	bower_components/Ionicons/png/512/thumbsdown.png
+M	bower_components/Ionicons/png/512/thumbsup.png
+M	bower_components/Ionicons/png/512/toggle-filled.png
+M	bower_components/Ionicons/png/512/toggle.png
+M	bower_components/Ionicons/png/512/trash-a.png
+M	bower_components/Ionicons/png/512/trash-b.png
+M	bower_components/Ionicons/png/512/trophy.png
+M	bower_components/Ionicons/png/512/umbrella.png
+M	bower_components/Ionicons/png/512/university.png
+M	bower_components/Ionicons/png/512/unlocked.png
+M	bower_components/Ionicons/png/512/upload.png
+M	bower_components/Ionicons/png/512/usb.png
+M	bower_components/Ionicons/png/512/videocamera.png
+M	bower_components/Ionicons/png/512/volume-high.png
+M	bower_components/Ionicons/png/512/volume-low.png
+M	bower_components/Ionicons/png/512/volume-medium.png
+M	bower_components/Ionicons/png/512/volume-mute.png
+M	bower_components/Ionicons/png/512/wand.png
+M	bower_components/Ionicons/png/512/waterdrop.png
+M	bower_components/Ionicons/png/512/wifi.png
+M	bower_components/Ionicons/png/512/wineglass.png
+M	bower_components/Ionicons/png/512/woman.png
+M	bower_components/Ionicons/png/512/wrench.png
+M	bower_components/Ionicons/png/512/xbox.png
+M	bower_components/Ionicons/readme.md
+M	bower_components/Ionicons/scss/_ionicons-font.scss
+M	bower_components/Ionicons/scss/_ionicons-icons.scss
+M	bower_components/Ionicons/scss/_ionicons-variables.scss
+M	bower_components/Ionicons/scss/ionicons.scss
+M	bower_components/Ionicons/src/alert-circled.svg
+M	bower_components/Ionicons/src/alert.svg
+M	bower_components/Ionicons/src/android-add-circle.svg
+M	bower_components/Ionicons/src/android-add.svg
+M	bower_components/Ionicons/src/android-alarm-clock.svg
+M	bower_components/Ionicons/src/android-alert.svg
+M	bower_components/Ionicons/src/android-apps.svg
+M	bower_components/Ionicons/src/android-archive.svg
+M	bower_components/Ionicons/src/android-arrow-back.svg
+M	bower_components/Ionicons/src/android-arrow-down.svg
+M	bower_components/Ionicons/src/android-arrow-dropdown-circle.svg
+M	bower_components/Ionicons/src/android-arrow-dropdown.svg
+M	bower_components/Ionicons/src/android-arrow-dropleft-circle.svg
+M	bower_components/Ionicons/src/android-arrow-dropleft.svg
+M	bower_components/Ionicons/src/android-arrow-dropright-circle.svg
+M	bower_components/Ionicons/src/android-arrow-dropright.svg
+M	bower_components/Ionicons/src/android-arrow-dropup-circle.svg
+M	bower_components/Ionicons/src/android-arrow-dropup.svg
+M	bower_components/Ionicons/src/android-arrow-forward.svg
+M	bower_components/Ionicons/src/android-arrow-up.svg
+M	bower_components/Ionicons/src/android-attach.svg
+M	bower_components/Ionicons/src/android-bar.svg
+M	bower_components/Ionicons/src/android-bicycle.svg
+M	bower_components/Ionicons/src/android-boat.svg
+M	bower_components/Ionicons/src/android-bookmark.svg
+M	bower_components/Ionicons/src/android-bulb.svg
+M	bower_components/Ionicons/src/android-bus.svg
+M	bower_components/Ionicons/src/android-calendar.svg
+M	bower_components/Ionicons/src/android-call.svg
+M	bower_components/Ionicons/src/android-camera.svg
+M	bower_components/Ionicons/src/android-cancel.svg
+M	bower_components/Ionicons/src/android-car.svg
+M	bower_components/Ionicons/src/android-cart.svg
+M	bower_components/Ionicons/src/android-chat.svg
+M	bower_components/Ionicons/src/android-checkbox-blank.svg
+M	bower_components/Ionicons/src/android-checkbox-outline-blank.svg
+M	bower_components/Ionicons/src/android-checkbox-outline.svg
+M	bower_components/Ionicons/src/android-checkbox.svg
+M	bower_components/Ionicons/src/android-checkmark-circle.svg
+M	bower_components/Ionicons/src/android-clipboard.svg
+M	bower_components/Ionicons/src/android-close.svg
+M	bower_components/Ionicons/src/android-cloud-circle.svg
+M	bower_components/Ionicons/src/android-cloud-done.svg
+M	bower_components/Ionicons/src/android-cloud-outline.svg
+M	bower_components/Ionicons/src/android-cloud.svg
+M	bower_components/Ionicons/src/android-color-palette.svg
+M	bower_components/Ionicons/src/android-compass.svg
+M	bower_components/Ionicons/src/android-contact.svg
+M	bower_components/Ionicons/src/android-contacts.svg
+M	bower_components/Ionicons/src/android-contract.svg
+M	bower_components/Ionicons/src/android-create.svg
+M	bower_components/Ionicons/src/android-delete.svg
+M	bower_components/Ionicons/src/android-desktop.svg
+M	bower_components/Ionicons/src/android-document.svg
+M	bower_components/Ionicons/src/android-done-all.svg
+M	bower_components/Ionicons/src/android-done.svg
+M	bower_components/Ionicons/src/android-download.svg
+M	bower_components/Ionicons/src/android-drafts.svg
+M	bower_components/Ionicons/src/android-exit.svg
+M	bower_components/Ionicons/src/android-expand.svg
+M	bower_components/Ionicons/src/android-favorite-outline.svg
+M	bower_components/Ionicons/src/android-favorite.svg
+M	bower_components/Ionicons/src/android-film.svg
+M	bower_components/Ionicons/src/android-folder-open.svg
+M	bower_components/Ionicons/src/android-folder.svg
+M	bower_components/Ionicons/src/android-funnel.svg
+M	bower_components/Ionicons/src/android-globe.svg
+M	bower_components/Ionicons/src/android-hand.svg
+M	bower_components/Ionicons/src/android-hangout.svg
+M	bower_components/Ionicons/src/android-happy.svg
+M	bower_components/Ionicons/src/android-home.svg
+M	bower_components/Ionicons/src/android-image.svg
+M	bower_components/Ionicons/src/android-laptop.svg
+M	bower_components/Ionicons/src/android-list.svg
+M	bower_components/Ionicons/src/android-locate.svg
+M	bower_components/Ionicons/src/android-lock.svg
+M	bower_components/Ionicons/src/android-mail.svg
+M	bower_components/Ionicons/src/android-map.svg
+M	bower_components/Ionicons/src/android-menu.svg
+M	bower_components/Ionicons/src/android-microphone-off.svg
+M	bower_components/Ionicons/src/android-microphone.svg
+M	bower_components/Ionicons/src/android-more-horizontal.svg
+M	bower_components/Ionicons/src/android-more-vertical.svg
+M	bower_components/Ionicons/src/android-navigate.svg
+M	bower_components/Ionicons/src/android-notifications-none.svg
+M	bower_components/Ionicons/src/android-notifications-off.svg
+M	bower_components/Ionicons/src/android-notifications.svg
+M	bower_components/Ionicons/src/android-open.svg
+M	bower_components/Ionicons/src/android-options.svg
+M	bower_components/Ionicons/src/android-people.svg
+M	bower_components/Ionicons/src/android-person-add.svg
+M	bower_components/Ionicons/src/android-person.svg
+M	bower_components/Ionicons/src/android-phone-landscape.svg
+M	bower_components/Ionicons/src/android-phone-portrait.svg
+M	bower_components/Ionicons/src/android-pin.svg
+M	bower_components/Ionicons/src/android-plane.svg
+M	bower_components/Ionicons/src/android-playstore.svg
+M	bower_components/Ionicons/src/android-print.svg
+M	bower_components/Ionicons/src/android-radio-button-off.svg
+M	bower_components/Ionicons/src/android-radio-button-on.svg
+M	bower_components/Ionicons/src/android-refresh.svg
+M	bower_components/Ionicons/src/android-remove-circle.svg
+M	bower_components/Ionicons/src/android-remove.svg
+M	bower_components/Ionicons/src/android-restaurant.svg
+M	bower_components/Ionicons/src/android-sad.svg
+M	bower_components/Ionicons/src/android-search.svg
+M	bower_components/Ionicons/src/android-send.svg
+M	bower_components/Ionicons/src/android-settings.svg
+M	bower_components/Ionicons/src/android-share-alt.svg
+M	bower_components/Ionicons/src/android-share.svg
+M	bower_components/Ionicons/src/android-star-half.svg
+M	bower_components/Ionicons/src/android-star-outline.svg
+M	bower_components/Ionicons/src/android-star.svg
+M	bower_components/Ionicons/src/android-stopwatch.svg
+M	bower_components/Ionicons/src/android-subway.svg
+M	bower_components/Ionicons/src/android-sunny.svg
+M	bower_components/Ionicons/src/andr

@@ -606,7 +606,7 @@ function abrirDoc(record) {
                 value.noteid +
                 '" class="ui-file"><span class="text-expectativa" expectativa_' +
                 value.noteid +
-                ">Solicitação que possibiita subir mais arquivos</span></div><br><br>"
+                ">Selecione um ou mais documentos</span></div><br><br>"
             );
           }
         }
@@ -722,7 +722,7 @@ function targetFileDeleted(item, id, fileName) {
 
   total === 1
     ? $(`#mutiple-file_${id}`).append(
-        `<span class="text-expectativa" expectativa_${id}>Solicitação que possibiita subir mais arquivos</span>`
+        `<span class="text-expectativa" expectativa_${id}>Selecione um ou mais documentos</span>`
       )
     : "";
 
