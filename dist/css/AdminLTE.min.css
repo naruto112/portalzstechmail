@@ -23,6 +23,13 @@
   display: flex;
 }
 
+.ui-group-file {
+  color: #b7b6b6;
+  width: 39%;
+  margin-left: 60px;
+  display: block;
+}
+
 
 .text-expectativa {
   color: #86868685;
@@ -654,6 +661,14 @@ input[type="file"] {
     background-color: #bcbcbc14;
     width: 99%;
     padding: 8px;
+    margin-left: 0px;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .ui-group-file {
+    color: #b7b6b6;
+    width: 99%;
     margin-left: 0px;
     margin-top: 10px;
     display: block;
