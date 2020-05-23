@@ -567,24 +567,8 @@ function abrirDoc(record) {
           value.status_evento == "AGUARDANDO DOCUMENTO" ||
           value.status_evento == "AGUARDANDO DOCUMENTO COMPLEMENTAR"
         ) {
-          if (value.tipo_input != "Mult-Input") {
-            $("#alert-tipifica-not").empty();
-            $("#doc-conteudo").append(
-              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
-                value.noteid +
-                '" name="file-single" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
-                value.noteid +
-                '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
-                value.noteid +
-                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
-                value.documento_tooltip +
-                '">' +
-                value.tipo_doc +
-                '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
-                value.noteid +
-                '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
-            );
-          } else {
+          
+          if (value.tipo_input === "Mult-Input") {
             $("#alert-tipifica-not").empty();
             $("#doc-conteudo").append(
               '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
@@ -607,6 +591,47 @@ function abrirDoc(record) {
                 '" class="ui-file"><span class="text-expectativa" expectativa_' +
                 value.noteid +
                 ">Selecione um ou mais documentos</span></div><br><br>"
+            );
+          }
+          if (value.tipo_input === "Simple-Input") {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-single" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
+                value.noteid +
+                '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
+                value.documento_tooltip +
+                '">' +
+                value.tipo_doc +
+                '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
+                value.noteid +
+                '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
+            );
+          }
+          if (value.tipo_input === "Grupo") {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+            '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-group" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
+                value.noteid +
+                '" id="label-busca-' +
+                value.noteid +
+                '" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
+                value.documento_tooltip +
+                '">' +
+                value.tipo_doc +
+                " ( ou )</a></span></li>" +
+                '<div class="ui-group-file">Caso não possua o '+value.tipo_doc+' envie em outra solicitação que possua (ou)</span></div>'+
+                '<a href="javascript:void(0)" onclick="Limpar(\'' +
+                value.noteid +
+                '\');" class="resposive-content-limpar" style="margin-top: -2.5%;"><span class="glyphicon glyphicon-remove"></span></a><br>'
+                +'<br><br>'
             );
           }
         }
@@ -846,6 +871,33 @@ const Tobase64Single = (files, file_name, ticketid, notesid, ramo, doc_name) => 
   });
 }
 
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Group
+const Tobase64Group = (files, file_name, ticketid, notesid, ramo, doc_name) => {
+  return new Promise((resolve, reject) => {
+    getBase64(files).then(
+      b64 => {
+        const data = {
+          name: file_name,
+          notesid,
+          ticketid,
+          ramo,
+          doc_name,
+          base64: b64,
+        };
+        axios
+          .post(`${url}/api/attachement-group`, data)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => {
+            $("#erro-document-modal").modal("show");
+            reject(error);
+          });
+      }
+    )
+  });
+}
+
 async function enviarDoc() {
   var count = 1;
   var validity = "";
@@ -894,6 +946,7 @@ async function enviarDoc() {
   let promise2 = await Promise.all(
     $("input[name=file-single]").map(function (i, input) {
         if (input.files.length > 0){
+          alert("ENTROU AQUI");
           // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
           $(`#label-${count}`).text() ? (doc_name = $(`#label-${count}`).text()) : (doc_name = "");
           // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
@@ -907,22 +960,9 @@ async function enviarDoc() {
 
     //Cria a linha do tempo de recepção de documento para o Ramo 89
     if ( obj.ramo == '89') {
+      
+      CreateTimeline(ticketid);
 
-      const datatimeline = {
-        ticketid
-      }
-  
-      axios
-        .post(`${url}/api/doc-recep-timeline`, datatimeline)
-        .then((response) => {
-          if (response.data) {
-            $("#process-document-modal").modal("hide");
-            $("#concluido-document-modal").modal("show");
-          }
-        })
-        .catch((error) => {
-          $("#erro-document-modal").modal("show");
-        });
     } else {
 
       $("#process-document-modal").modal("hide");
@@ -930,6 +970,56 @@ async function enviarDoc() {
 
     }
   }
+
+
+  //Promise que irá enviar os arquivos de Grupo
+  let promise3 = await Promise.all(
+    $("input[name=file-group]").map(function (i, input) {
+        if (input.files.length > 0){
+          // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+          $(`#label-${count}`).text() ? (doc_name = $(`#label-${count}`).text()) : (doc_name = "");
+          // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+          count++;
+          return Tobase64Group(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
+        }
+    })
+  )
+
+  if (promise3) {
+
+    //Cria a linha do tempo de recepção de documento para o Ramo 89
+    if ( obj.ramo == '89') {
+      
+      CreateTimeline(ticketid);
+      
+    } else {
+
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+
+    }
+  }
+
+}
+
+function CreateTimeline(ticketid) {
+
+  const datatimeline = {
+    ticketid
+  }
+
+  axios
+    .post(`${url}/api/doc-recep-timeline`, datatimeline)
+    .then((response) => {
+      if (response.data) {
+        $("#process-document-modal").modal("hide");
+        $("#concluido-document-modal").modal("show");
+      }
+    })
+    .catch((error) => {
+      $("#erro-document-modal").modal("show");
+    });
+
 }
 
 function documentosPrev() {
