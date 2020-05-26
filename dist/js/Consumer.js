@@ -1,6 +1,6 @@
 // JAVASCRIPT QUE IRÁ CONTROLAR TODO O PORTAL
 // Data de Criação: 25/09/2019
-// Alteração Data: 14/05/2020
+// Alteração Data: 26/05/2020
 // Desenvolvedor: Renato Moschetta de Souza
 // Objetivo: Portal Zurich Santander
 
@@ -567,7 +567,6 @@ function abrirDoc(record) {
           value.status_evento == "AGUARDANDO DOCUMENTO" ||
           value.status_evento == "AGUARDANDO DOCUMENTO COMPLEMENTAR"
         ) {
-          
           if (value.tipo_input === "Mult-Input") {
             $("#alert-tipifica-not").empty();
             $("#doc-conteudo").append(
@@ -614,7 +613,7 @@ function abrirDoc(record) {
           if (value.tipo_input === "Grupo") {
             $("#alert-tipifica-not").empty();
             $("#doc-conteudo").append(
-            '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
                 value.noteid +
                 '" name="file-group" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
                 value.noteid +
@@ -627,11 +626,13 @@ function abrirDoc(record) {
                 '">' +
                 value.tipo_doc +
                 " ( ou )</a></span></li>" +
-                '<div class="ui-group-file">Caso não possua o '+value.tipo_doc+' envie em outra solicitação que possua (ou)</span></div>'+
+                '<div class="ui-group-file">Caso não possua o ' +
+                value.tipo_doc +
+                " envie em outra solicitação que possua (ou)</span></div>" +
                 '<a href="javascript:void(0)" onclick="Limpar(\'' +
                 value.noteid +
-                '\');" class="resposive-content-limpar" style="margin-top: -2.5%;"><span class="glyphicon glyphicon-remove"></span></a><br>'
-                +'<br><br>'
+                '\');" class="resposive-content-limpar" style="margin-top: -2.5%;"><span class="glyphicon glyphicon-remove"></span></a><br>' +
+                "<br><br>"
             );
           }
         }
@@ -791,22 +792,21 @@ const getBase64 = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
-}
+};
 
 //Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Multiple
 const Tobase64Multiple = (files, ticketid, notesid) => {
   return new Promise((resolve, reject) => {
-    getBase64(files).then(
-      b64 => {
-        const data = {
-          base64: b64,
-          ticketid,
-          notesid
-        }
+    getBase64(files).then((b64) => {
+      const data = {
+        base64: b64,
+        ticketid,
+        notesid,
+      };
 
-        axios
+      axios
         .post(`${url}/api/send-multiplefile`, data)
         .then((response) => {
           resolve(response);
@@ -815,13 +815,9 @@ const Tobase64Multiple = (files, ticketid, notesid) => {
           $("#erro-document-modal").modal("show");
           reject(error);
         });
-
-
-      }
-    );
+    });
   });
-    
-}
+};
 
 const toUnionImage = (ramo, ticketid) => {
   return new Promise((resolve, reject) => {
@@ -832,71 +828,73 @@ const toUnionImage = (ramo, ticketid) => {
 
     // APi para listar os Documentos Converter e Anexar no Sinistro
     axios
-    .post(`${url}/api/unionimage`, datatype)
-    .then((response) => {
-     resolve(response);     
-    })
-    .catch((error) => {
-      resolve(error);
-      $("#erro-document-modal").modal("show");
-    });
-
+      .post(`${url}/api/unionimage`, datatype)
+      .then((response) => {
+        resolve(response);
+      })
+      .catch((error) => {
+        resolve(error);
+        $("#erro-document-modal").modal("show");
+      });
   });
-}
+};
 
 //Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Single
-const Tobase64Single = (files, file_name, ticketid, notesid, ramo, doc_name) => {
+const Tobase64Single = (
+  files,
+  file_name,
+  ticketid,
+  notesid,
+  ramo,
+  doc_name
+) => {
   return new Promise((resolve, reject) => {
-    getBase64(files).then(
-      b64 => {
-        const data = {
-          name: file_name,
-          notesid,
-          ticketid,
-          ramo,
-          doc_name,
-          base64: b64,
-        };
-        axios
-          .post(`${url}/api/attachement-single`, data)
-          .then((response) => {
-            resolve(response);
-          })
-          .catch((error) => {
-            $("#erro-document-modal").modal("show");
-            reject(error);
-          });
-      }
-    )
+    getBase64(files).then((b64) => {
+      const data = {
+        name: file_name,
+        notesid,
+        ticketid,
+        ramo,
+        doc_name,
+        base64: b64,
+      };
+      axios
+        .post(`${url}/api/attachement-single`, data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          $("#erro-document-modal").modal("show");
+          reject(error);
+        });
+    });
   });
-}
+};
 
 //Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Group
 const Tobase64Group = (files, file_name, ticketid, notesid, ramo, doc_name) => {
   return new Promise((resolve, reject) => {
-    getBase64(files).then(
-      b64 => {
-        const data = {
-          name: file_name,
-          notesid,
-          ticketid,
-          ramo,
-          doc_name,
-          base64: b64,
-        };
-        axios
-          .post(`${url}/api/attachement-group`, data)
-          .then((response) => {
-            resolve(response);
-          })
-          .catch((error) => {
-            $("#erro-document-modal").modal("show");
-            reject(error);
-          });
-      }
-    )
+    getBase64(files).then((b64) => {
+      const data = {
+        name: file_name,
+        notesid,
+        ticketid,
+        ramo,
+        doc_name,
+        base64: b64,
+      };
+      axios
+        .post(`${url}/api/attachement-group`, data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          $("#erro-document-modal").modal("show");
+          reject(error);
+        });
+    });
   });
-}
+};
 
 async function enviarDoc() {
   var count = 1;
@@ -907,7 +905,7 @@ async function enviarDoc() {
 
   var identificador = localStorage.getItem("identificador");
   var obj = JSON.parse(identificador);
-  var ramo = obj.ramo
+  var ramo = obj.ramo;
 
   $("#process-document-modal").modal("show");
 
@@ -918,95 +916,97 @@ async function enviarDoc() {
   //Promise que irá enviar os arquivos de Multi-input
   let promise = await Promise.all(
     fileInput.map(function (val) {
-      return Tobase64Multiple(val[1], ticketid, val[0])
+      return Tobase64Multiple(val[1], ticketid, val[0]);
     })
   );
 
   //Após prometido que todos arquivos foram enviados para APi ele entra para outra APi e unificar os arquivos
   if (promise) {
-
     //Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
-      $("input[multiple=multiple]").each(function (i, input) {
-        !input.files.length > 0 ? (validity = false) : (validity = true);
-      });
+    $("input[multiple=multiple]").each(function (i, input) {
+      !input.files.length > 0 ? (validity = false) : (validity = true);
+    });
 
-      if (validity) {
-        let promiseUnion = await toUnionImage(ramo, ticketid);
+    if (validity) {
+      let promiseUnion = await toUnionImage(ramo, ticketid);
 
-        if (promiseUnion) {
-          $("#process-document-modal").modal("hide");
-          $("#concluido-document-modal").modal("show");
-        }
-        
+      if (promiseUnion) {
+        $("#process-document-modal").modal("hide");
+        $("#concluido-document-modal").modal("show");
       }
-
+    }
   }
 
   //Promise que irá enviar os arquivos de Simple-input
   let promise2 = await Promise.all(
     $("input[name=file-single]").map(function (i, input) {
-        if (input.files.length > 0){
-          alert("ENTROU AQUI");
-          // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
-          $(`#label-${count}`).text() ? (doc_name = $(`#label-${count}`).text()) : (doc_name = "");
-          // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
-          count++;
-          return Tobase64Single(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
-        }
+      if (input.files.length > 0) {
+        alert("ENTROU AQUI");
+        // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+        $(`#label-${count}`).text()
+          ? (doc_name = $(`#label-${count}`).text())
+          : (doc_name = "");
+        // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+        count++;
+        return Tobase64Single(
+          input.files[0],
+          input.files[0].name,
+          ticketid,
+          input.id,
+          obj.ramo,
+          doc_name
+        );
+      }
     })
-  )
+  );
 
   if (promise2) {
-
     //Cria a linha do tempo de recepção de documento para o Ramo 89
-    if ( obj.ramo == '89') {
-      
+    if (obj.ramo == "89") {
       CreateTimeline(ticketid);
-
     } else {
-
       $("#process-document-modal").modal("hide");
       $("#concluido-document-modal").modal("show");
-
     }
   }
-
 
   //Promise que irá enviar os arquivos de Grupo
   let promise3 = await Promise.all(
     $("input[name=file-group]").map(function (i, input) {
-        if (input.files.length > 0){
-          // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
-          $(`#label-${count}`).text() ? (doc_name = $(`#label-${count}`).text()) : (doc_name = "");
-          // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
-          count++;
-          return Tobase64Group(input.files[0],input.files[0].name,ticketid,input.id,obj.ramo,doc_name);
-        }
+      if (input.files.length > 0) {
+        // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+        $(`#label-${count}`).text()
+          ? (doc_name = $(`#label-${count}`).text())
+          : (doc_name = "");
+        // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+        count++;
+        return Tobase64Group(
+          input.files[0],
+          input.files[0].name,
+          ticketid,
+          input.id,
+          obj.ramo,
+          doc_name
+        );
+      }
     })
-  )
+  );
 
   if (promise3) {
-
     //Cria a linha do tempo de recepção de documento para o Ramo 89
-    if ( obj.ramo == '89') {
-      
+    if (obj.ramo == "89") {
       CreateTimeline(ticketid);
-      
     } else {
-
       $("#process-document-modal").modal("hide");
       $("#concluido-document-modal").modal("show");
-
     }
   }
-
 }
 
 function CreateTimeline(ticketid) {
-
   const datatimeline = {
-    ticketid
-  }
+    ticketid,
+  };
 
   axios
     .post(`${url}/api/doc-recep-timeline`, datatimeline)
@@ -1019,7 +1019,6 @@ function CreateTimeline(ticketid) {
     .catch((error) => {
       $("#erro-document-modal").modal("show");
     });
-
 }
 
 function documentosPrev() {
