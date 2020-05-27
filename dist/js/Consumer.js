@@ -290,7 +290,6 @@ function TimeLine() {
       }
 
       if ($(window).width() < 440) {
-        // alert('entrou aqui')
         top = 1211;
       } else {
         top = 630;
@@ -941,7 +940,6 @@ async function enviarDoc() {
   let promise2 = await Promise.all(
     $("input[name=file-single]").map(function (i, input) {
       if (input.files.length > 0) {
-        alert("ENTROU AQUI");
         // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
         $(`#label-${count}`).text()
           ? (doc_name = $(`#label-${count}`).text())
