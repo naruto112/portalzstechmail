@@ -926,12 +926,14 @@ async function enviarDoc() {
       !input.files.length > 0 ? (validity = false) : (validity = true);
     });
 
+    if (validity) {
       let promiseUnion = await toUnionImage(ramo, ticketid);
 
       if (promiseUnion) {
         $("#process-document-modal").modal("hide");
         $("#concluido-document-modal").modal("show");
       }
+    }
   }
 
   //Promise que irá enviar os arquivos de Simple-input
