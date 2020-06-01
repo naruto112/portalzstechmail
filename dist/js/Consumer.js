@@ -922,18 +922,18 @@ async function enviarDoc() {
   //Após prometido que todos arquivos foram enviados para APi ele entra para outra APi e unificar os arquivos
   if (promise) {
     //Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
-    $("input[multiple=multiple]").each(function (i, input) {
-      !input.files.length > 0 ? (validity = false) : (validity = true);
-    });
+    // $("input[multiple=multiple]").each(function (i, input) {
+    //   !input.files.length > 0 ? (validity = false) : (validity = true);
+    // });
 
-    if (validity) {
+    // if (validity) {
       let promiseUnion = await toUnionImage(ramo, ticketid);
 
       if (promiseUnion) {
         $("#process-document-modal").modal("hide");
         $("#concluido-document-modal").modal("show");
       }
-    }
+    // }
   }
 
   //Promise que irá enviar os arquivos de Simple-input
