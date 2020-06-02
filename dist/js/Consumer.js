@@ -701,19 +701,19 @@ function LimparDocPrev(params) {
 function getFileMultiple(v, params) {
   let total = $("#mutiple-file_" + v.id + " > div").length;
 
-  if (v.files.length > 5) {
+  if (v.files.length > 18) {
     alert("Maior que o nível permitido");
     return false;
   }
 
-  if (total > 5) {
+  if (total > 18) {
     alert("Maior que o nível permitido");
     return false;
   }
 
   let sum_two = v.files.length + total;
 
-  if (sum_two > 5) {
+  if (sum_two > 18) {
     alert("Maior que o nível permitido");
     return false;
   }
@@ -927,12 +927,12 @@ async function enviarDoc() {
     // });
 
     // if (validity) {
-      let promiseUnion = await toUnionImage(ramo, ticketid);
+    let promiseUnion = await toUnionImage(ramo, ticketid);
 
-      if (promiseUnion) {
-        $("#process-document-modal").modal("hide");
-        $("#concluido-document-modal").modal("show");
-      }
+    if (promiseUnion) {
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+    }
     // }
   }
 
