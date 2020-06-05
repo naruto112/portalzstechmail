@@ -1,14 +1,18 @@
 // JAVASCRIPT QUE IRÁ CONTROLAR TODO O PORTAL
 // Data de Criação: 25/09/2019
-// Alteração Data: 17/11/2019
+// Alteração Data: 26/05/2020
 // Desenvolvedor: Renato Moschetta de Souza
-// Objetivo: Portal Regular de Documentos
+// Objetivo: Portal Zurich Santander
 
-var url = "https://sinistrozs-desenvolvimento.techmail.com.br";
+var data = JSON.parse(base_url);
 
+var url = data[0].url;
 var documento_tab = "'documentos'";
 const paramsRamo = "89";
 let formularioPrev = "";
+let baseImg64 = "";
+let fileInput = [];
+let expectPrev = [];
 
 function formatDate(data, formato) {
   var date = $.datepicker.formatDate("yy-mm-dd", new Date());
@@ -30,12 +34,244 @@ function addZero(i) {
 }
 
 function CircleTimer() {
-  // if(valor === 1 || )
+  var objeto = localStorage.getItem("identificador");
+  var data = JSON.parse(objeto);
+
+  $.ajax({
+    type: "GET",
+    dataType: "json",
+    url: url + "/api/circletimer",
+    data: { ticketid: data.record },
+    async: true,
+    success: function (data) {
+      var total = "";
+      !data ? (total = 0) : (total = data);
+
+      let valor = [
+        //Gráfico Verde
+        {
+          img: "dist/img/circle-vazio.svg",
+          dia: 0,
+          nomenclatura: "dia",
+          marginLeft: "85px",
+        },
+        {
+          img: "dist/img/circle-verde-1.svg",
+          dia: 1,
+          nomenclatura: "dia",
+          marginLeft: "85px",
+        },
+        {
+          img: "dist/img/circle-verde-1.svg",
+          dia: 2,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-1.svg",
+          dia: 3,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-1.svg",
+          dia: 4,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-2.svg",
+          dia: 5,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-2.svg",
+          dia: 6,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-2.svg",
+          dia: 7,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-2.svg",
+          dia: 8,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-2.svg",
+          dia: 9,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-3.svg",
+          dia: 10,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-3.svg",
+          dia: 11,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-3.svg",
+          dia: 12,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-4.svg",
+          dia: 13,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-verde-5.svg",
+          dia: 14,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        //Gráfico Amarelo
+        {
+          img: "dist/img/circle-amarelo-1.svg",
+          dia: 15,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-1.svg",
+          dia: 16,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-1.svg",
+          dia: 17,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-2.svg",
+          dia: 18,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-2.svg",
+          dia: 19,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-2.svg",
+          dia: 20,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-3.svg",
+          dia: 21,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-amarelo-3.svg",
+          dia: 22,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        //Gráfico Vermelho
+        {
+          img: "dist/img/circle-vermelho-1.svg",
+          dia: 23,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-2.svg",
+          dia: 24,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-3.svg",
+          dia: 25,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-4.svg",
+          dia: 26,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-5.svg",
+          dia: 27,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-7.svg",
+          dia: 28,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-8.svg",
+          dia: 29,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+        {
+          img: "dist/img/circle-vermelho-9.svg",
+          dia: 30,
+          nomenclatura: "dias",
+          marginLeft: "76px",
+        },
+      ];
+
+      if (total === 0) {
+        // $("#count-timeline").hide();
+        return false;
+      }
+
+      if (total < 30) {
+        /////////Função Desativada pois a Marcelle da Zurich ainda não decidiu de fato oque irá colocar para mostrar ao cliente/////
+        // let imagem = valor.filter((valor) => valor.dia === parseInt(total));
+        // let { img, dia, nomenclatura, marginLeft } = imagem[0];
+        // $("#dia").text(dia);
+        // $("#text-dia").text(nomenclatura);
+        // $(".circulo-timer label").css({ marginLeft : marginLeft })
+        // document.getElementById("cicrle-timer").src = img;
+      } else {
+        /////////Função Desativada pois a Marcelle da Zurich ainda não decidiu de fato oque irá colocar para mostrar ao cliente/////
+        // let imagem = valor.filter((valor) => valor.dia === 30);
+        // let { img, dia, nomenclatura, marginLeft } = imagem[0];
+        // $("#dia").text(dia);
+        // $("#text-dia").text(nomenclatura);
+        // $(".circulo-timer label").css({ marginLeft : marginLeft });
+        // document.getElementById("cicrle-timer").src = img;
+      }
+    },
+  }).fail(function () {
+    alert("ERROR API - NÃO RESPONDE - ERRO FUNCTION NOTIFICACAO");
+  });
 }
 
 function TimeLine() {
   var objeto = localStorage.getItem("identificador");
   var data = JSON.parse(objeto);
+
+  $("#icon-timeline").empty();
 
   $.ajax({
     type: "GET",
@@ -47,9 +283,13 @@ function TimeLine() {
       let top = "";
       let left = "";
       let msg = "";
-      // alert($(window).width());
+
+      if (data.length == 0) {
+        $("[timeline]").hide();
+        return false;
+      }
+
       if ($(window).width() < 440) {
-        // alert('entrou aqui')
         top = 1211;
       } else {
         top = 630;
@@ -72,7 +312,7 @@ function TimeLine() {
             } else {
               left = 74;
             }
-            if ($(window).width() > 1900) {
+            if ($(window).width() > 1700) {
               left = 85;
             }
             break;
@@ -84,8 +324,8 @@ function TimeLine() {
             } else {
               left = 79;
             }
-            if ($(window).width() > 1900) {
-              left = 90;
+            if ($(window).width() > 1700) {
+              left = 89;
             }
             break;
           case "EM ANÁLISE":
@@ -96,8 +336,8 @@ function TimeLine() {
             } else {
               left = 78;
             }
-            if ($(window).width() > 1900) {
-              left = 89;
+            if ($(window).width() > 1700) {
+              left = 86;
             }
             break;
           case "SOLICITAÇÃO DE DOCUMENTOS":
@@ -108,8 +348,8 @@ function TimeLine() {
             } else {
               left = 79;
             }
-            if ($(window).width() > 1900) {
-              left = 90;
+            if ($(window).width() > 1700) {
+              left = 89;
             }
             break;
           case "EM PAGAMENTO TOTAL":
@@ -121,8 +361,8 @@ function TimeLine() {
             } else {
               left = 81;
             }
-            if ($(window).width() > 1900) {
-              left = 92;
+            if ($(window).width() > 1700) {
+              left = 91;
             }
             break;
           case "EM PAGAMENTO PARCIAL":
@@ -134,14 +374,13 @@ function TimeLine() {
             } else {
               left = 81;
             }
-            if ($(window).width() > 1900) {
-              left = 92;
+            if ($(window).width() > 1700) {
+              left = 91;
             }
             break;
           default:
             break;
         }
-
         $("#icon-timeline").append(
           `<i class="${icon} custom-icon" style="top: ${top}px; left: ${left}px;"><span class="font-title-span">${
             item.etapa
@@ -194,6 +433,11 @@ function LoginSinistro() {
         }
 
         if (obj.ramo == "77") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
+        if (obj.ramo == "93") {
           var tutorial = { tutorial: false };
           localStorage.setItem("tutorial", JSON.stringify(tutorial));
         }
@@ -284,7 +528,7 @@ function abrirDoc(record) {
       $("#ticketid").text(data[0].ticketid);
       localStorage.setItem("data_aviso", data[0].data_aviso);
 
-      if (data[0].ramo == "71" || data[0].ramo == "77") {
+      if (data[0].ramo == "71" || data[0].ramo == "77" || data[0].ramo == 93) {
         $(".header-prev").remove();
       }
 
@@ -302,13 +546,13 @@ function abrirDoc(record) {
           $("#doc-conteudo").append(
             '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
               value.noteid +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               value.noteid +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;" >Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               value.noteid +
-              '" src="dist/img/warning_icorrent.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
+              '" src="dist/img/warning_icorrent.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
               value.documento_tooltip +
-              '" data-balloon-pos="up">' +
+              '">' +
               value.tipo_doc +
               '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
               value.noteid +
@@ -322,29 +566,81 @@ function abrirDoc(record) {
           value.status_evento == "AGUARDANDO DOCUMENTO" ||
           value.status_evento == "AGUARDANDO DOCUMENTO COMPLEMENTAR"
         ) {
-          $("#alert-tipifica-not").empty();
-          $("#doc-conteudo").append(
-            '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
-              value.noteid +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
-              value.noteid +
-              '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
-              value.noteid +
-              '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
-              value.documento_tooltip +
-              '" data-balloon-pos="up">' +
-              value.tipo_doc +
-              '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
-              value.noteid +
-              '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
-          );
+          if (value.tipo_input === "Mult-Input") {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-multiple[]" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileMultiple(this, \'result-multiplefile_' +
+                value.noteid +
+                '\')" multiple="multiple"/><label for="' +
+                value.noteid +
+                '" id="label-busca-' +
+                value.noteid +
+                '" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
+                value.documento_tooltip +
+                '">' +
+                value.tipo_doc +
+                "</a></span></li>" +
+                '<div id="mutiple-file_' +
+                value.noteid +
+                '" class="ui-file"><span class="text-expectativa" expectativa_' +
+                value.noteid +
+                ">Selecione um ou mais documentos</span></div><br><br>"
+            );
+          }
+          if (value.tipo_input === "Simple-Input") {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-single" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
+                value.noteid +
+                '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
+                value.documento_tooltip +
+                '">' +
+                value.tipo_doc +
+                '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
+                value.noteid +
+                '\');" class="resposive-content-limpar"><span class="glyphicon glyphicon-remove"></span></a><br>'
+            );
+          }
+          if (value.tipo_input === "Grupo") {
+            $("#alert-tipifica-not").empty();
+            $("#doc-conteudo").append(
+              '<li class="tamanho-label-doc" style="list-style-type: none;"><input id="' +
+                value.noteid +
+                '" name="file-group" type="file" style="width: 99%;" accept="image/jpg, image/jpeg, image/png, application/pdf " onchange="getFileName(this)"/><label for="' +
+                value.noteid +
+                '" id="label-busca-' +
+                value.noteid +
+                '" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
+                value.noteid +
+                '" src="dist/img/upload.png" style="margin-right: 2%;"><span><a href="javascript:void(0)" aria-label="' +
+                value.documento_tooltip +
+                '">' +
+                value.tipo_doc +
+                " ( ou )</a></span></li>" +
+                '<div class="ui-group-file">Caso não possua o ' +
+                value.tipo_doc +
+                " envie em outra solicitação que possua (ou)</span></div>" +
+                '<a href="javascript:void(0)" onclick="Limpar(\'' +
+                value.noteid +
+                '\');" class="resposive-content-limpar" style="margin-top: -2.5%;"><span class="glyphicon glyphicon-remove"></span></a><br>' +
+                "<br><br>"
+            );
+          }
         }
 
         if (value.status_evento == "RECUSADO PORTAL") {
           $("#doc-conteudo").append(
             '<div><li class="tamanho-label-doc" style="list-style-type: none;"><span"><a href="javascript:void(0)" data-balloon-length="medium" aria-label="' +
               value.documento_tooltip +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               value.tipo_doc +
               '</a></span></li><a href="javascript:void(0)" onclick="Limpar(\'' +
               value.noteid +
@@ -397,7 +693,85 @@ function Limpar(v, h) {
 }
 
 function LimparDocPrev(params) {
+  //Retorna o Botão para que ele possa adicionar mais documento do previdencia.
+  expectPrev.length === 1 ? $(".btn-add-doc").show() : expectPrev.splice(1, 1);
   $("#divPrev-" + params).remove();
+}
+
+function getFileMultiple(v, params) {
+  let total = $("#mutiple-file_" + v.id + " > div").length;
+
+  if (v.files.length > 18) {
+    alert("Maior que o nível permitido");
+    return false;
+  }
+
+  if (total > 18) {
+    alert("Maior que o nível permitido");
+    return false;
+  }
+
+  let sum_two = v.files.length + total;
+
+  if (sum_two > 18) {
+    alert("Maior que o nível permitido");
+    return false;
+  }
+
+  $(`[expectativa_${v.id}]`).remove();
+  var files = $(v)[0].files;
+  var names = "";
+
+  $("#img-" + v.id).attr("src", "dist/img/ok.png");
+  $("#btn-enviaDoc").attr("style", "visibility: visible");
+  $("#btn-enviaDoc").attr("style", "margin-left: 89%");
+  $("#btn-ok").remove();
+  $("#span-ok").empty();
+  $("#span-ok").append(
+    '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" canceled><span class="fas fa-redo-alt"></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" enviar><span class="fa fa-location-arrow"></span> Enviar</button></div>'
+  );
+
+  $.each(files, function (i, file) {
+    fileInput.push([v.id, file, file.name]);
+
+    names += `<div id="arquivo_${v.id}_${i}"><img width="2%" src="dist/img/open-iconic/image.svg"><span style="width: 100%;">${file.name}</span> <div style="display: inline;width: 100%;text-align: end;cursor: pointer;"><img src="dist/img/open-iconic/x.svg" onClick="targetFileDeleted('arquivo_${v.id}_${i}', ${v.id}, '${file.name}')"></div></div>`;
+  });
+  document.getElementById(`mutiple-file_${v.id}`).innerHTML += names;
+}
+
+//Limpa os input do combo box e volta a mensagem e o incone de upload
+function targetFileDeleted(item, id, fileName) {
+  const total = $(`#mutiple-file_${id} > [id^=arquivo]`).length;
+
+  total === 1 ? $(`#img-${id}`).attr("src", "dist/img/upload.png") : "";
+
+  total === 1
+    ? $(`#mutiple-file_${id}`).append(
+        `<span class="text-expectativa" expectativa_${id}>Selecione um ou mais documentos</span>`
+      )
+    : "";
+
+  const total_file = $(`[id^=arquivo]`).length;
+
+  total_file === 1 ? $(".div-button-doc").hide() : "";
+
+  document.getElementById(item).remove();
+
+  let index = "";
+
+  for (i = 0; fileInput.length > i; i++) {
+    for (j = 0; fileInput[i].length > j; j++) {
+      let a = fileInput[i].indexOf(fileName);
+
+      if (a >= 0) {
+        index = fileInput[i];
+      }
+    }
+  }
+
+  let indexes = fileInput.indexOf(index);
+
+  fileInput.splice(indexes, 1);
 }
 
 function getFileName(v) {
@@ -408,150 +782,241 @@ function getFileName(v) {
   $("#btn-ok").remove();
   $("#span-ok").empty();
   $("#span-ok").append(
-    '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" ><span class="fas fa-redo-alt"></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" ><span class="fa fa-location-arrow"></span> Enviar</button></div>'
+    '<div class="div-button-doc"><button id="btn-ok" class="btn btn-dark btn-upload-responsive" style="background: #3e3e3e;color: #FFF;" onclick="javascript:location.reload()" canceled><span class="fas fa-redo-alt"></span> Cancelar</button><button id="btn-ok" class="btn btn-danger btn-upload-responsive" onclick="enviarDoc()" enviar><span class="fa fa-location-arrow"></span> Enviar</button></div>'
   );
 }
 
-function enviarDoc() {
-  var month = date.getMonth();
-  var day = date.getDate();
-  var year = date.getFullYear();
-  var data = year + "-" + month + "-" + day;
-  var md5 = $.md5(data);
-  var count = 1;
-  var b64 = "";
+const getBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
+};
 
-  var email = $("#email").val();
-  var telefone = $("#telefone").val();
-  var num_sinistro = $("#num_sinistro").val();
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Multiple
+const Tobase64Multiple = (files, ticketid, notesid) => {
+  return new Promise((resolve, reject) => {
+    getBase64(files).then((b64) => {
+      const data = {
+        base64: b64,
+        ticketid,
+        notesid,
+      };
+
+      axios
+        .post(`${url}/api/send-multiplefile`, data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          $("#erro-document-modal").modal("show");
+          reject(error);
+        });
+    });
+  });
+};
+
+const toUnionImage = (ramo, ticketid) => {
+  return new Promise((resolve, reject) => {
+    const datatype = {
+      ramo,
+      ticketid,
+    };
+
+    // APi para listar os Documentos Converter e Anexar no Sinistro
+    axios
+      .post(`${url}/api/unionimage`, datatype)
+      .then((response) => {
+        resolve(response);
+      })
+      .catch((error) => {
+        resolve(error);
+        $("#erro-document-modal").modal("show");
+      });
+  });
+};
+
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Single
+const Tobase64Single = (
+  files,
+  file_name,
+  ticketid,
+  notesid,
+  ramo,
+  doc_name
+) => {
+  return new Promise((resolve, reject) => {
+    getBase64(files).then((b64) => {
+      const data = {
+        name: file_name,
+        notesid,
+        ticketid,
+        ramo,
+        doc_name,
+        base64: b64,
+      };
+      axios
+        .post(`${url}/api/attachement-single`, data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          $("#erro-document-modal").modal("show");
+          reject(error);
+        });
+    });
+  });
+};
+
+//Captura o arquivo imagem do input e converte para BASE64 enviando a APi do pasta Digital Group
+const Tobase64Group = (files, file_name, ticketid, notesid, ramo, doc_name) => {
+  return new Promise((resolve, reject) => {
+    getBase64(files).then((b64) => {
+      const data = {
+        name: file_name,
+        notesid,
+        ticketid,
+        ramo,
+        doc_name,
+        base64: b64,
+      };
+      axios
+        .post(`${url}/api/attachement-group`, data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          $("#erro-document-modal").modal("show");
+          reject(error);
+        });
+    });
+  });
+};
+
+async function enviarDoc() {
+  var count = 1;
+  var validity = "";
+
   var ticketid = $("#ticketid").text();
+  var doc_name = "";
 
   var identificador = localStorage.getItem("identificador");
   var obj = JSON.parse(identificador);
+  var ramo = obj.ramo;
 
-  $.ajax({
-    type: "POST",
-    dataType: "json",
-    url: url + "/api/confirma-campo",
-    timeout: 30000,
-    async: true,
-    data: { num_sinistro: num_sinistro, email: email, telefone: telefone },
-    traditional: true,
-    success: function (data) {
-      if (data.result == true) {
-        var formData = new FormData();
+  $("#process-document-modal").modal("show");
 
-        $("#loading-progresso").append(
-          "<span id='texto-envio' style='font-weight: bold; margin-left: 47%;'></span><div class='progresso'><div class='progress-bar-santander' id='progresso' role='progressbar' style='width: 100%;' aria-valuenow=0' aria-valuemin='0' aria-valuemax='100'>0%</div></div>"
+  //Quando estiver enviando Hidden no Button Enviar Documento
+  $("[enviar]").hide();
+  $("[canceled]").hide();
+
+  //Promise que irá enviar os arquivos de Multi-input
+  let promise = await Promise.all(
+    fileInput.map(function (val) {
+      return Tobase64Multiple(val[1], ticketid, val[0]);
+    })
+  );
+
+  //Após prometido que todos arquivos foram enviados para APi ele entra para outra APi e unificar os arquivos
+  if (promise) {
+    //Validar o Union se for campo multiple ele irá verificar se não ele não aciona essa APi
+    // $("input[multiple=multiple]").each(function (i, input) {
+    //   !input.files.length > 0 ? (validity = false) : (validity = true);
+    // });
+
+    // if (validity) {
+    let promiseUnion = await toUnionImage(ramo, ticketid);
+
+    if (promiseUnion) {
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+    }
+    // }
+  }
+
+  //Promise que irá enviar os arquivos de Simple-input
+  let promise2 = await Promise.all(
+    $("input[name=file-single]").map(function (i, input) {
+      if (input.files.length > 0) {
+        // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+        $(`#label-${count}`).text()
+          ? (doc_name = $(`#label-${count}`).text())
+          : (doc_name = "");
+        // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+        count++;
+        return Tobase64Single(
+          input.files[0],
+          input.files[0].name,
+          ticketid,
+          input.id,
+          obj.ramo,
+          doc_name
         );
-
-        $("input[type=file]").each(function (i, input) {
-          if (input.files[0] != undefined) {
-            if (input.files[0].size > "13500000") {
-              // $("html").removeClass('modal-html');
-              // $("#load").empty();
-              alert(
-                "Seu arquivo deve ser menor ou igual a 13,5MB. Caso esteja tentando enviar pela Câmera do Celular, diminua os pixels para o envio."
-              );
-              return false;
-            } else {
-              if (
-                input.files[0].type == "application/pdf" ||
-                input.files[0].type == "image/jpeg" ||
-                input.files[0].type == "image/png" ||
-                input.files[0].type == "image/jpg"
-              ) {
-                // return false;
-                // base64( $("input[type=file]"), function(data){
-                //     b64 = data.base64;
-                // })
-
-                let data_aviso = localStorage.getItem("data_aviso");
-
-                formData.append(input.name, input.files[0]);
-                formData.append("record", input.id);
-                formData.append("ticketid", ticketid);
-                formData.append("data_aviso", data_aviso);
-                formData.append("ramo", obj.ramo);
-                let label = $("#label-" + count).text();
-                formData.append("doc_nome", label);
-
-                $("#btn-enviaDoc").remove();
-                $("#texto-envio").empty();
-                $("#texto-envio").text("Efetuando o envio...");
-
-                $("#btn-ok").remove();
-
-                let req = new XMLHttpRequest();
-                req.overrideMimeType("application/json");
-                req.upload.addEventListener(
-                  "progress",
-                  function (evt) {
-                    var pct = Math.floor((evt.loaded * 100) / evt.total);
-                    $("#progresso").empty();
-                    $("#progresso").text(pct + "%");
-                    $("#progresso").width(pct + "%");
-                  },
-                  false
-                );
-                req.open("POST", url + "/api/new-attachemnt");
-                req.timeout = 10000000000;
-                req.onload = function () {
-                  var request = JSON.parse(req.responseText);
-
-                  if (request.status == true) {
-                    $("#email").attr("readonly", true);
-                    $("#telefone").attr("readonly", true);
-                    $("#btn-enviaDoc").remove();
-                    $("label").remove();
-                    $(".resposive-content-limpar").remove();
-                    $("#sucesso-doc").fadeIn(function () {
-                      setTimeout(function () {}, 5000);
-                    });
-                    $("#texto-envio").empty();
-                    $("#texto-envio").text("Envio concluido.");
-                    // $("html").removeClass('modal-html');
-                    $("#btn-ok").remove();
-                    $("#span-ok").append(
-                      '<div class="div-finalizado-doc"><button id="btn-ok" class="btn btn-success btn-upload-responsive" onclick="finalizado()" style="margin-left: 89%;"><span class="glyphicon glyphicon-ok"></span> Finalizar</button></div>'
-                    );
-                    // $("#load").empty();
-                  } else {
-                    // $("html").removeClass('modal-html');
-                    $("#load").empty();
-                    alert(
-                      "Não foi Possivel enviar os documento, procure o suporte"
-                    );
-                    location.reload;
-                    return false;
-                  }
-                };
-                req.send(formData);
-              } else {
-                // $("#load").empty();
-                // $("html").removeClass('modal-html');
-                alert(
-                  "Você deve anexar os seguintes arquivos: PNG, JPG, JPEG e PDF"
-                );
-                return false;
-              }
-            }
-          } else {
-            $("#alerta-doc").fadeIn(function () {
-              setTimeout(function () {}, 5000);
-            });
-          }
-          count = count + 1;
-        });
-      } else {
-        alert("ERROR API - NÃO RESPONDE");
-        location.reload;
       }
-    },
-  }).fail(function () {
-    alert("ERROR API - NÃO RESPONDE");
-    location.reload;
-  });
+    })
+  );
+
+  if (promise2) {
+    //Cria a linha do tempo de recepção de documento para o Ramo 89
+    if (obj.ramo == "89") {
+      CreateTimeline(ticketid);
+    } else {
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+    }
+  }
+
+  //Promise que irá enviar os arquivos de Grupo
+  let promise3 = await Promise.all(
+    $("input[name=file-group]").map(function (i, input) {
+      if (input.files.length > 0) {
+        // Verifica se o Label está preenchido pois esse é um formato do Ramo 89 (prev)... caso estiver vazio entende que é outro ramo e envia mesmo assim a APi
+        $(`#label-${count}`).text()
+          ? (doc_name = $(`#label-${count}`).text())
+          : (doc_name = "");
+        // Envia para ToBase64Single onde é arquivo por expectativa e converte para BASE64 e envia na APi
+        count++;
+        return Tobase64Group(
+          input.files[0],
+          input.files[0].name,
+          ticketid,
+          input.id,
+          obj.ramo,
+          doc_name
+        );
+      }
+    })
+  );
+
+  if (promise3) {
+    //Cria a linha do tempo de recepção de documento para o Ramo 89
+    if (obj.ramo == "89") {
+      CreateTimeline(ticketid);
+    } else {
+      $("#process-document-modal").modal("hide");
+      $("#concluido-document-modal").modal("show");
+    }
+  }
+}
+
+function CreateTimeline(ticketid) {
+  const datatimeline = {
+    ticketid,
+  };
+
+  axios
+    .post(`${url}/api/doc-recep-timeline`, datatimeline)
+    .then((response) => {
+      if (response.data) {
+        $("#process-document-modal").modal("hide");
+        $("#concluido-document-modal").modal("show");
+      }
+    })
+    .catch((error) => {
+      $("#erro-document-modal").modal("show");
+    });
 }
 
 function documentosPrev() {
@@ -616,7 +1081,7 @@ function documentosPrev() {
       }
     },
   }).fail(function () {
-    alert("ERROR API - NÃO RESPONDE");
+    $("#erro-document-modal").modal("show");
   });
 }
 
@@ -630,6 +1095,7 @@ function somenteNumeros(num) {
 }
 
 function IncluiDocumentoPrev() {
+  $(".btn-add-doc").hide();
   $("#alert-tipifica-pass").empty();
 
   var selecteditems = [];
@@ -641,6 +1107,7 @@ function IncluiDocumentoPrev() {
     .find("input:checked")
     .each(function (i, ob) {
       obValue.push($(ob).val());
+      expectPrev.push(i);
 
       totalCaracteres = $(ob).val();
 
@@ -680,7 +1147,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" doc="' +
                 selecteditemsTip[i] +
-                '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+                '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
                 count +
                 '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 count +
@@ -688,7 +1155,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" data-balloon-length="medium" aria-label="' +
                 selecteditemsTip[i] +
-                '" data-balloon-pos="up">' +
+                '" data-balloon-pos="bottom">' +
                 selecteditems[i] +
                 '</a> <i class="fas fa-file-download"></i> <a href="dist/formularios/' +
                 arquivo +
@@ -707,7 +1174,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" doc="' +
                 selecteditemsTip[i] +
-                '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+                '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
                 count +
                 '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
                 count +
@@ -715,7 +1182,7 @@ function IncluiDocumentoPrev() {
                 count +
                 '" data-balloon-length="medium" aria-label="' +
                 selecteditemsTip[i] +
-                '" data-balloon-pos="up">' +
+                '" data-balloon-pos="bottom">' +
                 selecteditems[i] +
                 '</a></span></li><a href="javascript:void(0)" onclick="LimparDocPrev(' +
                 count +
@@ -743,7 +1210,7 @@ function IncluiDocumentoPrev() {
               count +
               '" doc="' +
               selecteditemsTip[i] +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               count +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               count +
@@ -751,7 +1218,7 @@ function IncluiDocumentoPrev() {
               count +
               '" data-balloon-length="medium" aria-label="' +
               selecteditemsTip[i] +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               selecteditems[i] +
               '</a>  <i class="fas fa-file-download"></i> <a href="dist/formularios/' +
               arquivo +
@@ -770,7 +1237,7 @@ function IncluiDocumentoPrev() {
               count +
               '" doc="' +
               selecteditemsTip[i] +
-              '" name="file" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
+              '" name="file-single" type="file" style="width: 99%;" onchange="getFileName(this)"/>  <label for="' +
               count +
               '" id="label-busca" class="btn btn-primary btn-sm btn-primary-busca btn-enviar-up" style="float: inline-end;position: absolute;">Buscar Arquivo</label><img class="resposive-concluido-doc" id="img-' +
               count +
@@ -778,7 +1245,7 @@ function IncluiDocumentoPrev() {
               count +
               '" data-balloon-length="medium" aria-label="' +
               selecteditemsTip[i] +
-              '" data-balloon-pos="up">' +
+              '" data-balloon-pos="bottom">' +
               selecteditems[i] +
               '</a></span></li><a href="javascript:void(0)" onclick="LimparDocPrev(' +
               count +
@@ -809,14 +1276,17 @@ function ReadOnlyTrue(params, chk) {
 }
 
 function TabMenu(item) {
+  TimeLine();
   if (item == "documentos") {
     $("#status-timeline").hide();
+    $("#count-timeline").hide();
     $("#doc-bar").show();
     $("#bar-status").removeClass("active");
     $("#bar-doc").addClass("active");
   }
   if (item == "status") {
     $("#status-timeline").show();
+    $("#count-timeline").show();
     $("#doc-bar").hide();
     $("#bar-status").addClass("active");
     $("#bar-doc").removeClass("active");
