@@ -993,7 +993,7 @@ async function enviarDoc() {
   if (promise3) {
     //Cria a linha do tempo de recepção de documento para o Ramo 89
     if (obj.ramo == "89") {
-      CreateTimeline(ticketid);
+      // CreateTimeline(ticketid);
     } else {
       $("#process-document-modal").modal("hide");
       $("#concluido-document-modal").modal("show");
