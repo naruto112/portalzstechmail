@@ -442,6 +442,21 @@ function LoginSinistro() {
           localStorage.setItem("tutorial", JSON.stringify(tutorial));
         }
 
+        if (obj.ramo == "82") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
+        if (obj.ramo == "90") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
+        if (obj.ramo == "87") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
         window.location.href = "index.html?confirmacao";
       } else {
         $("#alert-sinistro-verifica").show();
@@ -528,7 +543,15 @@ function abrirDoc(record) {
       $("#ticketid").text(data[0].ticketid);
       localStorage.setItem("data_aviso", data[0].data_aviso);
 
-      if (data[0].ramo == "71" || data[0].ramo == "77" || data[0].ramo == 93) {
+      if (
+        //Exibe o Layout para mostrar no Portal por Ramo.
+        data[0].ramo == "71" ||
+        data[0].ramo == "77" ||
+        data[0].ramo == "93" ||
+        data[0].ramo == "82" ||
+        data[0].ramo == "90" ||
+        data[0].ramo == "87"
+      ) {
         $(".header-prev").remove();
       }
 
