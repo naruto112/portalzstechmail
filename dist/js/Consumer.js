@@ -8,7 +8,7 @@ var data = JSON.parse(base_url);
 
 var url = data[0].url;
 var documento_tab = "'documentos'";
-const paramsRamo = "89";
+const paramsRamo = ["89", "77", "71"];
 let formularioPrev = "";
 let baseImg64 = "";
 let fileInput = [];
@@ -328,6 +328,18 @@ function TimeLine() {
               left = 89;
             }
             break;
+          case "TODOS DOCUMENTOS RECEPCIONADOS":
+            icon = "far fa-check-circle";
+            msg = "";
+            if ($(window).width() <= 440) {
+              left = 57;
+            } else {
+              left = 76;
+            }
+            if ($(window).width() > 1700) {
+              left = 86;
+            }
+            break;
           case "EM ANÁLISE":
             icon = "far fa-clock";
             msg = "";
@@ -340,7 +352,31 @@ function TimeLine() {
               left = 86;
             }
             break;
+          case "SINISTRO RECUSADO":
+            icon = "far fa-stop-circle";
+            msg = "";
+            if ($(window).width() <= 440) {
+              left = 57;
+            } else {
+              left = 78;
+            }
+            if ($(window).width() > 1700) {
+              left = 86;
+            }
+            break;
           case "SOLICITAÇÃO DE DOCUMENTOS":
+            icon = "far fa-file-alt";
+            msg = `Para verificar os documentos pendentes <a href="javascript:TabMenu('documentos')">clique aqui</a>`;
+            if ($(window).width() <= 440) {
+              left = 60;
+            } else {
+              left = 79;
+            }
+            if ($(window).width() > 1700) {
+              left = 89;
+            }
+            break;
+          case "SOLICITAÇÃO DE DOCUMENTOS COMPLEMENTAR":
             icon = "far fa-file-alt";
             msg = `Para verificar os documentos pendentes <a href="javascript:TabMenu('documentos')">clique aqui</a>`;
             if ($(window).width() <= 440) {

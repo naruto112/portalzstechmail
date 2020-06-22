@@ -188,7 +188,9 @@
         var objeto = localStorage.getItem("identificador");
         var objeto = JSON.parse(objeto);
         if(objeto){
-            var bool = objeto.ramo === paramsRamo ? true : false;
+            // var bool = objeto.ramo === paramsRamo ? true : false;
+            var bool = paramsRamo.find(el => el === objeto.ramo);
+            console.log(bool);
             if(!bool){
                 $("#bar-doc").addClass("active");
                 $("#doc-bar").show();
