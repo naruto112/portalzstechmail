@@ -426,6 +426,11 @@ function TimeLine() {
         );
         $(".linha-vertical").css("height", `${height}px`);
         top = top + 75;
+        if (height > 600) {
+          alert("ENTROU AQUI");
+          height = height * 1.14;
+          return;
+        }
         height = height * 1.17;
       });
     },
