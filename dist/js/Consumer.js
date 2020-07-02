@@ -8,7 +8,7 @@ var data = JSON.parse(base_url);
 
 var url = data[0].url;
 var documento_tab = "'documentos'";
-const paramsRamo = ["89", "77", "71"];
+const paramsRamo = ["89", "77", "71", "93", "82", "90"];
 let formularioPrev = "";
 let baseImg64 = "";
 let fileInput = [];
