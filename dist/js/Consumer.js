@@ -14,6 +14,30 @@ let baseImg64 = "";
 let fileInput = [];
 let expectPrev = [];
 
+function VerifyLineTime() {
+  var objeto = localStorage.getItem("identificador");
+  var objeto = JSON.parse(objeto);
+  if (objeto) {
+    // var bool = objeto.ramo === paramsRamo ? true : false;
+    var bool = paramsRamo.find((el) => el === objeto.ramo);
+    var data_aviso = objeto.dt_aviso;
+
+    if (data_aviso < "2020-06-26" && objeto.ramo != "89") {
+      $("#bar-doc").addClass("active");
+      $("#doc-bar").show();
+      $("#bar-status").remove();
+      $("#time-line").remove();
+    }
+
+    if (!bool) {
+      $("#bar-doc").addClass("active");
+      $("#doc-bar").show();
+      $("#bar-status").remove();
+      $("#time-line").remove();
+    }
+  }
+}
+
 function formatDate(data, formato) {
   var date = $.datepicker.formatDate("yy-mm-dd", new Date());
 
@@ -458,6 +482,7 @@ function LoginSinistro() {
           nome: obj.nome,
           cpf: obj.cpf,
           ramo: obj.ramo,
+          dt_aviso: obj.dt_aviso,
           record: obj.record,
           data_nasc: obj.data_nasc,
           celular: obj.celular,
