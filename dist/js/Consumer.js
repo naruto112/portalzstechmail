@@ -739,7 +739,7 @@ function abrirDoc(record) {
         }
 
         if (value.status_evento == "CONCLUIDO") {
-          if (value.enviado_por == "Cliente Portal") {
+          if (value.enviado_por == "Cliente Portal" || value.enviado_por == "Plataforma") {
             $("#alert-tipifica-pass").empty();
             $("#doc-conteudo-pass").append(
               '<li class="tamanho-label-doc" style="list-style-type: none;"><div class="resposive-data-doc" style="float: inline-end;position: absolute;"><span class="glyphicon glyphicon-calendar"></span> ' +
