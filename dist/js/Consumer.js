@@ -29,6 +29,27 @@ function VerifyLineTime() {
       $("#time-line").remove();
     }
 
+    if (data_aviso < "2020-07-17" && objeto.ramo == "93") {
+      $("#bar-doc").addClass("active");
+      $("#doc-bar").show();
+      $("#bar-status").remove();
+      $("#time-line").remove();
+    }
+
+    if (data_aviso < "2020-07-17" && objeto.ramo == "82") {
+      $("#bar-doc").addClass("active");
+      $("#doc-bar").show();
+      $("#bar-status").remove();
+      $("#time-line").remove();
+    }
+
+    if (data_aviso < "2020-07-17" && objeto.ramo == "90") {
+      $("#bar-doc").addClass("active");
+      $("#doc-bar").show();
+      $("#bar-status").remove();
+      $("#time-line").remove();
+    }
+
     if (!bool) {
       $("#bar-doc").addClass("active");
       $("#doc-bar").show();
