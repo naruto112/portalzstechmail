@@ -37,7 +37,6 @@ function VerifyLineTime() {
     }
 
     if (data_aviso < "2020-07-20" && objeto.ramo == "82") {
-      alert(data_aviso);
       $("#bar-doc").addClass("active");
       $("#doc-bar").show();
       $("#bar-status").remove();
