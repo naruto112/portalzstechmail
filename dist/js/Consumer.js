@@ -4,9 +4,9 @@
 // Desenvolvedor: Renato Moschetta de Souza
 // Objetivo: Portal Zurich Santander
 
-var data = JSON.parse(base_url);
+var json = JSON.parse(data);
 
-var url = data[0].url;
+var url = json.base_url;
 var documento_tab = "'documentos'";
 const paramsRamo = ["89", "77", "71", "93", "82", "90"];
 let formularioPrev = "";
