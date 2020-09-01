@@ -760,14 +760,17 @@ function abrirDoc(record) {
         }
 
         if (value.status_evento == "CONCLUIDO") {
-          if (value.enviado_por == "Cliente Portal" || value.enviado_por == "Plataforma") {
+          if (
+            value.enviado_por == "Cliente Portal" ||
+            value.enviado_por == "Plataforma"
+          ) {
             $("#alert-tipifica-pass").empty();
             $("#doc-conteudo-pass").append(
               '<li class="tamanho-label-doc" style="list-style-type: none;"><div class="resposive-data-doc" style="float: inline-end;position: absolute;"><span class="glyphicon glyphicon-calendar"></span> ' +
                 formatDate(value.data_recep, "pt-br") +
                 '</div><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/feito.png" style="margin-right: 2%;"><span>' +
+                '" src="dist/img/carraca.svg" style="margin-right: 2%;"><span>' +
                 value.tipo_doc +
                 "</span></li><br>"
             );
@@ -780,7 +783,7 @@ function abrirDoc(record) {
                 formatDate(value.data_recep, "pt-br") +
                 '</div><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/feito.png" style="margin-right: 2%;"><span>' +
+                '" src="dist/img/carraca.svg" style="margin-right: 2%;"><span>' +
                 value.tipo_doc +
                 "</span></li><br>"
             );
@@ -831,7 +834,7 @@ function getFileMultiple(v, params) {
   var files = $(v)[0].files;
   var names = "";
 
-  $("#img-" + v.id).attr("src", "dist/img/ok.png");
+  $("#img-" + v.id).attr("src", "dist/img/enviar.svg");
   $("#btn-enviaDoc").attr("style", "visibility: visible");
   $("#btn-enviaDoc").attr("style", "margin-left: 89%");
   $("#btn-ok").remove();
@@ -886,7 +889,7 @@ function targetFileDeleted(item, id, fileName) {
 function getFileName(v) {
   $("#btn-enviaDoc").attr("style", "visibility: visible");
   $("#btn-enviaDoc").attr("style", "margin-left: 89%");
-  $("#img-" + v.id).attr("src", "dist/img/ok.png");
+  $("#img-" + v.id).attr("src", "dist/img/enviar.svg");
   $("#img-trash-" + v.id).remove();
   $("#btn-ok").remove();
   $("#span-ok").empty();
