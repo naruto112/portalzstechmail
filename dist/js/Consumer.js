@@ -524,7 +524,6 @@ function LoginSinistro() {
   } else {
     $.get(url + "/api/login/sinistro/" + num_sinistro, function (data, status) {
       var obj = jQuery.parseJSON(data);
-
       if (obj.status) {
         var credencial = {
           nome: obj.nome,
