@@ -15,7 +15,7 @@ let fileInput = [];
 let expectPrev = [];
 
 function VerifyLineTime() {
-  var objeto = localStorage.getItem("identificador");
+ var objeto = localStorage.getItem("identificador");
   var objeto = JSON.parse(objeto);
   if (objeto) {
     // var bool = objeto.ramo === paramsRamo ? true : false;
