@@ -176,7 +176,7 @@
         </div>
   </footer>
 
-  <div class="modal fade" id="tutorial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal fade" id="tutorial-modal-prev" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-content-resposive" style="width: 120%;background-color: #77777700;margin-left: -9%;">
             <div class="modal-header" style="border-bottom-color: #f4f4f400;padding: 0px;">
@@ -218,11 +218,33 @@
         var object_slide = JSON.parse(slide);
         // $("#process-document-modal").modal('show');
 
-        if(object_slide){
-        }else{
-            var tutorial = { "tutorial": true }
-            localStorage.setItem("tutorial", JSON.stringify(tutorial));
-            $('#tutorial-modal').modal('show');
+        if(object_slide.tutorial){
+        } else {
+          var objeto = localStorage.getItem("identificador");
+          var objeto = JSON.parse(objeto);
+
+          if (objeto.ramo == "89") {
+            $('#tutorial-modal-prev').modal('show');
+          }
+
+          if (objeto.ramo == "71") {
+            $('#tutorial-modal-prev').modal('show');
+          }
+          
+          if (objeto.ramo == "77") {
+            $('#tutorial-modal-prev').modal('show');
+          }
+
+          if (objeto.ramo == "82") {
+            $('#tutorial-modal-prev').modal('show');
+          }
+
+          if (objeto.ramo == "93") {
+            $('#tutorial-modal-prev').modal('show');
+          }
+
+          var tutorial = { "tutorial": true }
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
         }
     })
     

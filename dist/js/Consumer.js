@@ -22,28 +22,28 @@ function VerifyLineTime() {
     var bool = paramsRamo.find((el) => el === objeto.ramo);
     var data_aviso = objeto.dt_aviso;
 
-    if (data_aviso < "2020-06-26" && objeto.ramo != "89") {
+    // if (data_aviso < "2020-06-26" && objeto.ramo != "89") {
+    //   $("#bar-doc").addClass("active");
+    //   $("#doc-bar").show();
+    //   $("#bar-status").remove();
+    //   $("#time-line").remove();
+    // }
+
+    if (data_aviso < "2020-07-20" && objeto.ramo == "93") {
       $("#bar-doc").addClass("active");
       $("#doc-bar").show();
       $("#bar-status").remove();
       $("#time-line").remove();
     }
 
-    if (data_aviso < "2020-07-17" && objeto.ramo == "93") {
+    if (data_aviso < "2020-07-20" && objeto.ramo == "82") {
       $("#bar-doc").addClass("active");
       $("#doc-bar").show();
       $("#bar-status").remove();
       $("#time-line").remove();
     }
 
-    if (data_aviso < "2020-07-17" && objeto.ramo == "82") {
-      $("#bar-doc").addClass("active");
-      $("#doc-bar").show();
-      $("#bar-status").remove();
-      $("#time-line").remove();
-    }
-
-    if (data_aviso < "2020-07-17" && objeto.ramo == "90") {
+    if (data_aviso < "2020-07-20" && objeto.ramo == "90") {
       $("#bar-doc").addClass("active");
       $("#doc-bar").show();
       $("#bar-status").remove();
@@ -360,6 +360,9 @@ function TimeLine() {
             if ($(window).width() > 1700) {
               left = 85;
             }
+            if ($(window).width() > 2000) {
+              left = 98;
+            }
             break;
           case "DOCUMENTOS RECEPCIONADOS":
             icon = "far fa-file";
@@ -371,6 +374,9 @@ function TimeLine() {
             }
             if ($(window).width() > 1700) {
               left = 89;
+            }
+            if ($(window).width() > 2000) {
+              left = 101;
             }
             break;
           case "TODOS DOCUMENTOS RECEPCIONADOS":
@@ -384,6 +390,9 @@ function TimeLine() {
             if ($(window).width() > 1700) {
               left = 86;
             }
+            if ($(window).width() > 2000) {
+              left = 98;
+            }
             break;
           case "EM ANÁLISE":
             icon = "far fa-clock";
@@ -395,6 +404,9 @@ function TimeLine() {
             }
             if ($(window).width() > 1700) {
               left = 86;
+            }
+            if ($(window).width() > 2000) {
+              left = 99;
             }
             break;
           case "SINISTRO RECUSADO":
@@ -408,6 +420,9 @@ function TimeLine() {
             if ($(window).width() > 1700) {
               left = 86;
             }
+            if ($(window).width() > 2000) {
+              left = 98;
+            }
             break;
           case "SOLICITAÇÃO DE DOCUMENTOS":
             icon = "far fa-file-alt";
@@ -420,6 +435,9 @@ function TimeLine() {
             if ($(window).width() > 1700) {
               left = 89;
             }
+            if ($(window).width() > 2000) {
+              left = 101;
+            }
             break;
           case "SOLICITAÇÃO DE DOCUMENTOS COMPLEMENTAR":
             icon = "far fa-file-alt";
@@ -431,6 +449,9 @@ function TimeLine() {
             }
             if ($(window).width() > 1700) {
               left = 89;
+            }
+            if ($(window).width() > 2000) {
+              left = 98;
             }
             break;
           case "EM PAGAMENTO TOTAL":
@@ -445,6 +466,9 @@ function TimeLine() {
             if ($(window).width() > 1700) {
               left = 91;
             }
+            if ($(window).width() > 2000) {
+              left = 98;
+            }
             break;
           case "EM PAGAMENTO PARCIAL":
             icon = "fas fa-dollar-sign";
@@ -457,6 +481,9 @@ function TimeLine() {
             }
             if ($(window).width() > 1700) {
               left = 91;
+            }
+            if ($(window).width() > 2000) {
+              left = 98;
             }
             break;
           default:
@@ -770,7 +797,7 @@ function abrirDoc(record) {
                 formatDate(value.data_recep, "pt-br") +
                 '</div><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/carraca.svg" style="margin-right: 2%;"><span>' +
+                '" src="dist/img/feito.png" style="margin-right: 2%;"><span>' +
                 value.tipo_doc +
                 "</span></li><br>"
             );
@@ -783,7 +810,7 @@ function abrirDoc(record) {
                 formatDate(value.data_recep, "pt-br") +
                 '</div><img class="resposive-concluido-doc" id="img-' +
                 value.noteid +
-                '" src="dist/img/carraca.svg" style="margin-right: 2%;"><span>' +
+                '" src="dist/img/feito.png" style="margin-right: 2%;"><span>' +
                 value.tipo_doc +
                 "</span></li><br>"
             );
@@ -834,7 +861,7 @@ function getFileMultiple(v, params) {
   var files = $(v)[0].files;
   var names = "";
 
-  $("#img-" + v.id).attr("src", "dist/img/enviar.svg");
+  $("#img-" + v.id).attr("src", "dist/img/ok.png");
   $("#btn-enviaDoc").attr("style", "visibility: visible");
   $("#btn-enviaDoc").attr("style", "margin-left: 89%");
   $("#btn-ok").remove();
@@ -889,7 +916,7 @@ function targetFileDeleted(item, id, fileName) {
 function getFileName(v) {
   $("#btn-enviaDoc").attr("style", "visibility: visible");
   $("#btn-enviaDoc").attr("style", "margin-left: 89%");
-  $("#img-" + v.id).attr("src", "dist/img/enviar.svg");
+  $("#img-" + v.id).attr("src", "dist/img/ok.png");
   $("#img-trash-" + v.id).remove();
   $("#btn-ok").remove();
   $("#span-ok").empty();
