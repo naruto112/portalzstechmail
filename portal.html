@@ -176,19 +176,20 @@
         </div>
   </footer>
 
-  <div class="modal fade" id="tutorial-modal-prev" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <!--Previdencia-->
+  <div class="modal fade" id="tutorial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-content-resposive" style="width: 120%;background-color: #77777700;margin-left: -9%;">
             <div class="modal-header" style="border-bottom-color: #f4f4f400;padding: 0px;">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;opacity: 1;"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <img class="img-pc-tutorial" id="my_image" src="dist/img/tutorial/Screenshot_1.png" style="width: 100%;">
-                <img class="img-tutorial" id="my_image_mobile" src="dist/img/tutorial/Screenshot_mobile_1.png" style="width: 100%;">
+                <img class="img-pc-tutorial" id="my_image" src="dist/img/tutorial-prev/Screenshot_1.png" style="width: 100%;">
+                <img class="img-tutorial" id="my_image_mobile" src="dist/img/tutorial-prev/Screenshot_mobile_1.png" style="width: 100%;">
             </div>
             <div class="modal-footer" style="width: 55%;margin-top: -3%;border-top-color: #ffffff00;">
-                <button type="button" onclick="PreviousImg();" class="btn btn-default btn-previous" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-left"></span></button>
-                <button type="button" onclick="NextImg();" class="btn btn-default btn-next" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" onclick="PreviousImgPrev();" class="btn btn-default btn-previous" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button type="button" onclick="NextImgPrev();" class="btn btn-default btn-next" style="background-color: #ffffff00;color: #fff;border-color: #ddd0; font-weight: bold;"><span class="glyphicon glyphicon-chevron-right"></span></button>
             </div>
         </div>
   </div>
@@ -224,23 +225,29 @@
           var objeto = JSON.parse(objeto);
 
           if (objeto.ramo == "89") {
-            $('#tutorial-modal-prev').modal('show');
+            $('#tutorial-modal').modal('show');
           }
 
           if (objeto.ramo == "71") {
-            $('#tutorial-modal-prev').modal('show');
+            $('#tutorial-modal').modal('show');
+            $("#my_image").attr("src","dist/img/tutorial-demais-ramos/Screenshot_1.png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial-demais-ramos/Screenshot_mobile_1.png");
           }
           
           if (objeto.ramo == "77") {
-            $('#tutorial-modal-prev').modal('show');
+            $('#tutorial-modal').modal('show');
           }
 
           if (objeto.ramo == "82") {
-            $('#tutorial-modal-prev').modal('show');
+            $('#tutorial-modal').modal('show');
           }
 
           if (objeto.ramo == "93") {
-            $('#tutorial-modal-prev').modal('show');
+            $('#tutorial-modal').modal('show');
+          }
+
+          if (objeto.ramo == "90") {
+            $('#tutorial-modal').modal('show');
           }
 
           var tutorial = { "tutorial": true }
@@ -248,27 +255,47 @@
         }
     })
     
-    function NextImg(){
+    function NextImgPrev(){
         count_img = count_img + 1;
         if(count_img > 7){
             $(".btn-next").hide();
         }else{
+
+          var objeto = localStorage.getItem("identificador");
+          var objeto = JSON.parse(objeto);
+
+          if (objeto.ramo != "89") {
             $(".btn-next").show();
             $(".btn-previous").show();
-            $("#my_image").attr("src","dist/img/tutorial/Screenshot_"+count_img+".png");
-            $("#my_image_mobile").attr("src","dist/img/tutorial/Screenshot_mobile_"+count_img+".png");
+            $("#my_image").attr("src","dist/img/tutorial-demais-ramos/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial-demais-ramos/Screenshot_mobile_"+count_img+".png");
+          } else {
+            $(".btn-next").show();
+            $(".btn-previous").show();
+            $("#my_image").attr("src","dist/img/tutorial-prev/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial-prev/Screenshot_mobile_"+count_img+".png");
+          }
+            
         }
         
     }
-    function PreviousImg(){
+    function PreviousImgPrev(){
         count_img = count_img - 1;
         if(count_img == 0){
             $(".btn-previous").hide();
         }else{
+
+          if (objeto.ramo != "89") {
             $(".btn-next").show();
             $(".btn-previous").show();
-            $("#my_image").attr("src","dist/img/tutorial/Screenshot_"+count_img+".png");
-            $("#my_image_mobile").attr("src","dist/img/tutorial/Screenshot_mobile_"+count_img+".png");
+            $("#my_image").attr("src","dist/img/tutorial-demais-ramos/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial-demais-ramos/Screenshot_mobile_"+count_img+".png");
+          } else {
+            $(".btn-next").show();
+            $(".btn-previous").show();
+            $("#my_image").attr("src","dist/img/tutorial-prev/Screenshot_"+count_img+".png");
+            $("#my_image_mobile").attr("src","dist/img/tutorial-prev/Screenshot_mobile_"+count_img+".png");
+          }
         }
         
     }

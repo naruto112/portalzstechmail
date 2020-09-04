@@ -540,8 +540,13 @@ function LoginSinistro() {
         };
         localStorage.setItem("identificador", JSON.stringify(credencial));
 
+        if (obj.ramo == "89") {
+          var tutorial = { tutorial: false };
+          localStorage.setItem("tutorial", JSON.stringify(tutorial));
+        }
+
         if (obj.ramo == "71") {
-          var tutorial = { tutorial: true };
+          var tutorial = { tutorial: false };
           localStorage.setItem("tutorial", JSON.stringify(tutorial));
         }
 
